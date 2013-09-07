@@ -1,0 +1,326 @@
+%=========================================================================%
+%   "Epigenetic basis of endocycle regulation in Oikopleura dioica"
+%
+% Master thesis by André Figueiredo Rendeiro
+% 2013/1014
+%
+% University of Aveiro thesis
+% based on the template by Tomás Oliveira e Silva
+%
+%=========================================================================%
+
+\documentclass[11pt,twoside,a4paper]{report}
+%incluir 'final' nas opções em baixo para omitir "Documento Provisório"
+\usepackage[DBIO,newLogo,final]{uaThesis}
+
+% optional packages
+\usepackage[english]{babel}
+\usepackage{hyperref}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{xspace}% used by \sigla
+\usepackage{cite}
+\usepackage[titletoc]{appendix}
+
+% provide encoding packages depending on the compiler
+\ifxetex
+  \usepackage{fontspec}
+\else
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{lmodern}
+\fi
+% to get external fonts (e.g. google webfonts)
+% must use xelatex compiler!!!
+% \setmainfont[Ligatures=TeX]{Junge.ttf}
+
+% defs
+\def\ThesisYear{2014}
+\def\ThesisAuthor{André Figueiredo Rendeiro}
+\def\ptThesisTitle{Bases epigenéticas da regulação de endociclos em Oikopleura dioica}
+\def\enThesisTitle{Epigenetic basis of endocycle regulation in Oikopleura dioica}
+
+% optional (comment to use default)s
+%   depth of the table of contents
+%     1 ... chapther and sections
+%     2 ... chapters, sections, and subsections
+%     3 ... chapters, sections, subsections, and subsubsections
+\setcounter{tocdepth}{4}
+
+% optional (comment to used default)
+%   horizontal line to separate floats (figures and tables) from text
+\def\topfigrule{\kern 7.8pt \hrule width\textwidth\kern -8.2pt\relax}
+\def\dblfigrule{\kern 7.8pt \hrule width\textwidth\kern -8.2pt\relax}
+\def\botfigrule{\kern -7.8pt \hrule width\textwidth\kern 8.2pt\relax}
+
+% custom macros (could also be defined using \newcommand)
+\def\I{\mathtt{i}}         % one possible way to represent $\sqrt{-1}$
+\def\Exp#1{e^{2\pi\I #1}}  % argument inside braces, i.e., "{}"
+\def\EXP#1.{e^{2\pi\I #1}} % argument finishes when a full stop is encountered, i.e., "."
+\def\sigla{\LaTeX\xspace}  % use as "blabla \sigla blabla (no need to do "blabla \sigla\ blabla"
+
+\def\AddVMargin#1{\setbox0=\hbox{#1}%
+                  \dimen0=\ht0\advance\dimen0 by 2pt\ht0=\dimen0%
+                  \dimen0=\dp0\advance\dimen0 by 2pt\dp0=\dimen0%
+                  \box0}   % add extra vertical space above and below the argument (#1)
+\def\Header#1#2{\setbox1=\hbox{#1}\setbox2=\hbox{#2}%
+           \ifdim\wd1>\wd2\dimen0=\wd1\else\dimen0=\wd2\fi%
+           \AddVMargin{\parbox{\dimen0}{\centering #1\\#2}}} % put #1 on top #2
+
+\begin{document}
+
+%=========================================================================%
+% Cover page (use only one of the first two \TitlePage)
+%=========================================================================%
+\TitlePage
+    \HEADER{%\BAR\
+    }{\ThesisYear}
+    
+    \TITLE{\ThesisAuthor}
+        {\ptThesisTitle}
+    \vspace*{10mm}
+    \TITLE{}{\enThesisTitle}
+          %\HEADER{\BAR\FIG{\begin{minipage}{50mm} % no more than 120mm
+          %``I'm King of the world.''
+          % \begin{flushright}
+          %  --- Jack Nicholson
+          % \end{flushright}
+          % \end{minipage}}}
+          % {\ThesisYear}
+\EndTitlePage
+
+\cleardoublepage
+
+%=========================================================================%
+% Cover page
+%=========================================================================%
+
+\TitlePage
+    \HEADER{}{\ThesisYear}
+    \TITLE{\ThesisAuthor}
+        {\ptThesisTitle}
+    \vspace*{10mm}
+    \TITLE{}{\enThesisTitle}
+    \vspace*{15mm}
+    
+    \TEXT{}
+       {Dissertação apresentada à Universidade de Aveiro para cumprimento dos requisitos necessários à obtenção do grau de Mestre em Biologia Molecular e Celular, realizada sob a orientação científica de Eric Thompson, Professor do Departamento de Biologia da Universidade de Bergen e de Manuel Santos, Professor Associado do Departamento de Biologia da Universidade de Aveiro.}
+       
+\EndTitlePage
+
+\cleardoublepage
+
+%=========================================================================%
+% Title page
+%=========================================================================%
+
+\TitlePage
+  \vspace*{55mm}
+  \TEXT{\textbf{jury}}{}
+       
+  \TEXT{president}
+       {\textbf{António MASADASDDSASD}\newline {\small Associated Professor at the Biology Department of the University of Aveiro }}
+  \vspace*{5mm}
+  
+    \TEXT{}
+       {\textbf{António MASADASDDSASD}\newline {\small Associated Professor at the Biology Department of the University of Aveiro }}
+  \vspace*{5mm}
+  
+    \TEXT{}
+       {\textbf{António MASADASDDSASD}\newline {\small
+        Associated Professor at the Biology Department of the University of Aveiro }}
+  \vspace*{5mm}
+  
+\EndTitlePage
+
+\cleardoublepage
+
+%=========================================================================%
+% Dedications
+%=========================================================================%
+
+\TitlePage
+  \vspace*{55mm}
+    \TEXT{\textbf{acknowledgements}}
+        {I thank Prof. Thompson for allowing me to work in his lab and for all help with my stay in Norway. Pavla, for unconditional support and guidance during this period, Gemma for irreplaceable computational help, and everyone in the lab for all the good laughs and help when needed.}
+    \TEXT{}
+        {I'd like to thank my family for all the support throughout these years, allowing me to follow my dreams.}
+    \TEXT{}
+		{I'd also like to acknowledge the free open source software community for its marvellous efforts in building an open world and Tomás Oliveira e Silva for the University of Aveiro \LaTeX thesis template.}
+    \TEXT{}
+        {This thesis was made using entirely open source software.}
+
+
+\EndTitlePage
+
+\cleardoublepage
+
+%=========================================================================%
+% Portuguese abstract page
+%=========================================================================%
+
+\TitlePage
+  \vspace*{55mm}
+  \TEXT{\textbf{palavras-chave}}
+        {epigenética, endociclos, Oikopleura dioica}
+  \TEXT{\textbf{resumo}}
+    	{Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.}
+\EndTitlePage
+
+\cleardoublepage
+
+%=========================================================================%
+% English abstract page
+%=========================================================================%
+
+\TitlePage
+    \vspace*{55mm}
+    \TEXT{\textbf{palavras-chave}}
+        {epigenetics, endocycles, Oikopleura dioica}
+  \TEXT{\textbf{abstract}}
+		{Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.}
+\EndTitlePage
+
+\cleardoublepage
+
+%=========================================================================%
+% Tables of contents, of figures, ...
+%=========================================================================%
+
+\pagenumbering{roman}
+
+\tableofcontents
+\cleardoublepage
+
+%\listoffigures
+\listoffigures
+\cleardoublepage
+
+%\listoftables
+\listoftables
+\cleardoublepage
+
+%=========================================================================%
+% The chapters (usually written using the isolatin font encoding ...)
+%=========================================================================%
+\pagenumbering{arabic}
+%=========================================================================%
+\chapter{Introduction}
+%=========================================================================%
+Here I will talk about stuff...
+\cite{Roy2010}
+\cite{DeVeylder2011}
+
+%=========================================================================%
+\section{Epigenetics and Gene Regulation}
+Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+\subsection{Histone Variants}
+Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+\subsection{lncRNAs}
+Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+\subsection{Histone modifications}
+Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+\section{Oikopleura dioca, a model system on... }
+Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+\subsection{Genome compactation and gene loss}
+Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+\subsection{Cell cycle variants}
+Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+\subsection{Endocycling}
+Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+\section{Endocycle regulation}
+\subsection{Advantages of endocycles}
+\subsection{Mammals}
+\subsubsection{Giant cell Placenta}
+\subsubsection{Liver}
+\subsection{Oikopleura}
+\subsubsection{Histone variants}
+
+\subsection{New insigts on endocycle control from epigenetics}
+\subsubsection{E2F family}
+\subsubsection{Dot1L}
+\subsubsection{DOT1L in cell reprogramming}
+
+\subsection{Project Goals}
+Identify the roles of the Oikopleura E2F TF family in endocycles
+Gain insights on the epigenetics basis for endocycle regulation mediated by H3K79me and it's methyltransferase Dot1L
+\clearpage
+
+%=========================================================================%
+\chapter{Materials and Methods}
+%=========================================================================%
+\section{ChIP-seq}
+\subsection{ChIP}
+\subsection{Illumina library construction}
+\subsection{Sequencing}
+
+\section{Dot1L inhibition and knockout}
+\subsection{Phenotype curve}
+\subsection{Dot1L knockout}
+\subsection{Phenotype curve}
+\subsection{Dot1L phenotype rescue}
+
+\section{Immunostaining}
+\section{Bioinformatics analysis}
+\subsection{ChIP-seq QC, mapping}
+\subsection{E2F peak-finding}
+\subsection{E2F target-gene association}
+\subsection{E2F target-gene GO}
+\subsection{H3K79me domain identification}
+\subsection{pre-post Dot1L inhibition diferences on H3K79me and GO of genes involved}
+
+
+\clearpage
+
+%=========================================================================%
+\chapter{Results}
+%=========================================================================%
+
+
+
+\clearpage
+
+%=========================================================================%
+\chapter{Discussion}
+%=========================================================================%
+
+
+\clearpage
+
+%=========================================================================%
+\chapter{Conclusions and Future Perspectives}
+%=========================================================================%
+
+
+
+\cleardoublepage
+%=========================================================================%
+%
+% The bibliography
+%
+%=========================================================================%
+\bibliographystyle{plain}
+\bibliography{/data/Documents/Mendeley/collection.bib}
+
+
+\cleardoublepage
+%=========================================================================%
+% Appendix
+%=========================================================================%
+\begin{appendices}
+  \chapter{List of GO terms}
+  \chapter{PCR primers}
+  \chapter{PCR primers}
+  \chapter{PCR primers}
+\end{appendices}
+
+
+\end{document}
