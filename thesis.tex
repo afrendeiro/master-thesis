@@ -22,6 +22,8 @@
 \usepackage{cite}
 \usepackage[titletoc]{appendix}
 \usepackage{emptypage}
+\usepackage{multirow}
+\usepackage{float}
 
 % provide encoding packages depending on the compiler
 \ifxetex
@@ -67,6 +69,9 @@
 \def\Header#1#2{\setbox1=\hbox{#1}\setbox2=\hbox{#2}%
            \ifdim\wd1>\wd2\dimen0=\wd1\else\dimen0=\wd2\fi%
            \AddVMargin{\parbox{\dimen0}{\centering #1\\#2}}} % put #1 on top #2
+
+\newcommand{\degree}{\ensuremath{^\circ}}
+\DeclareUnicodeCharacter{B0}{\degree}
 
 \begin{document}
 
@@ -298,7 +303,7 @@ H4 is highly constrained as it contacts with the other 3 core histones and its N
 			Much less is known about the regulation of the endoreplicative cell cycle, and endocycling in particular. Compared with the canonical cell cycle regulation, two prominent events must occur for an endocycle to take place:
 			\begin{enumerate}
 				\item abolishment of mitosis and cell division;
-				\item successful regulation of the cell cycle effectors to continue to allow genome replication.
+				\item regulation of cell cycle effectors to continue to allow genome replication.
 			\end{enumerate}
 						
 				\subsubsection{Endoreplication by abolishment of mitosis and cell division}
@@ -310,15 +315,20 @@ H4 is highly constrained as it contacts with the other 3 core histones and its N
 			 	Blocking cytokinesis is a way to inhibit cell division and thus leads to endoreplication, a mechanism known to be normal in plants, where it has even been used in horticulture to improve crops. RhoA, a GTPase with a key role in regulating cell division is not activated due to the downregulation of two of its activators (GEF-H1 and ECT2) during cytokinesis in magakaryocytes as well, which causes failure of cell division. Resulting in endoreplication, through an incomplete mitosis this method is a known path for endomitosis.
 			 
 			\subsubsection{Endoreplication by CDK activity regulation}
-			Replication of DNA during S phase requires CDK activity. Indeed, CKI induction during megakaryocyte differentiation must be transient in order not to inhibit the CDK activity required for endoreplication S phase (Muñoz-Alonso et al., 2012). Cdk2 is the important kinase for endoreplication S phase in animal cells, although in the absence of Cdk2 in mammals, Cdk1 can act as a substitute (Ullah et al., 2009b). Cyclin E overexpression increases the ploidy of megakaryocytes (Eliades et al., 2010), suggesting that the Cyclin E/Cdk2 (Cdc2c – FlyBase) complex is the relevant kinase. Likewise, early work suggested that the Cyclin E/Cdk2 complex is the crucial, and perhaps only, CDK required for endoreplication in Drosophila (Lilly and Duronio, 2005). However, Sallé et al. recently showed that Cyclin A regulates endoreplication S phase dynamics in Drosophila mechanosensory organs, although a corresponding CDK was not identified (Sallé et al., 2012). In spite of such important complexities, informative models of endoreplication can be built by considering the S-phase CDK as a single activity.
-			The alternation of high and low levels of CDK activity that is needed for endoreplication can often be observed cytologically. For example, Cyclin E transcripts and protein are present just prior to and during S phase, but not G phase, in endoreplicating Drosophila cells (Knoblich et al., 1994; Lilly and Spradling, 1996; Weng et al., 2003). Endoreplication is suppressed when such cyclic accumulation of Cyclin E is bypassed by forced continuous transcription of Cyclin E (Follette et al., 1998; Weiss et al., 1998). The Cyclin E/Cdk2 complex also functions to control the cyclic accumulation of replication factors like the pre-RC component Orc1 (Narbonne-Reveau et al., 2008). These observations helped formulate the idea of an endoreplication oscillator that controls periods of high and low S-phase CDK activity. Recently, mathematical modeling of endoreplication oscillations helped guide experiments demonstrating that cyclic accumulation of the transcription factor E2f1 (E2f – FlyBase) is essential for endoreplication in the highly polyploid Drosophila salivary gland (Zielke et al., 2011). E2F transcription factors are potent stimulators of S-phase entry and control the expression of genes required for DNA synthesis, including Cyclin E. Their activity is regulated by the Rb family of tumor suppressors, which bind to and inhibit E2F proteins during G1 phase (van den Heuvel and Dyson, 2008). E2F-Rb interactions regulate endoreplication in plants and worms (Magyar et al., 2012; Ouellet and Roy, 2007). However, Rb- mediated regulation of E2f1 is not essential for endoreplication in Drosophila salivary glands, perhaps because of the action of the E2f2-containing Myb-MuvB complex in repressing Cyclin E expression during G phase (Maqbool et al., 2010; Weng et al., 2003). Zielke et al. (Zielke et al., 2011) provide data in support of a model whereby E2f1 accumulation during G phase results in activation of the Cyclin E/Cdk2 complex, which triggers S phase, which in turn causes the subsequent inactivation of E2f1 via the action of CRL4Cdt2, an E3 ubiquitin ligase that couples proteolysis with DNA replication (Havens and Walter, 2011; Shibutani et al., 2008) (Fig. 2). This model is consistent with earlier observations that Cyclin E activity is required for the downregulation of E2f1 target genes in the endoreplicating embryonic midgut (Duronio and O’Farrell, 1995), and that disruptions to normal oscillations of E2f1 activity in salivary glands suppress endoreplication (Maqbool et al., 2010). Interestingly, CRL4 is also required for endoreplication in Arabidopsis trichomes, although the relevant CRL4 target in trichomes might be CKI proteins (Roodbarkelari et al., 2010). Negative-feedback regulation of E2F activity is also important for endoreplication in hepatocytes (Chen et al., 2012; Pandit et al., 2012), but here it appears to control the transition from cell division to endoreplication, and it is not yet known whether E2F functions as part of a mammalian endoreplication oscillator. Nonetheless, these results emphasize that negative-feedback regulation is a common and important feature of molecular oscillators that control cell cycle progression (Ferrell et al., 2011). A central CDK oscillator provides a mechanism through which other important aspects of endoreplication can be controlled (Fig. 2). For example, the oscillation of APC/C activity in Drosophila salivary glands probably results directly from the oscillation of Cyclin E/Cdk2 complex activity, which inhibits the
-		
-		\subsubsection{E2Fs in Endocycles}
-		
-		\subsection{Oikopleura endocycles}
-		
-	\section{E2F factors and cell cycle regulation}
+			Cyclin E/CDK2 complex drives replication during S phase
+			And that's required for endoreplication in drosophila (Lilly and Duronio, 2005) and megakaryocites (Eliades et al., 2010)
 
+			Evidence of Cyclin E function on S phase comes from presence of both transcript and protein in drosophila endocycling cells. ( Weng et al., 2003)
+			Absence during G phase seems to point to the need of a cycle of CE/CDK2 presence and absence coincinding with S and G. 
+			If CycE is expressed continually, endoreplication is suppressed ( Weiss et al., 1998)
+
+			\subsubsection{E2F factors in endoreplication}
+			
+			Recently, mathematical modeling of endoreplication oscillations helped guide experiments demonstrating that cyclic accumulation of the transcription factor E2f1 (E2f – FlyBase) is essential for endoreplication in the highly polyploid Drosophila salivary gland (Zielke et al., 2011). E2F transcription factors are potent stimulators of S-phase entry and control the expression of genes required for DNA synthesis, including Cyclin E. Their activity is regulated by the Rb family of tumor suppressors, which bind to and inhibit E2F proteins during G1 phase (van den Heuvel and Dyson, 2008). E2F-Rb interactions regulate endoreplication in plants and worms (Magyar et al., 2012; Ouellet and Roy, 2007). However, Rb- mediated regulation of E2f1 is not essential for endoreplication in Drosophila salivary glands, perhaps because of the action of the E2f2-containing Myb-MuvB complex in repressing Cyclin E expression during G phase (Maqbool et al., 2010; Weng et al., 2003). Zielke et al. (Zielke et al., 2011) provide data in support of a model whereby E2f1 accumulation during G phase results in activation of the Cyclin E/Cdk2 complex, which triggers S phase, which in turn causes the subsequent inactivation of E2f1 via the action of CRL4Cdt2, an E3 ubiquitin ligase that couples proteolysis with DNA replication (Havens and Walter, 2011; Shibutani et al., 2008) (Fig. 2). This model is consistent with earlier observations that Cyclin E activity is required for the downregulation of E2f1 target genes in the endoreplicating embryonic midgut (Duronio and O’Farrell, 1995), and that disruptions to normal oscillations of E2f1 activity in salivary glands suppress endoreplication (Maqbool et al., 2010). Interestingly, CRL4 is also required for endoreplication in Arabidopsis trichomes, although the relevant CRL4 target in trichomes might be CKI proteins (Roodbarkelari et al., 2010). Negative-feedback regulation of E2F activity is also important for endoreplication in hepatocytes (Chen et al., 2012; Pandit et al., 2012), but here it appears to control the transition from cell division to endoreplication, and it is not yet known whether E2F functions as part of a mammalian endoreplication oscillator. 
+			
+			
+			Nonetheless, these results emphasize that negative-feedback regulation is a common and important feature of molecular oscillators that control cell cycle progression (Ferrell et al., 2011). A central CDK oscillator provides a mechanism through which other important aspects of endoreplication can be controlled (Fig. 2). For example, the oscillation of APC/C activity in Drosophila salivary glands probably results directly from the oscillation of Cyclin E/Cdk2 complex activity, which inhibits the
+		
 		\subsection{Dot1}
 			\subsubsection{Dot1L}
 			\subsubsection{DOT1L in cell reprogramming}
@@ -337,27 +347,44 @@ H4 is highly constrained as it contacts with the other 3 core histones and its N
 %=========================================================================%
 	\section{Materials}
 		\subsection{Antibodies}
-			\begin{table}[!ht]
-       		\caption{
-            		\bf{Primary antibodies used for ChIP, immunofluorescence and western blot}
-        }
+			\begin{table}[H]
+       		\caption{\bf{Primary antibodies used for ChIP, immunofluorescence and western blot}}
         		\begin{center}
-            		\begin{tabular}{|c|c|c|c|}
+            		\begin{tabular}{| p{2cm} | p{8cm} | p{3cm} | p{3cm} |}
                 		\hline
-	                Antibody & Description & Supplier & Purpose\\
+	                	\textbf{Antibody} & \textbf{Description} & \textbf{Supplier} & \textbf{Purpose}\\
     		            \hline
         		        ab46540 & Rabbit Control IgG - ChIP Grade & Abcam & ChIP\\
-            		    ab10543 & Anti-Histone H3 (phospho S28) [HTA28] & Abcam & ChIP\\
-	                \hline
+        		        \hline
+            		    ab & RNA Polymerase II CTD & Abcam & ChIP\\
+            		    \hline
+            		     & E2F1 & & ChIP\\
+            		     \hline
+						 & E2F7 & & ChIP\\
+						 \hline
+            		    ab10543 & Anti-Histone H3 (phospho S28) [HTA28] & Abcam & Immunostaining\\
+            		    \hline
+            		    ActiveMotif 39143  & Anti-Histone H3 K79me2 Rabbit & Active Motif & Immunostaining and Western blot\\
+            		    \hline
+            		    Milipore 05-1312  &  Anti-Ubiquityl-Histone H2B Mouse & Milipore & Immunostaining\\
+            		    \hline
+            		    \hline
+            		    Molecular Probes A-21206 & Anti-Rabbit IgG secondary antibody conjugated with Alexa 488 fluorochrome &  Molecular Probes & Immunostaining\\            		    
+            		    \hline
+            		    Molecular Probes       & Anti-Rat IgG secondary antibody conjugated with Alexa  fluorochrome &  Molecular Probes & Immunostaining\\
+            		    \hline
+            		    Molecular Probes       & Anti-Mouse IgG secondary antibody conjugated with Alexa  fluorochrome &  Molecular Probes & Immunostaining\\
+            		    \hline
+            		    Invitrogen       & Anti-Rabbit IgG secondary antibody conjugated with horseradish peroxidase &  Invitrogen & Western blot\\
+            		    \hline
 	            \end{tabular}
     		    \end{center}
 		    \end{table}
 		  
 		\subsection{Chemicals and reagents}
-			\begin{table}[!ht]
-       		\caption{
-            		\bf{Chemicals and reagents used in various protocols}
-        }
+		
+			\begin{table}[H]
+       		\caption{\bf{Chemicals and reagents used in various protocols}}
         		\begin{center}
             		\begin{tabular}{|c|c|c|}
                 		\hline
@@ -369,59 +396,140 @@ H4 is highly constrained as it contacts with the other 3 core histones and its N
     		    \end{center}
 		    \end{table}
     
-    		\subsection{Instruments and equipment}
-			\begin{table}[!ht]
-       		\caption{
-            		\bf{Instruments and equipment used in various protocols}
-        }
+	    \subsection{Consumables}
+			\begin{table}[H]
+       			\caption{\bf{Consumables with particular relevance in certain protocols}}
         		\begin{center}
-            		\begin{tabular}{|c|c|c|}
+            		\begin{tabular}{| p{2cm} | p{8cm} | p{3cm} |}
                 		\hline
-	                Instrument/equipment & Supplier & Purpose\\
+	                	\textbf{Supplier} & \textbf{Consumable} &  \textbf{Purpose}\\
     		            \hline
-					X & X & X\\
-	                \hline
+    		            Covaris & AFA microtubes & ChIP\\
+        		        Invitrogen & Protein G magnetic beads & ChIP\\
+        		        \hline
+	            \end{tabular}
+    		    \end{center}
+		    \end{table}
+    
+    		\subsection{Instruments and equipment}
+			\begin{table}[H]
+       		\caption{\bf{Instruments with particular relevance in certain protocols}}
+        		\begin{center}
+            		\begin{tabular}{| p{2cm} | p{8cm} | p{3cm} |}
+                		\hline
+	               		\textbf{Supplier} & \textbf{Instrument/equipment} & \textbf{Purpose}\\
+    		            \hline
+						Covaris & S200 ultrafocused sonicator & ChIP\\
+						\hline
+						Sigma-Aldrich & Siliconized microtubes 1.7 mL capacity& ChIP\\
+						\hline
+						Life Technologies? & Nanodrop ND-1000 spectrophotometer & ChIP\\
+						\hline
+						Life Technologies & Q-bit & ChIP\\
+						\hline
+						BioRad & C1000 thermocycler with CFX96 module & ChIP\\
+						\hline
+						Leica & TCS-SP5 confocal microscope with Ar-Kr ion laser & Microscopy\\
+	               		 \hline
 	            \end{tabular}
     		    \end{center}
 		    \end{table}
 		    
 		\subsection{Buffers and solutions}
 			\subsubsection{ChIP}
-				\begin{table}[!ht]
-       			\caption{
-            			\bf{Lysis buffer}
-            		}
+			
+				\begin{table}[H]
+       			\caption{\bf{Lysis buffer}}
 	        		\begin{center}
     		        		\begin{tabular}{|c|c|}
         		        		\hline
-	        		        Chemical & Concentration\\
+	    	    		        \textbf{Chemical} & \textbf{Concentration}\\
     		        		    \hline
-						X & X\\
-		                \hline
+								NaCl & 150 mM\\
+    		        		    \hline
+								NP-40 & 1\%\\
+    		        		    \hline
+								Na deoxycholate & 0.5\%\\
+	   		        		    \hline
+								SDS & 0.1\%\\
+								\hline
+								Tris, pH 8 & 50 mM\\
+								\hline
+								EDTA & 1 mM\\							
+		               			 \hline
+		            		\end{tabular}
+    			    	\end{center}
+			   		 \end{table}
+			   		 
+			   	 \begin{table}[H]
+       			\caption{\bf{PBS-T}}
+	        		\begin{center}
+    		        		\begin{tabular}{|c|c|}
+        		        		\hline
+	    	    		        \textbf{Chemical} & \textbf{Concentration}\\
+    		        		    \hline
+	    	    		        Tween 20 & 0.02\%\\
+    		        		    \hline
+	    	    		        PBS & 1x\\
+    		        		    \hline
 		            \end{tabular}
     			    \end{center}
 			    \end{table}
 			    
-			    \begin{table}[!ht]
-       			\caption{
-            			\bf{Lithium chloride buffer}
-            		}
+			    \begin{table}[H]
+       			\caption{\bf{Lithium chloride buffer}}
 	        		\begin{center}
     		        		\begin{tabular}{|c|c|}
         		        		\hline
-	        		        Chemical & Concentration\\
+	    	    		        \textbf{Chemical} & \textbf{Concentration}\\
     		        		    \hline
-						X & X\\
-		                \hline
+	    	    		        Tris, pH 8 & 50 mM\\
+    		        		    \hline
+	    	    		        LiCl & 250 mM\\
+    		        		    \hline
+	    	    		        NP-40 & 0.5\%\\
+    		        		    \hline
+								Na deoxycholate & 0.5\%\\
+								\hline
+		            \end{tabular}
+    			    \end{center}
+			    \end{table}
+			    
+			     \begin{table}[H]
+       			\caption{\bf{TE buffer}}
+	        		\begin{center}
+    		        		\begin{tabular}{|c|c|}
+        		        		\hline
+	    	    		        \textbf{Chemical} & \textbf{Concentration}\\
+    		        		    \hline
+	    	    		        Tris, pH 8 & 10 mM\\
+    		        		    \hline
+	    	    		        EDTA & 1 mM\\
+	    	    		        \hline
+		            \end{tabular}
+    			    \end{center}
+			    \end{table}
+			    
+			     \begin{table}[H]
+       			\caption{\bf{Elution buffer}}
+	        		\begin{center}
+    		        		\begin{tabular}{|c|c|}
+        		        		\hline
+	    	    		        \textbf{Chemical} & \textbf{Concentration}\\
+    		        		    \hline
+	    	    		        Tris, pH 8 & 50 mM\\
+    		        		    \hline
+	    	    		        EDTA & 1 mM\\
+    		        		    \hline
+								SDS & 0.1\%\\
+								\hline
 		            \end{tabular}
     			    \end{center}
 			    \end{table}
 			    
 			    \subsubsection{Western blot}
-				\begin{table}[!ht]
-       			\caption{
-            			\bf{Lysis buffer}
-            		}
+				\begin{table}[H]
+       			\caption{\textbf{Lysis buffer}}
 	        		\begin{center}
     		        		\begin{tabular}{|c|c|}
         		        		\hline
@@ -439,31 +547,40 @@ H4 is highly constrained as it contacts with the other 3 core histones and its N
 		The culture of \textit{Oikopleura} was performed at the SARS centre appendiculatian facility as previously described \cite{Bouquet2009}. Cultured animals are native from the coastal area outside Bergen and are frequently collected and added to the permanent culture. Animals are permanently cultured at the facility in 6L seawater beakers, with permanent stirring and daily water renewal as well as feeding twice daily with algae according to the developmental stage (see table \ref{table:ODculture}). The use of a fixed volume for culture implies the progressive dilution of animals until the third day of life, where density remains at 150 animals per 6L beaker.
 		
 		\begin{table}[!ht]
-       		\caption{
-            		\bf{Feeding regime of \textit{Oikopleura} according to developmental stage}
-        }
+       		\caption{\bf{Feeding regime of \textit{Oikopleura} according to developmental stage}}
         		\begin{center}
-            		\begin{tabular}{|c|c|c|c|c|c|}
+            		\begin{tabular}{| c | c | p{2.4cm} | p{2cm}|p{2cm} | p{2.2cm}|p{1.9cm} |}
                 		\hline
-	                \multicolumn{2}{c}{Developmental stage} & \multicolumn{4}{c}{Algae}\\
-	                \hline
-	                \multicolumn{2}{c}{} & Isochrysis sp. (cells/mL) & Chaetoceros calcitrans (cells/mL) & Rhinomonas reticulata (cells/mL) & Synecococcus sp. (mL) & crushed Rhinomonas reticulata (mL)\\
+		                \multicolumn{2}{|c|}{} & \textit{Isochrysis sp.} (cells/mL) & \textit{Chaetoceros calcitrans} (cells/mL) & \textit{Rhinomonas reticulata} (cells/mL) & \textit{Synecococcus sp.} (mL) & Crushed \textit{R. reticulata} (mL)\\
     		            \hline
-        		        Day 1 & Morning & 2000 & 2000 & 0 & 5 & 5\\
-        		        Day 1 & Evening & 1000 & 1000 & 0 & 3 & 5\\
-	                \hline
-	            \end{tabular*}
+        		        \multirow{2}{*}{Day1} 	& Morning & 2000 & 2000 & 0 & 5 & 5\\
+        		        												& Evening & 1000 & 1000 & 0 & 3 & 5\\
+        		        												 \hline
+        		        \multirow{2}{*}{Day2} 	& Morning & 2000 & 2000 & 0 & 5 & 5\\
+        		        												& Evening & 1000 & 1000 & 0 & 3 & 5\\
+        		        												 \hline
+        		        \multirow{2}{*}{Day3} 	& Morning & 2000 & 4000 & 0 & 5 & 5\\
+        		        												& Evening & 1000 & 2000 & 1000 & 3 & 5\\
+        		        												 \hline
+        		        \multirow{2}{*}{Day4} 	& Morning & 4000 & 4000 & 2000 & 0 & 5\\
+        		        												& Evening & 2000 & 2000 & 1000 & 0 & 5\\
+        		        												 \hline
+        		        \multirow{2}{*}{Day5} 	& Morning & 4000 & 4000 & 2000 & 0 & 5\\
+        		        												& Evening & 2000 & 2000 & 1000 & 0 & 5\\
+	                	\hline
+	           		 \end{tabular}
     		    \end{center}
         		\label{table:ODculture}
 		    \end{table}
 		
 		\subsection{Collection of \textit{O. dioica}}
 			\subsubsection{Tailbud stage}
-			To collect \textit{Oikopleura} in the Tailbud developmental stage, a controlled \textit{in vitro} fertilization was performed. Day six mature male animals were collected to a Petri dish with seawater and allowed to spawn. When all male animals had spawned, sperm quality was visually inspected on a light microscope for motility. Day six mature females were individually collected to glass salliers with seawater and allowed to spawn at 18ºC. When spawned, 60µL of sperm solution was added to the sallier and after 3-4 hours tailbud animals collected to a eppendorf microtube.
+			To collect \textit{Oikopleura} in the Tailbud developmental stage, a controlled \textit{in vitro} fertilization was performed. Day six mature male animals were collected to a Petri dish with seawater and allowed to spawn. When all male animals had spawned, sperm quality was visually inspected on a light microscope for motility. Day six mature females were individually collected to glass salliers with seawater and allowed to spawn at 18ºC. When spawned, 60$\mu$L of sperm solution was added to the sallier and after 3-4 hours tailbud animals collected to a eppendorf microtube.
 			
 			\subsubsection{Day two stage}
 			Late day two \textit{Oikopleura} were individually collected with the aid of a 2 mL plastic pipette to a 1 L beaker with clean seawater (no algae) and stayed there 3 to 4 hours to be allowed to empty the gut of any remaining algae as well as build a new clean house.
-			To achieve release of the houses, animals were individually collected again, this time using a mouth-pipette built from a 1 mL plastic pipette and poured into a glass recipient on ice with 0.125 mg/mL MS222 and allowed to sink to the bottom, where a third collection using a 200 µL micropipette took them to a 1.5 mL microtube.
+			To achieve release of the houses, animals were individually collected again, this time using a mouth-pipette built from a 1 mL plastic pipette and poured into a glass recipient on ice with 0.125 mg/mL MS222 and allowed to sink to the bottom, where a third collection using a 200 $\mu$
+			L micropipette took them to a 1.5 mL microtube.
 			
 			\subsubsection{Day six, immature stage}
 			Immature day six animals with a visible gonad but naked-eye indistinguishable features were collected from culture into a 500 mL plastic beaker with clean seawater with the aid of a 25 mL plastic pipette and from there to a 1.5 mL microtube with a 2 mL plastic pipette. 
@@ -477,42 +594,54 @@ H4 is highly constrained as it contacts with the other 3 core histones and its N
 			Formaldehyde was quenched with Glycine solution to stop fixation and again let rotating for 5 min at 18ºC. 
 			Again by either spinning at 5000 g for 30 seconds or allowing animals to freely sink, Formaldehyde was removed and animals washed with cold PBSplus three times on ice, after which all solution was removed and animal pellets frozen with liquid nitrogen and stored at -80ºC for future use.
     
-    \begin{table}[!ht]
-        \caption{
-            \bf{Fixation conditions for each tested developmental stage of \textit{Oikopleura dioica}}
-        }
-        \begin{center}
-            \begin{tabular}{|c|c|c|c|}
-                \hline
-                Stage & Fixative concentration & Time (min) & Temperature (ºC)\\
-                \hline
-                Tailbud & 1\% & 5 & 18\\
-                Day two & 0.5\% & 5 & 18\\
-                Day six immature & 1\% & 10 & 18\\
-                \hline
-            \end{tabular}
-        \end{center}
-        \label{table:ODfixation}
-    \end{table}
+    		 \begin{table}[!ht]
+	    	    \caption{\bf{Fixation conditions for each tested developmental stage of \textit{Oikopleura dioica}}}
+        		\begin{center}
+		            \begin{tabular}{|c|c|c|c|}
+        		        \hline
+                		\textbf{Stage} & \textbf{Fixative concentration} & \textbf{Time (min)} & \textbf{Temperature (ºC)}\\
+		                \hline
+		                Tailbud & 1\% & 5 & 18\\
+		                Day two & 0.5\% & 5 & 18\\
+		                Day six immature & 1\% & 10 & 18\\
+		                \hline
+        		    \end{tabular}
+		        \end{center}
+        		\label{table:ODfixation}
+		    \end{table}
     
     			\subsubsection{Cell lysis and chromatin sonication}
-			Frozen animals pellets were thawed on ice and pooled with the aid of cold Lysis buffer to a total volume multiple of 130µL but never less than 390µL depending on the total amount of animal material.		
+			Frozen animals pellets were thawed on ice and pooled with the aid of cold Lysis buffer to a total volume multiple of 130$\mu$L but never less than 390$\mu$L depending on the total amount of animal material.		
 			Mechanical lysis was conducted with a 27-gauge XXXXXX needle and 2 mL syringe passing the whole volume no less than three times through the needle and incubated on ice 15 min.
 			
-			Sonication was performed on a S200 Covaris focused sonicator on a 4ºC water bath with 130µL AFA glass microtubes. The instrument settings used to sonicate the chromatin to a approximate gaussian distribution within 100-800 bp can be seen on Table \ref{table:CovarisSettings}. \\
+			Sonication was performed on a S200 Covaris focused sonicator on a 4ºC water bath with 130$\mu$L AFA glass microtubes. The instrument settings used to sonicate the chromatin to a approximate gaussian distribution within 100-800 bp can be seen on Table \ref{table:CovarisSettings}. \\
 			Whole sonicated lysates were centrifuged for 10 min, at 21000 g at 4°C and the chromatin-enriched supernatant was collect to a siliconized microtube.
 			
 			\begin{table}[!ht]
-        		\caption{
-	            \bf{Settings used on the S200 Covaris sonicator for \textit{Oikopleura dioica} chromatin}
-    		    }
+        		\caption{\bf{Settings used on the S200 Covaris sonicator for \textit{Oikopleura dioica} chromatin}}
         		\begin{center}
         		\begin{tabular}{|l|c|}
             		\hline
-	            Setting & Value\\
+	           		\textbf{Setting} & \textbf{Value}\\
         		    \hline
+	        		Duty cycle& 5\%\\
+	        		\hline
             	    Intensity & 7.5\\
 	        		\hline
+					Processing time & 5 minutes\\
+	        		\hline
+	        		Bath temperature & 5-6 ºC\\
+	        		\hline
+					Power mode & Frequency sweeping\\
+	        		\hline
+	        		Degassing mode & Continuous\\
+	        		\hline
+	        		Volume & 130$\mu$L\\
+	        		\hline
+	        		AFA intensifer & Integrated\\
+	        		\hline
+	        		Water level & 8\\
+	        		\hline        		
 	        \end{tabular}
     		    \end{center}
 	        \label{table:CovarisSettings}
@@ -522,18 +651,19 @@ H4 is highly constrained as it contacts with the other 3 core histones and its N
 			\label{section:chromQualityAssess}
 			Total protein yield of chromatin was quantified with the Bradford assay with a 30:1 ratio of XXXX reagent to chromatin and measured on a Nanodrop instrument.
 			
-			To check the distribution of the sonicated chromatin fragments, 1\% SDS, 100mM NaCl and 50 µg/mL RNAse A were added to a fraction of the chromatin and incubated for 30 min at 55ºC. Proteinase K was added to 200 µg/mL and samples incubated 90 min to O/N at 65ºC to reverse crosslinks. DNA was purified with the Phenol-Chloroform method and precipitation with ethanol. Briefly, an equal volume of Phenol:Chloroform:Isoamyl Alcohol (25:24:1) was mixed to the samples, and after centrifugation the 30 µg Glycogen, 300 mM Sodium Acetate and cold 70\% Ethanol (final concentrations) were added to the aqueous phase in a new microtube and incubated at -80ºC for 1 hour. After centrifugation at 4ºC, DNA pellets were washed with 70ºC Ethanol and dissolved in 3 to 5 µL TE buffer. \\
+			To check the distribution of the sonicated chromatin fragments, 1\% SDS, 100mM NaCl and 50 $\mu$g/mL RNAse A were added to a fraction of the chromatin and incubated for 30 min at 55ºC. Proteinase K was added to 200 $\mu$g/mL and samples incubated 90 min to O/N at 65ºC to reverse crosslinks. DNA was purified with the Phenol-Chloroform method and precipitation with ethanol. Briefly, an equal volume of Phenol:Chloroform:Isoamyl Alcohol (25:24:1) was mixed to the samples, and after centrifugation the 30 $\mu$g Glycogen, 300 mM Sodium Acetate and cold 70\% Ethanol (final concentrations) were added to the aqueous phase in a new microtube and incubated at -80ºC for 1 hour. After centrifugation at 4ºC, DNA pellets were washed with 70ºC Ethanol and dissolved in 3 to 5 $\mu$L TE buffer. \\
 			
 			DNA quality and amount was quantified on a Nanodrop instrument and loaded on an Agilent DNA High Sensitivity digital electrophoresis chip, to assess the distribution of DNA fragments with an Agilent Bioanalyzer instrument.
 			
 			\subsubsection{Immunoprecipitation}
-			Protein G magnetic beads were washed once with PBS-T in siliconized tubes, incubated at 4ºC rotating for two hours with 10 µg of antibody and washed again with PBS-T and Lysis buffer. \\
+			Protein G magnetic beads were washed once with PBS-T in siliconized tubes, incubated at 4ºC rotating for two hours with 10 $\mu$g of antibody and washed again with PBS-T and Lysis buffer. \\
 			
-			800 µg of chromatin were added to the magnetic beads with the already bound antibody and left O/N rotating at 4ºC, after which a series of 15 min, 4ºC washes followed: three with Lysis buffer without any inhibitors; two with Lithium chloride buffer; one with TE buffer.
+			800 $\mu$g of chromatin were added to the magnetic beads with the already bound antibody and left O/N rotating at 4ºC, after which a series of 15 min, 4ºC washes followed: three with Lysis buffer without any inhibitors; two with Lithium chloride buffer; one with TE buffer.
 			
 			Elution of IP-enriched DNA followed with the addition of elution buffer and incubation at 65ºC for 15 min horizontally stirring at 900 rpm. A second, more stringent elution was performed with TE buffer with 500 mM NaCl and both supernatants were pooled. \\
 			
-			Reversal of crosslink took place during a three to five hour incubation at 65ºC, after which 50 µg/mL RNAse A were added, incubated at R/T for 10 min, and incubated again this time with 200 µg/mL Proteinase K at 55ºC O/N. Phenol-Chloroform extraction followed as previously described on section \ref{section:chromQualityAssess}, with the exception of final pellet dilution in 50 µL TE buffer.
+			Reversal of crosslink took place during a three to five hour incubation at 65ºC, after which 50 $\mu$g/mL RNAse A were added, incubated at R/T for 10 min, and incubated again this time with 200 $\mu$g/mL Proteinase K at 55ºC O/N. Phenol-Chloroform extraction followed as previously described on section \ref{section:chromQualityAssess}, with the exception of final pellet dilution in 50 $\mu$L TE buffer.
+			
 			\subsubsection{qPCR}
 		
 		
@@ -605,7 +735,7 @@ H4 is highly constrained as it contacts with the other 3 core histones and its N
 			\item[ChIP-seq] Chromatin immunoprecipitation followed by high-throughput sequencing
 			\item[DNA] Deoxyribonucleic acid
 			\item[kD] Kilo Dalton
-			\item[µL, mL, L] Microlitre, Mililitre and Litre, respectively
+			\item[$\mu$L, mL, L] Microlitre, Mililitre and Litre, respectively
 			\item[O/N] Over night
 			\item[R/T] Room temperature
 		\end{description}
