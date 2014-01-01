@@ -21,9 +21,10 @@
 \usepackage{xspace}% used by \sigla
 \usepackage{cite}
 \usepackage[titletoc]{appendix}
-\usepackage{emptypage}
-\usepackage{multirow}
-\usepackage{float}
+\usepackage{emptypage} % to remove numbering from empty pages
+\usepackage{multirow} % for merging cells in tables
+\usepackage{float} %to manage floating objects
+\usepackage{array} % used in table
 
 % provide encoding packages depending on the compiler
 \ifxetex
@@ -201,7 +202,7 @@
 
 \listoftables
 
-
+\cleardoublepage
 %=========================================================================%
 % The chapters (usually written using the isolatin font encoding ...)
 %=========================================================================%
@@ -437,109 +438,38 @@ H4 is highly constrained as it contacts with the other 3 core histones and its N
 		    
 		\subsection{Buffers and solutions}
 			\subsubsection{ChIP}
+				\begin{description}
+					\footnotesize
+					\item[Lysis buffer] 150mM NaCl, 1\% NP-40, 0.5\% Na deoxycholate, 0.1\% SDS, 50 mM Tris pH 8, 1mM EDTA
+					\item[PBS-T] 0.02\% Tween-20 in 1x PBS
+					\item[Lithium chloride buffer] 50 mM Tris pH 8, 250mM LiCl, 0.5\% NP-40, 0.5\% Na deoxycholate
+					\item[TE buffer] 10 mM Tris pH 8, 1 mM EDTA
+					\item[Elution buffer] 50 mM Tris pH 8, 1 mM EDTA, 0.1\% SDS
+				\end{description}
+				
+		    \subsubsection{Western blot}
+				\begin{description}
+					\footnotesize
+					\item[Laemmli extract] 200 mM Tris-HCl pH 6.8, 8\% SDS, 40\% glycerol, 0.004\%bromophenol blue, 400 mM beta-mercapto ethanol
+					\item[Physiological extract]
+					\item[SDS-PAGE running buffer] Tris-HCl, glycine, SDS
+					\item[TBS] 
+					\item[TBS-T]
+					\item[Blocking buffer]
+					\item[Transfer buffer] 
+					\item[Silver stain buffer] 
+				\end{description}
 			
-				\begin{table}[H]
-       			\caption{\bf{Lysis buffer}}
-	        		\begin{center}
-    		        		\begin{tabular}{|c|c|}
-        		        		\hline
-	    	    		        \textbf{Chemical} & \textbf{Concentration}\\
-    		        		    \hline
-								NaCl & 150 mM\\
-    		        		    \hline
-								NP-40 & 1\%\\
-    		        		    \hline
-								Na deoxycholate & 0.5\%\\
-	   		        		    \hline
-								SDS & 0.1\%\\
-								\hline
-								Tris, pH 8 & 50 mM\\
-								\hline
-								EDTA & 1 mM\\							
-		               			 \hline
-		            		\end{tabular}
-    			    	\end{center}
-			   		 \end{table}
-			   		 
-			   	 \begin{table}[H]
-       			\caption{\bf{PBS-T}}
-	        		\begin{center}
-    		        		\begin{tabular}{|c|c|}
-        		        		\hline
-	    	    		        \textbf{Chemical} & \textbf{Concentration}\\
-    		        		    \hline
-	    	    		        Tween 20 & 0.02\%\\
-    		        		    \hline
-	    	    		        PBS & 1x\\
-    		        		    \hline
-		            \end{tabular}
-    			    \end{center}
-			    \end{table}
-			    
-			    \begin{table}[H]
-       			\caption{\bf{Lithium chloride buffer}}
-	        		\begin{center}
-    		        		\begin{tabular}{|c|c|}
-        		        		\hline
-	    	    		        \textbf{Chemical} & \textbf{Concentration}\\
-    		        		    \hline
-	    	    		        Tris, pH 8 & 50 mM\\
-    		        		    \hline
-	    	    		        LiCl & 250 mM\\
-    		        		    \hline
-	    	    		        NP-40 & 0.5\%\\
-    		        		    \hline
-								Na deoxycholate & 0.5\%\\
-								\hline
-		            \end{tabular}
-    			    \end{center}
-			    \end{table}
-			    
-			     \begin{table}[H]
-       			\caption{\bf{TE buffer}}
-	        		\begin{center}
-    		        		\begin{tabular}{|c|c|}
-        		        		\hline
-	    	    		        \textbf{Chemical} & \textbf{Concentration}\\
-    		        		    \hline
-	    	    		        Tris, pH 8 & 10 mM\\
-    		        		    \hline
-	    	    		        EDTA & 1 mM\\
-	    	    		        \hline
-		            \end{tabular}
-    			    \end{center}
-			    \end{table}
-			    
-			     \begin{table}[H]
-       			\caption{\bf{Elution buffer}}
-	        		\begin{center}
-    		        		\begin{tabular}{|c|c|}
-        		        		\hline
-	    	    		        \textbf{Chemical} & \textbf{Concentration}\\
-    		        		    \hline
-	    	    		        Tris, pH 8 & 50 mM\\
-    		        		    \hline
-	    	    		        EDTA & 1 mM\\
-    		        		    \hline
-								SDS & 0.1\%\\
-								\hline
-		            \end{tabular}
-    			    \end{center}
-			    \end{table}
-			    
-			    \subsubsection{Western blot}
-				\begin{table}[H]
-       			\caption{\textbf{Lysis buffer}}
-	        		\begin{center}
-    		        		\begin{tabular}{|c|c|}
-        		        		\hline
-	        		        Chemical & Concentration\\
-    		        		    \hline
-						X & X\\
-		                \hline
-		            \end{tabular}
-    			    \end{center}
-			    \end{table}
+			\subsubsection{Immunostaining}
+			     \begin{description}
+					\footnotesize
+					\item[Fixative] 4\% paraformaldehyde, 100 mM MOPS pH 7.5, 500 mM NaCl
+					\item[PBS]
+					\item[PBS-T] 0.02\% Tween-20 in PBS buffer
+					\item[PBS-TE] 0.02\% Tween-20, 1 mM EDTA in PBS buffer
+					\item[PBS-TEG] 0.02\% Tween-20, 1 mM EDTA, 100 mM glycine in PBS buffer
+					\item[Blocking solution] 3 \% acetylated bovine serum albumin (BSA) in PBS-TE buffer
+				\end{description}
 		    		    
 		    
 	\section{Animal culture and collection}
@@ -549,23 +479,24 @@ H4 is highly constrained as it contacts with the other 3 core histones and its N
 		\begin{table}[!ht]
        		\caption{\bf{Feeding regime of \textit{Oikopleura} according to developmental stage}}
         		\begin{center}
-            		\begin{tabular}{| c | c | p{2.4cm} | p{2cm}|p{2cm} | p{2.2cm}|p{1.9cm} |}
+            		\begin{tabular}{| c | c | >{\centering\arraybackslash}m{1.8cm}  | >{\centering\arraybackslash}m{2.3cm}  | >{\centering\arraybackslash}m{2.4cm} | >{\centering\arraybackslash}m{2.4cm} | >{\centering\arraybackslash}m{2cm} | }
                 		\hline
-		                \multicolumn{2}{|c|}{} & \textit{Isochrysis sp.} (cells/mL) & \textit{Chaetoceros calcitrans} (cells/mL) & \textit{Rhinomonas reticulata} (cells/mL) & \textit{Synecococcus sp.} (mL) & Crushed \textit{R. reticulata} (mL)\\
-    		            \hline
-        		        \multirow{2}{*}{Day1} 	& Morning & 2000 & 2000 & 0 & 5 & 5\\
+		                \multicolumn{2}{|c|}{} & \textbf{\textit{Isochrysis sp.}} & \textbf{\textit{Chaetoceros calcitrans}} & \textbf{\textit{Rhinomonas reticulata}} & \textbf{\textit{Synecococcus sp.}} & \textbf{Crushed \textit{R. reticulata}}\\
+        		        \multicolumn{2}{|c}{Development time} & \multicolumn{3}{|c|}{(cells/mL)} & \multicolumn{2}{c|}{(mL)} \\
+        		        												 \hline
+        		        \multirow{2}{*}{1} 	& Morning & 2000 & 2000 & 0 & 5 & 5\\
         		        												& Evening & 1000 & 1000 & 0 & 3 & 5\\
         		        												 \hline
-        		        \multirow{2}{*}{Day2} 	& Morning & 2000 & 2000 & 0 & 5 & 5\\
+        		        \multirow{2}{*}{2} 	& Morning & 2000 & 2000 & 0 & 5 & 5\\
         		        												& Evening & 1000 & 1000 & 0 & 3 & 5\\
         		        												 \hline
-        		        \multirow{2}{*}{Day3} 	& Morning & 2000 & 4000 & 0 & 5 & 5\\
+        		        \multirow{2}{*}{3} 	& Morning & 2000 & 4000 & 0 & 5 & 5\\
         		        												& Evening & 1000 & 2000 & 1000 & 3 & 5\\
         		        												 \hline
-        		        \multirow{2}{*}{Day4} 	& Morning & 4000 & 4000 & 2000 & 0 & 5\\
+        		        \multirow{2}{*}{4} 	& Morning & 4000 & 4000 & 2000 & 0 & 5\\
         		        												& Evening & 2000 & 2000 & 1000 & 0 & 5\\
         		        												 \hline
-        		        \multirow{2}{*}{Day5} 	& Morning & 4000 & 4000 & 2000 & 0 & 5\\
+        		        \multirow{2}{*}{5} 	& Morning & 4000 & 4000 & 2000 & 0 & 5\\
         		        												& Evening & 2000 & 2000 & 1000 & 0 & 5\\
 	                	\hline
 	           		 \end{tabular}
@@ -587,8 +518,7 @@ H4 is highly constrained as it contacts with the other 3 core histones and its N
 		
 	
 	\section{ChIP-seq}
-		\subsection{ChIP}
-			\subsubsection{Animal fixation}
+		\subsection{Animal fixation}
 			Tailbud and day two animals were briefly spin at 5000 g for 10 seconds to be collected at the bottom of the microtube, while day six immature voluntarily sank in seconds time. Seawater was exchanged for 0,5 mL PBS and 0,5 ml of either 1 or 2\% Formaldehyde in PBS was added to have a final fixative concentration of 0.5 or 1\% respectively, and let rotating for a variable amount of time as shown in Table \ref{table:ODfixation}, depending of the developmental stage. %Use good quality, methanol-free formaldehyde (see materials) and always opened fresh.
 			
 			Formaldehyde was quenched with Glycine solution to stop fixation and again let rotating for 5 min at 18ºC. 
@@ -610,7 +540,7 @@ H4 is highly constrained as it contacts with the other 3 core histones and its N
         		\label{table:ODfixation}
 		    \end{table}
     
-    			\subsubsection{Cell lysis and chromatin sonication}
+    			\subsection{Cell lysis and chromatin sonication}
 			Frozen animals pellets were thawed on ice and pooled with the aid of cold Lysis buffer to a total volume multiple of 130$\mu$L but never less than 390$\mu$L depending on the total amount of animal material.		
 			Mechanical lysis was conducted with a 27-gauge XXXXXX needle and 2 mL syringe passing the whole volume no less than three times through the needle and incubated on ice 15 min.
 			
@@ -647,7 +577,7 @@ H4 is highly constrained as it contacts with the other 3 core histones and its N
 	        \label{table:CovarisSettings}
 		    \end{table}
 			
-			\subsubsection{Chromatin quality assessment}
+			\subsection{Chromatin quality assessment}
 			\label{section:chromQualityAssess}
 			Total protein yield of chromatin was quantified with the Bradford assay with a 30:1 ratio of XXXX reagent to chromatin and measured on a Nanodrop instrument.
 			
@@ -655,7 +585,7 @@ H4 is highly constrained as it contacts with the other 3 core histones and its N
 			
 			DNA quality and amount was quantified on a Nanodrop instrument and loaded on an Agilent DNA High Sensitivity digital electrophoresis chip, to assess the distribution of DNA fragments with an Agilent Bioanalyzer instrument.
 			
-			\subsubsection{Immunoprecipitation}
+			\subsection{Immunoprecipitation}
 			Protein G magnetic beads were washed once with PBS-T in siliconized tubes, incubated at 4ºC rotating for two hours with 10 $\mu$g of antibody and washed again with PBS-T and Lysis buffer. \\
 			
 			800 $\mu$g of chromatin were added to the magnetic beads with the already bound antibody and left O/N rotating at 4ºC, after which a series of 15 min, 4ºC washes followed: three with Lysis buffer without any inhibitors; two with Lithium chloride buffer; one with TE buffer.
@@ -664,10 +594,28 @@ H4 is highly constrained as it contacts with the other 3 core histones and its N
 			
 			Reversal of crosslink took place during a three to five hour incubation at 65ºC, after which 50 $\mu$g/mL RNAse A were added, incubated at R/T for 10 min, and incubated again this time with 200 $\mu$g/mL Proteinase K at 55ºC O/N. Phenol-Chloroform extraction followed as previously described on section \ref{section:chromQualityAssess}, with the exception of final pellet dilution in 50 $\mu$L TE buffer.
 			
-			\subsubsection{qPCR}
+			\subsection{qPCR}
 		
 		
-		\subsection{Illumina library construction and high-throughput sequencing}
+			\subsection{Illumina library construction and high-throughput sequencing}
+		
+	\section{Western blot}
+		
+		\subsection{Protein extraction}
+		
+		\subsection{SDS-PAGE electrophoresis}
+		
+		\subsection{Blotting and visualization}
+	
+	\section{Whole mount immunostaining}
+		
+		Collected animals were fixed in 4\% paraformaldehyde at 4ºC overnight and washed once with PBS-TE and twice with PBS-TEG to quench remaining formaldehyde. Two TBS-TE washes followed, after which animals were inculated O/N in blocking solution.
+		
+		Primary antibodies were diluted 1:100 in blocking solution and added to the animals after the previous blocking solution was removed from the microtubes. An incubation of at least six days with the primary antibodies was performed at 4ºC
+		
+		After primary antibody binding, six PBS-TE washes in 10 min intervals followed to remove any unbound primary antibody traces. A post-fixation similar to the primary one followed: 4\% formaldehyde in PBS-TE was added, and fixation took place O/N at 4ºC, after which one wash with PBS-TE and two with PBS-TEG followed. 
+		
+		Secondary antibodies diluted in blocking solution were added to the animals  and these were left for another minimum of six days at 4ºC in darkness, to allow antibody binding and avoid weakening of fluorescent signal. Another six washes of PBS-TE followed, with the particularity that ToPRo3 was added to the fourth wash, diluted 1:1000, therefore allowing DNA staining.
 		
 	\section{Data analysis}
 		\subsection{QC, mapping}
@@ -678,13 +626,8 @@ H4 is highly constrained as it contacts with the other 3 core histones and its N
 		\subsection{pre-post Dot1L inhibition diferences on H3K79me and GO of genes involved}
 
 	\section{Dot1L inhibition and knockout}
-		\subsection{Phenotype curve}
-		\subsection{Dot1L knockout}
-		\subsection{Phenotype curve}
-		\subsection{Dot1L phenotype rescue}
-
-		\subsection{Immunostaining}
-		\subsection{Western blot}
+		\subsection{Inhibitor incubation}
+		\subsection{Microinjections}
 
 
 \clearpage
