@@ -349,36 +349,26 @@ H4 is highly constrained as it contacts with the other 3 core histones and its N
 	\section{Materials}
 		\subsection{Antibodies}
 			\begin{table}[H]
-       		\caption{\bf{Primary antibodies used for ChIP, immunofluorescence and western blot}}
+       		\caption{\bf{Antibodies used for ChIP, immunofluorescence and western blot}}
         		\begin{center}
             		\begin{tabular}{| p{2cm} | p{8cm} | p{3cm} | p{3cm} |}
                 		\hline
 	                	\textbf{Antibody} & \textbf{Description} & \textbf{Supplier} & \textbf{Purpose}\\
     		            \hline
         		        ab46540 & Rabbit Control IgG - ChIP Grade & Abcam & ChIP\\
-        		        \hline
             		    ab & RNA Polymerase II CTD & Abcam & ChIP\\
-            		    \hline
             		     & E2F1 & & ChIP\\
-            		     \hline
 						 & E2F7 & & ChIP\\
-						 \hline
             		    ab10543 & Anti-Histone H3 (phospho S28) [HTA28] & Abcam & Immunostaining\\
-            		    \hline
             		    ActiveMotif 39143  & Anti-Histone H3 K79me2 Rabbit & Active Motif & Immunostaining and Western blot\\
-            		    \hline
             		    Milipore 05-1312  &  Anti-Ubiquityl-Histone H2B Mouse & Milipore & Immunostaining\\
             		    \hline
+            		    Molecular Probes A-21206 & Anti-Rabbit IgG secondary antibody conjugated with Alexa 488 fluorochrome &  Molecular Probes & Immunostaining\\
+               		    & Anti-Mouse IgG secondary antibody conjugated with Alexa 488  fluorochrome &  & Immunostaining\\
+            		    & Anti-Rat IgG secondary antibody conjugated with Alexa 568 fluorochrome & & Immunostaining\\
+            		    & Anti-Rabbit IgG secondary antibody conjugated with horseradish peroxidase &  & Western blot\\
             		    \hline
-            		    Molecular Probes A-21206 & Anti-Rabbit IgG secondary antibody conjugated with Alexa 488 fluorochrome &  Molecular Probes & Immunostaining\\            		    
-            		    \hline
-            		    Molecular Probes       & Anti-Rat IgG secondary antibody conjugated with Alexa  fluorochrome &  Molecular Probes & Immunostaining\\
-            		    \hline
-            		    Molecular Probes       & Anti-Mouse IgG secondary antibody conjugated with Alexa  fluorochrome &  Molecular Probes & Immunostaining\\
-            		    \hline
-            		    Invitrogen       & Anti-Rabbit IgG secondary antibody conjugated with horseradish peroxidase &  Invitrogen & Western blot\\
-            		    \hline
-	            \end{tabular}
+	            	\end{tabular}
     		    \end{center}
 		    \end{table}
 		  
@@ -389,26 +379,32 @@ H4 is highly constrained as it contacts with the other 3 core histones and its N
         		\begin{center}
             		\begin{tabular}{|c|c|c|}
                 		\hline
-	                Chemical & Supplier & Purpose\\
+	               		Chemical & Supplier & Purpose\\
     		            \hline
         		        X & X & X\\
-	                \hline
-	            \end{tabular}
+	               		 \hline
+	            	\end{tabular}
     		    \end{center}
 		    \end{table}
     
 	    \subsection{Consumables}
+	    \label{subsection:consumables}
 			\begin{table}[H]
        			\caption{\bf{Consumables with particular relevance in certain protocols}}
         		\begin{center}
-            		\begin{tabular}{| p{2cm} | p{8cm} | p{3cm} |}
+            		\begin{tabular}{| p{2.9cm} | p{8.2cm} | p{2.2cm} |}
                 		\hline
 	                	\textbf{Supplier} & \textbf{Consumable} &  \textbf{Purpose}\\
     		            \hline
     		            Covaris & AFA microtubes & ChIP\\
+						Sigma-Aldrich & Siliconized microtubes 1.7 mL capacity & ChIP\\
         		        Invitrogen & Protein G magnetic beads & ChIP\\
+        		        Life Technologies & Qubit dsDNA HS assay kit & ChIP\\
+        		        Bio-Rad & Mini-PROTEAN TGX stain-free gel & Western blot\\
+        		        Bio-Rad & Trans-Blot turbo mini nitrocellulose membrane & Western blot\\
+        		        Bio-Rad & Clarity western ECL substrate & Western blot\\
         		        \hline
-	            \end{tabular}
+	            	\end{tabular}
     		    \end{center}
 		    \end{table}
     
@@ -416,23 +412,19 @@ H4 is highly constrained as it contacts with the other 3 core histones and its N
 			\begin{table}[H]
        		\caption{\bf{Instruments with particular relevance in certain protocols}}
         		\begin{center}
-            		\begin{tabular}{| p{2cm} | p{8cm} | p{3cm} |}
+            		\begin{tabular}{| p{3.1cm} | p{8.5cm} | p{2.2cm} |}
                 		\hline
 	               		\textbf{Supplier} & \textbf{Instrument/equipment} & \textbf{Purpose}\\
     		            \hline
-						Covaris & S200 ultrafocused sonicator & ChIP\\
-						\hline
-						Sigma-Aldrich & Siliconized microtubes 1.7 mL capacity& ChIP\\
-						\hline
-						Life Technologies? & Nanodrop ND-1000 spectrophotometer & ChIP\\
-						\hline
-						Life Technologies & Q-bit & ChIP\\
-						\hline
+						Covaris & S200 focused sonicator & ChIP\\
+						Thermo Scientific & Nanodrop ND-1000 spectrophotometer & ChIP\\
+						Life Technologies & Qubit 2.0 fluorometer & ChIP\\
 						BioRad & C1000 thermocycler with CFX96 module & ChIP\\
-						\hline
 						Leica & TCS-SP5 confocal microscope with Ar-Kr ion laser & Microscopy\\
+						Bio-Rad & Trans-Blot turbo transfer system & Western blot\\
+						Bio-Rad & ChemiDox XRS imaging system & Western blot\\
 	               		 \hline
-	            \end{tabular}
+	            	\end{tabular}
     		    \end{center}
 		    \end{table}
 		    
@@ -441,30 +433,33 @@ H4 is highly constrained as it contacts with the other 3 core histones and its N
 				\begin{description}
 					\footnotesize
 					\item[Lysis buffer] 150mM NaCl, 1\% NP-40, 0.5\% Na deoxycholate, 0.1\% SDS, 50 mM Tris pH 8, 1mM EDTA
-					\item[PBS-T] 0.02\% Tween-20 in 1x PBS
+					\item[PBS, pH 7.4] 1.37 M NaCl, 27mM KCl,100 mM Na2HPO4, 1.8 mM KH2PO4		
+					\item[PBS-T] 0.02\% Tween-20 in PBS
 					\item[Lithium chloride buffer] 50 mM Tris pH 8, 250mM LiCl, 0.5\% NP-40, 0.5\% Na deoxycholate
 					\item[TE buffer] 10 mM Tris pH 8, 1 mM EDTA
 					\item[Elution buffer] 50 mM Tris pH 8, 1 mM EDTA, 0.1\% SDS
 				\end{description}
 				
 		    \subsubsection{Western blot}
+		    \label{subsection:Westernbuffers}
 				\begin{description}
 					\footnotesize
-					\item[Laemmli extract] 200 mM Tris-HCl pH 6.8, 8\% SDS, 40\% glycerol, 0.004\%bromophenol blue, 400 mM beta-mercapto ethanol
-					\item[Physiological extract]
-					\item[SDS-PAGE running buffer] Tris-HCl, glycine, SDS
-					\item[TBS] 
-					\item[TBS-T]
-					\item[Blocking buffer]
-					\item[Transfer buffer] 
-					\item[Silver stain buffer] 
+					\item[Laemmli extract] 200 mM Tris-HCl pH 6.8, 8\% SDS, 40\% glycerol, 0.004\%bromophenol blue (400 mM 2-mercaptoethanol - added fresh)
+					\item[Polyacrilamide gel, stacking portion] 6\% bis-acrilamide, 125 mM Tris pH 6.8, 0.1 \%SDS, 0.1\% ammonium persulphate,  0.1\% TEMED
+					\item[Polyacrilamide gel, running portion] 8-18\% bis-acrilamide, 370 mM Tris pH 8.8, 0.1 \%SDS, 0.1\% ammonium persulphate,  0.1\% TEMED
+					\item[SDS-PAGE running buffer] 25 mM Tris, 192 mM glycine, 0.1\% SDS
+					\item[TBS, pH 7.4] 1.5M NaCl, 0.2M Tris
+					\item[TBS-T] 1.5M NaCl, 0.2M Tris, 0.1\% Tween-20
+					\item[PBS, pH 7.4] 1.37 M NaCl, 27mM KCl,100 mM Na2HPO4, 1.8 mM KH2PO4
+					\item[Transfer buffer] 25 mM Tris, 192 mM glycine (10\% methanol - added fresh)
+					\item[Ponceau S stain] 2\% Ponceau S, 30\% trichloroacetic acid, 30\% sulfosalicylic acid
 				\end{description}
 			
 			\subsubsection{Immunostaining}
 			     \begin{description}
 					\footnotesize
 					\item[Fixative] 4\% paraformaldehyde, 100 mM MOPS pH 7.5, 500 mM NaCl
-					\item[PBS]
+					\item[PBS, pH 7.4] 1.37 M NaCl, 27mM KCl,100 mM Na2HPO4, 1.8 mM KH2PO4
 					\item[PBS-T] 0.02\% Tween-20 in PBS buffer
 					\item[PBS-TE] 0.02\% Tween-20, 1 mM EDTA in PBS buffer
 					\item[PBS-TEG] 0.02\% Tween-20, 1 mM EDTA, 100 mM glycine in PBS buffer
@@ -476,13 +471,13 @@ H4 is highly constrained as it contacts with the other 3 core histones and its N
 		\subsection{Culture of \textit{O. dioica}}
 		The culture of \textit{Oikopleura} was performed at the SARS centre appendiculatian facility as previously described \cite{Bouquet2009}. Cultured animals are native from the coastal area outside Bergen and are frequently collected and added to the permanent culture. Animals are permanently cultured at the facility in 6L seawater beakers, with permanent stirring and daily water renewal as well as feeding twice daily with algae according to the developmental stage (see table \ref{table:ODculture}). The use of a fixed volume for culture implies the progressive dilution of animals until the third day of life, where density remains at 150 animals per 6L beaker.
 		
-		\begin{table}[!ht]
+		\begin{table}
        		\caption{\bf{Feeding regime of \textit{Oikopleura} according to developmental stage}}
-        		\begin{center}
-            		\begin{tabular}{| c | c | >{\centering\arraybackslash}m{1.8cm}  | >{\centering\arraybackslash}m{2.3cm}  | >{\centering\arraybackslash}m{2.4cm} | >{\centering\arraybackslash}m{2.4cm} | >{\centering\arraybackslash}m{2cm} | }
+       			\begin{center}
+            		\begin{tabular}{| c | c | >{\centering\arraybackslash}m{1.6cm}  | >{\centering\arraybackslash}m{2.1cm}  | >{\centering\arraybackslash}m{2.0cm} | >{\centering\arraybackslash}m{2.2cm} | >{\centering\arraybackslash}m{1.8cm} | }
                 		\hline
-		                \multicolumn{2}{|c|}{} & \textbf{\textit{Isochrysis sp.}} & \textbf{\textit{Chaetoceros calcitrans}} & \textbf{\textit{Rhinomonas reticulata}} & \textbf{\textit{Synecococcus sp.}} & \textbf{Crushed \textit{R. reticulata}}\\
-        		        \multicolumn{2}{|c}{Development time} & \multicolumn{3}{|c|}{(cells/mL)} & \multicolumn{2}{c|}{(mL)} \\
+		                \multicolumn{2}{|c|}{} & \small{\textbf{\textit{Isochrysis sp.}}} & \small{\textbf{\textit{Chaetoceros calcitrans}}} & \small{\textbf{\textit{Rhinomonas reticulata}}} & \small{\textbf{\textit{Synecococcus sp.}}} & \small{\textbf{Crushed \textit{R. reticulata}}}\\
+        		        \multicolumn{2}{|c}{\small{Development time}} & \multicolumn{3}{|c|}{(cells/mL)} & \multicolumn{2}{c|}{(mL)} \\
         		        												 \hline
         		        \multirow{2}{*}{1} 	& Morning & 2000 & 2000 & 0 & 5 & 5\\
         		        												& Evening & 1000 & 1000 & 0 & 3 & 5\\
@@ -499,8 +494,8 @@ H4 is highly constrained as it contacts with the other 3 core histones and its N
         		        \multirow{2}{*}{5} 	& Morning & 4000 & 4000 & 2000 & 0 & 5\\
         		        												& Evening & 2000 & 2000 & 1000 & 0 & 5\\
 	                	\hline
-	           		 \end{tabular}
-    		    \end{center}
+	           			\end{tabular}
+       				\end{center}
         		\label{table:ODculture}
 		    \end{table}
 		
@@ -555,21 +550,13 @@ H4 is highly constrained as it contacts with the other 3 core histones and its N
 	           		\textbf{Setting} & \textbf{Value}\\
         		    \hline
 	        		Duty cycle& 5\%\\
-	        		\hline
             	    Intensity & 7.5\\
-	        		\hline
 					Processing time & 5 minutes\\
-	        		\hline
 	        		Bath temperature & 5-6 ºC\\
-	        		\hline
 					Power mode & Frequency sweeping\\
-	        		\hline
 	        		Degassing mode & Continuous\\
-	        		\hline
-	        		Volume & 130$\mu$L\\
-	        		\hline
+	        		Volume & 130 $\mu$L\\
 	        		AFA intensifer & Integrated\\
-	        		\hline
 	        		Water level & 8\\
 	        		\hline        		
 	        \end{tabular}
@@ -579,7 +566,7 @@ H4 is highly constrained as it contacts with the other 3 core histones and its N
 			
 			\subsection{Chromatin quality assessment}
 			\label{section:chromQualityAssess}
-			Total protein yield of chromatin was quantified with the Bradford assay with a 30:1 ratio of XXXX reagent to chromatin and measured on a Nanodrop instrument.
+			Total protein yield of chromatin was quantified with the Bradford assay with a 30:1 ratio of Coomassie reagent to chromatin and measured on a Nanodrop instrument.
 			
 			To check the distribution of the sonicated chromatin fragments, 1\% SDS, 100mM NaCl and 50 $\mu$g/mL RNAse A were added to a fraction of the chromatin and incubated for 30 min at 55ºC. Proteinase K was added to 200 $\mu$g/mL and samples incubated 90 min to O/N at 65ºC to reverse crosslinks. DNA was purified with the Phenol-Chloroform method and precipitation with ethanol. Briefly, an equal volume of Phenol:Chloroform:Isoamyl Alcohol (25:24:1) was mixed to the samples, and after centrifugation the 30 $\mu$g Glycogen, 300 mM Sodium Acetate and cold 70\% Ethanol (final concentrations) were added to the aqueous phase in a new microtube and incubated at -80ºC for 1 hour. After centrifugation at 4ºC, DNA pellets were washed with 70ºC Ethanol and dissolved in 3 to 5 $\mu$L TE buffer. \\
 			
@@ -594,28 +581,45 @@ H4 is highly constrained as it contacts with the other 3 core histones and its N
 			
 			Reversal of crosslink took place during a three to five hour incubation at 65ºC, after which 50 $\mu$g/mL RNAse A were added, incubated at R/T for 10 min, and incubated again this time with 200 $\mu$g/mL Proteinase K at 55ºC O/N. Phenol-Chloroform extraction followed as previously described on section \ref{section:chromQualityAssess}, with the exception of final pellet dilution in 50 $\mu$L TE buffer.
 			
+			1 $\mu$L of sample was used in a Qubit high-sensitivity assay to measure total dsDNA yield from the ChIP assay.
 			\subsection{qPCR}
-		
+			Enrichment of the ChIP samples was assessed through quantitative polymerase chain reaction (qPCR). PCR reactions were performed with 5 $\mu$L DNA from  either the ChIP sample or IgG control and the same set of primers amplifying regions of interest with 80-120 bp total length (see appendix \ref{appendixQPCRprimers}).
+			
+			Enrichments were calculated as XXXXXXXXXXXX
 		
 			\subsection{Illumina library construction and high-throughput sequencing}
+			ChIP libraries were made according to Illumina's instructions, selecting fragments within 150-250 bp and sequenced in a GAII instrument with 50 bp single-end reads at the XXXXX facility in Ohio, USA.
 		
 	\section{Western blot}
+			\subsection{Sample preparation}
+			Animals of the required stage were collected in microtubes and washed once with PBS. Laemmli buffer with fresh 2-mercaptoethanol was added to a 1x concentration in a volume smaller than 50$\mu$L and samples were boiled at 99ºC for 10 minutes with mild agitation. Samples were optionally snap frozen and stored at -20ºC for later use.
+			
+			\subsection{SDS-PAGE}
+			SDS-polyacrylamide gel electrophoresis was performed using either precast or self-casted gels (see section \ref{subsection:consumables} or \ref{subsection:Westernbuffers} respectively). The total volume of samples, as well as 8$\mu$L of protein marker were loaded and gels were run for 20 minutes at 50 V and then approximately 90 minutes at 150 V in running buffer.
+			
+			\subsection{Protein transference}
+			Electrophoretically separed proteins were transfered to a nitrocelulose membrane using the a semi-dry transfer system with a program optimized for low molecular weight proteins (5 minutes transfer at XXXXX V).
+			
+			The nitrocellulose membrane was washed once in TBS buffer for 10 minutes, incubated in 1:10 Ponceau stain in TBS for 5 minutes and briefly rinsed with distilled water to allow visualization of protein, and an assessment of the transference efficiency. Ponceau stain was removed with two TBS-T washes.
+			\subsection{Blotting}
+			To reduce unspecific antibody binding, the membrane was blocked with 5\% fat-free milk or 3\% BSA in TBS-T for 60 minutes at R/T with mild horizontal shaking.
+			
+			The membrane was incubated with primary antibody dilluted 1:500 in 5\% fat-free milk O/N at 4ºC, and washed for 10 minutes at R/T with mild horizontally shaking, once with TBS, twice with TBS-T and again with TBS.
+			
+			Secondary antibody incubation diluted 1:5000 in 5\% fat-free milk was added to the membrane and this incubated for one hour at R/T. Following washed were as after primary antibody incubation: 10 minutes at R/T with mild horizontally shaking, once with TBS, twice with TBS-T and again with TBS.
+			\subsection{Detection}
+			The membrane was washed once with PBS and incubated for 5 minutes in ECL substrate to allow detection of secondary antibody binding through chemiluminescence, being scanned with an exposure time between 3 and 30 seconds depending on signal strength.
 		
-		\subsection{Protein extraction}
-		
-		\subsection{SDS-PAGE electrophoresis}
-		
-		\subsection{Blotting and visualization}
-	
 	\section{Whole mount immunostaining}
-		
 		Collected animals were fixed in 4\% paraformaldehyde at 4ºC overnight and washed once with PBS-TE and twice with PBS-TEG to quench remaining formaldehyde. Two TBS-TE washes followed, after which animals were inculated O/N in blocking solution.
 		
 		Primary antibodies were diluted 1:100 in blocking solution and added to the animals after the previous blocking solution was removed from the microtubes. An incubation of at least six days with the primary antibodies was performed at 4ºC
 		
 		After primary antibody binding, six PBS-TE washes in 10 min intervals followed to remove any unbound primary antibody traces. A post-fixation similar to the primary one followed: 4\% formaldehyde in PBS-TE was added, and fixation took place O/N at 4ºC, after which one wash with PBS-TE and two with PBS-TEG followed. 
 		
-		Secondary antibodies diluted in blocking solution were added to the animals  and these were left for another minimum of six days at 4ºC in darkness, to allow antibody binding and avoid weakening of fluorescent signal. Another six washes of PBS-TE followed, with the particularity that ToPRo3 was added to the fourth wash, diluted 1:1000, therefore allowing DNA staining.
+		Secondary antibodies diluted 1:500 in blocking solution were added to the animals  and these were left for another minimum of six days at 4ºC in darkness, to allow antibody binding and avoid weakening of fluorescent signal. Another six washes of PBS-TE followed, with the particularity that ToPRo3 was added to the fourth wash, diluted 1:1000, therefore allowing DNA staining.
+		
+		Animals were mounted in glass slides with Vectashield and imaged with confocal microscopy.
 		
 	\section{Data analysis}
 		\subsection{QC, mapping}
@@ -681,12 +685,14 @@ H4 is highly constrained as it contacts with the other 3 core histones and its N
 			\item[$\mu$L, mL, L] Microlitre, Mililitre and Litre, respectively
 			\item[O/N] Over night
 			\item[R/T] Room temperature
+			\item[V] Volt
 		\end{description}
 
+	\chapter{PCR primers}
+		\label{appendixQPCRprimers}
+
 	\chapter{List of GO terms}
-	\chapter{PCR primers}
-	\chapter{PCR primers}
-	\chapter{PCR primers}
+
 \end{appendices}
 
 
