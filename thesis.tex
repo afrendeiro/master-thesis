@@ -25,6 +25,8 @@
 \usepackage{multirow} % for merging cells in tables
 \usepackage{float} %to manage floating objects
 \usepackage{array} % used in table
+\usepackage{titlesec} % used to format paragraph sections
+\usepackage{fancyhdr} % used to format headings and footer
 
 % provide encoding packages depending on the compiler
 \ifxetex
@@ -49,7 +51,25 @@
 %     1 ... chapther and sections
 %     2 ... chapters, sections, and subsections
 %     3 ... chapters, sections, subsections, and subsubsections
-\setcounter{tocdepth}{4}
+\setcounter{tocdepth}{5}
+\setcounter{secnumdepth}{5}
+
+% make paragraphs look like sections
+\titleformat{\paragraph}[hang]{\normalfont\small\bfseries}{\theparagraph}{1em}{}
+\titlespacing*{\paragraph}{0pt}{3.5ex plus 1ex minus .2ex}{1em}
+
+% heading and footer
+\pagestyle{fancy}
+\renewcommand{\headrulewidth}{0pt}
+\fancyhf{}
+\fancyhead[lo]{\slshape\nouppercase{\rightmark}}
+\fancyhead[re]{\slshape\nouppercase{\leftmark}}
+
+\lfoot[\thepage]{}
+\cfoot{}
+\rfoot[]{\thepage}
+
+
 
 % optional (comment to used default)
 %   horizontal line to separate floats (figures and tables) from text
@@ -211,6 +231,139 @@
 \chapter{Introduction}
 %=========================================================================%
 
+	\section{Endoreplication, a polyploid cell cycle}
+		Polyploid cells possess more than two pairs of their set of chromossomes. This polyploid state is common to be predominant within fungi, plants and some vertebrates like fish and amphibians, but also within restricted cell types in many other organisms \cite{Fox2013}.
+		
+		Documented advantages of polyploid organisms compared to diploids include heterosis (a evolutionary situation where the progeny has fitness advantages compared to its progenitors), gene redundancy, and gain of asexual reproduction by loss of self-incompatibility \cite{Comai2005}. From a strict cellular perspective, gene redundancy is the most relevant - it provides a way of masking the effect of deleterious alleles, and shields the possible effect of mutagens in the DNA. On the other hand, the increase of the gene-space available for mutations to act can also be seen as a evolutionary advantage.
+		
+		Changing ploidy within a cell has tremendous consequences for its physiology. Increased genetic material when active will produce more products, which will contribute to increase the cell volume and this inevitably changes the general cellular architecture. Higher number of genomic loci will bring new challenges in nuclear organization which can alter the epigenetic stability and consequently, gene expression. Cell division can be seriously compromised due to the inadequacy of the cell division machinery in dealing with an abnormal number of chromosomes. Like anything exposed to selection, only the sum of all these attributes will predict the outcome of the success of the organism, and while some of these events may be seriously restrictive to an organism survival in a specific environment, in others it might confer advantages.
+		
+		Polyploidy as a cellular state is known for more than a century, but studies of it under the light of endoreplication, a cell cycle mode which relies on cycles of genome replication without cell division (see Figure \ref{fig:simple_cell_cycle}), only recently began to gain relevance. Two main ways exist for the occurrence of endoreplication: endocycling, where genome replication in the S phase of the cell cycle alternates with a G phase preparing for the next replication; endomitosis, where an abortive mitotic cell division attempt after genome replication returns to a new G phase. Since the outcome of both is the same - the creation of a single polyploid cell - the distinction between the two can sometimes be unclear.
+		
+		\begin{figure}[here]
+			\centering
+			\includegraphics[width=0.6 \textwidth]{pngs/simple_cell_cycle.png}
+			\caption{The eukaryotic canonical endoreduplicative cell cycles. {\footnotesize Adapted from \cite{Frisch2002}}}
+			\label{fig:simple_cell_cycle}
+		\end{figure}
+		
+		Most remarkably, the core protein machinery that drives and regulates the canonical mitotic cell cycle performs as well in endocycles.
+		%Key signalling factors during development seems to exploit conserved cell cycle pathways to guide a cell into performing endocycling. 
+		
+			\subsection{An overview of the eukaryotic canonical cell cycle}
+			Cell division is a mechanism common to all organisms, being necessary for reproduction and also used for growth and proliferation in multicellular organisms. Regulation of the whole cell cycle and cell division is intricately complex, but is necessary to assure progression into the several phases in a controlled manner. Multicellular eukaryotes in particular, require precise timing and sensing of internal and environmental clues, which is regulated by complex cellular machinery, to achieve correct tissue and organ development.
+			
+			The canonical cell cycle consists of four major phases: gap phase one (G1) - cell growth and synthesis of required subtracts for DNA synthesis; Synthesis (S) - genome replication; gap phase two (G2) - continued cell growth; mitotic phase (M) - cell division through mitosis. Progression through the cell cycle phases is controlled by a number of checkpoints where genomic and cellular integrity are attested and various internal and external cues are considered, allowing progression, or arresting cell cycle.
+			
+			Numerous protein classes interact during regulation of the canonical cell cycle, being the complexes formed by Cyclins and Cyclin-dependent kinases (CDK) very prominent. Different CDK-Cyclin complexes are activated throughout the cell cycle, and their specific temporal regulation allows modulation of the activity of specific downstream effectors of cycle progression. While CDKs remain relatively constant through the cycle, the level of the Cyclin subunit is regulated thus restricting the complexes' temporal activity. 
+			
+				\subsubsection{Cell cycle progression regulated by CDK-Cyclin complexes}
+				In general, the overall activity of CDK-Cyclin complexes increases from G1 to M, being several thresholds of their activity used by the cell to identify the phase it is in.
+								
+				% some CDKs are mitotic, some are...
+				The G1 phase is the one with lowest CDK-Cyclin activity. This allows the cell to start replication with the assembly of the replication-specific proteins into a pre-replication complex in DNA sites that will become origins of replication. The assembly of pre-replication complexes during the G1 phase licenses replication and when CDK activity is detected above a threshold, the S phase begins with DNA replication. High CDK activity activates replication but also prevents replication licensing during other phases, for it requires low activity. A unique cell division per cycle is thus assured, for only when CDK activity is abolished at the end of mitosis can the genome be licensed for replication again.
+								
+				In the G1 phase, the D cyclins are expressed in response to external cues such as growth factors. These associate with both CDK 4 and 6 and phosphorilate downstream targets which most importantly include the retinoblastoma protein (pRb). pRb natively binds to a complex formed by a member of the E2F family of transcriptions factors (TF) and DP (also a TF), inhibiting it. When phosphorilated, pRb releases the E2F-DP TF complex and this is free to bind DNA and activate the expression of downstream genes that are responsible for entry into the S phase (Figure \ref{fig:pRb-E2F}).
+				
+				\begin{figure}[here]
+					\centering
+					\includegraphics[width=0.5\textwidth]{pngs/CDK-pRb-E2F-DP.png}
+					\caption{Cyclin-CDK phosphorilation of pRb and release of the E2F TF during G1 phase of the cell cycle. {\footnotesize Adapted from \cite{Frisch2002}}}
+					\label{fig:pRb-E2F}
+				\end{figure}
+				
+				Among the genes regulated by the E2F TF upon S phase entry is Cyclin A. This Cyclin first interacts with CDK2 and this complex is required for successful completion of S phase. Later, Cyclin A complexes with CDK1 having a function in G2/M phases transition.
+				
+				In the mitotic phase the predominant Cyclin-CDK complex is the Cyclin B-CDK1, which has important functions in phosphorilating cytoskeletal proteins involved in mitosis.
+				
+				Towards the end of cell division, cyclins are degraded, therefore greatly reducing the overall level of CDK activity. Both A and B cyclins are ubiquitinated by the ubiquitin ligase anaphase-promoting complex/cyclosome (APC/C), which includes the Fzr/Cdh1 subunit. This subunit confers Cyclin A and B specificity, marking them for proteolytic degradation starting at the end of mitosis but continuing through the G1 phase, which helps to ensure unidirectional cell cycle progression.	
+				
+				Cyclin-CDK activity can also be modulated by Cyclin-dependent kinase inhibitors (CKI). Among the most prominent are p27 which inhibits CDK4 in the pre-S phase Cyclin D-CDK4 complexes - therefore preventing phosphorilation of pRb and E2F release - and CDK 2 in the Cyclin E-CDK2 complex causing the cell to stay in S phase.
+				
+				Downstream effects of Cyclin-CDK activity involve activation of various cell cycle effectors including cyclins necessary for the subsequent phase, and this is fundamental for all cell cycle events to occur, specially in the beginning of the S phase, and during mitosis, assuring that the latter cannot start without the first and vice-versa, and that once they have started they cannot be reversed. These concepts can be visualized in Figure \ref{fig:canonical_cycle} and will prove useful when considering the implications of an endoreplicative cell cycle - a cycle of G and S phases.
+				
+				\begin{figure}[here]
+					\centering
+					\includegraphics[width=0.9\textwidth]{pngs/canonical_cell_cycle.png}
+					\caption{The phases of the canonical eukaryotic cell cycle. {\footnotesize Adapted from \cite{Trimarchi2002}}}
+					\label{fig:canonical_cycle}
+				\end{figure}
+
+			\subsection{Endocycle regulation}
+			Much less is known about the regulation of the endoreplicative cell cycle, and endocycling in particular. Compared with the canonical cell cycle regulation, two prominent events must occur for an endocycle to take place:
+			
+			\begin{enumerate}
+				\item abolishment of mitosis and cell division;
+				\item regulation of cell cycle effectors to continue to allow genome replication despite that there has been no cell division.
+			\end{enumerate}
+						
+				\subsubsection{Abolishment of mitosis and cell division in endoreplication}
+				Bypassing mitosis and cell division in endocycles can be accomplished in several ways. One such way involves the exploitation of the regular regulation mechanism in the canonical cell cycle through modulation of the Cyclin-CDK regulators. 
+				The APC/C subunit, Frz/Cdh1 is used in \textit{Drosophila} and \textit{Arabidopsis} as a way to achieve this, and its continued expression is in fact sufficient to induce endoreplication \cite{asd}. Its expression throughout the endocycles is required to continue suppression of pro-mitotic effectors, in particular Cyclin A and B.
+				
+				Evidence from mammalian cells, specifically placental throphoblas giant cells (TGC) and megakaryocytes in the bone marrow - both employ endocycling - suggest that Cyclin kinase inhibitors (CKI), proteins that act by direct binding to CDKs, also promote endocycling. This happens, with the activation of the p57 protein (a CKI), which inhibits CDK1 and prevents it from actively promoting entry into mitosis.	
+				
+			 	Blocking cytokinesis is a way to inhibit cell division and thus leads to endoreplication, a mechanism known to be normal in plants, where it has even been used in horticulture to improve crops. RhoA, a GTPase with a key role in regulating cell division is not activated due to the downregulation of two of its activators (GEF-H1 and ECT2) during cytokinesis in magakaryocytes as well, which causes failure of cell division. Endoreplication through an incomplete mitosis, is also known as endomitosis.
+			
+			\subsubsection{Regulation of cell cycle drivers in endoreplication}
+			
+				\paragraph{Endoreplication by CDK activity regulation}
+			
+				The Cyclin E-CDK2 complex is the main driver for S phase entry in the canonical cell cycle, although in the absence of CDK2, CDK1 can act as a substitute in mammalian cells \cite{Ullah2009}. Evidence suggests that modulation of Cyclin E expression during endoreplication in \textit{Drosophila} is crucial and possibly sufficient for its maintenance \cite{Lilly2005}, and megakaryocytes with Cyclin E overexpression show increased ploidy \cite{Eliades2010}, reinforcing the role of Cyclin E complexed with a CDK in endoreplication. The Cyclin E-CDK complex has also been shown to be responsible for the inhibition of the pre-replication complex (RC) protein Orc1 indirectly, by inhibiting the APC/C component  Fzr/Cdh1 \cite{Narbonne-Reveau2008}.
+			
+				All these observations put the Cyclin E-CDK2 complex in the center of regulation of endoreplicative cell cycles: it seems to generally contribute to increased replication, but also inhibits elements necessary for it, indicating that a temporally cyclic regulation of expression is necessary. Cyclin E is present at both transcript and protein level just before and during S phase, but not G, in endoreplicating Drosophila cells \cite{Weng2003} and if expressed continually, endoreplication is suppressed \cite{Weiss}.
+			
+				\paragraph{E2F factors in CDK activity regulation}
+			
+				 The E2F family of TFs is well known to have important functions in the regulation of both the canonical and endoreplicative cell cycles. This family of eight TFs in mammals can be grouped in a set of six canonical (which dimerize with the DP TF through a XXXXXXXXX domain; E2F3 is duplicated ) and two atypical TFs (lack the XXXXX domain).
+							
+				Some E2Fs are bound by Rb (van den Heuvel and Dyson, 2008)
+			
+				\begin{figure}[here]
+					\centering
+					\includegraphics[width=0.9\textwidth]{pngs/E2F_family.png}
+					\caption{The E2F family of transcription factors in mammals. {\footnotesize Adapted from \cite{VandenHeuvel2008}}}
+					\label{fig:E2F_family}
+				\end{figure}
+				
+				The most prominent regulator of Cyclin E in the canonical cell cycle is the transcription factor E2F1. It is a potent regulator of S phase entry and DNA synthesis.
+				In \textit{Drosophila} endocycles, E2F1 is subject to regulation by the action of CRL4/Cdt2, an ubiquitin ligase that is activated upon DNA replication and thus itself a consequence of the E2F1 activity - a negative feedback mechanism \cite{Zielke2011}\cite{Havens2011}\cite{Shibutani2008}.  There is therefore an oscillation of E2F1 during endocycles that both promotes and is also the consequence of the oscillation of other key players in cell cycle regulation: 
+				APC/C activity as a xXXXXXXXX is negatively regulated by Cyclin E-CDK2
+				Cdt1 (essential replication licensing protein Cdt1 (Dup - droso))
+				Gemini (inhibitor of Cdt1 - inhibited by APC)
+				
+				\begin{figure}[here]
+					\centering
+					\includegraphics[width=0.9\textwidth]{pngs/oscilation.png}
+					\caption{Oscillation of opposing networks of cell cycle genes during endocycles. {\footnotesize Adapted from \cite{Fox2013}}}
+					\label{fig:oscillation}
+				\end{figure}
+				
+				
+				This is mechanism of regulation ensures DNA is replicated only once per S phase, and is consistent with the observation that E2F1 activity is necessary for 
+				consistent 
+			
+
+			Nonetheless, these results emphasize that negative-feedback regulation is a common and important feature of molecular oscillators that control cell cycle progression (Ferrell et al., 2011). A central CDK oscillator provides a mechanism through which other important aspects of endoreplication can be controlled (Fig. 2). 
+			For example, the oscillation of APC/C activity in Drosophila salivary glands probably results directly from the oscillation of Cyclin E/Cdk2 complex activity, which inhibits the APC/C (Narbonne-Reveau et al., 2008). Key targets of the APC/C during endoreplication progression are the mitotic cyclins and the protein Geminin, which is an inhibitor of the essential replication licensing protein Cdt1 (Dup – FlyBase).
+			Indeed, the combination of mitotic Cdk1 inhibition and Geminin proteolysis can trigger endoreplication in human cells (Hochegger et al., 2007). By contrast, in Arabidopsis, little or no APC/C activity is required for endoreplication progression (as opposed to endoreplication entry, as described above), perhaps because there is no Geminin protein (Roodbarkelari et al., 2010). In Drosophila salivary glands, Geminin is absent during G phase, when replication licensing occurs, and present during S phase to prevent DNA licensing (Zielke et al., 2008).
+			 In this way, the endoreplication S phase is similar to the S phase of a cell division cycle and distinct from the phenomenon of re-replication, in which specific segments of DNA are replicated more than once in a single S phase. In contrast to endoreplication, re-replication is an aberrant situation that causes genomic instability and is observed in some cancer cells (see Box 2).
+			 In summary, the central endoreplication oscillator entrains many molecular activities to ensure the cycling of CDK activity and, thus, the cycling of replication licensing. It is important to keep in mind that the mechanism by which cyclic CDK activity is achieved may differ among species or even among different cell types within the same organism. For example, Drosophila nurse cells probably rely more on CKI activity than on E2F activity for CDK control during endoreplication (Hong et al., 2007). Nevertheless, the network of interactions controlling cyclic S phase CDK activity constitutes the central principle of endoreplication that we propose is universally applicable.
+
+			Negative-feedback regulation of E2F activity is also important for endoreplication in hepatocytes (Chen et al., 2012; Pandit et al., 2012), but here it appears to control the transition from cell division to endoreplication, and it is not yet known whether E2F functions as part of a mammalian endoreplication oscillator.
+			
+			
+			In another perspective, E2F7 is known to repress a network of cell cycle genes to control S-phase progression.\cite{Westendorp2012}
+			\cite{Moon2008}
+			\cite{Meserve2012}
+			\cite{Chen2012}
+
+		\subsection{Dot1}
+			\subsubsection{Dot1L}
+			\subsubsection{DOT1L in cell reprogramming}
+
+	%%%%%%%%%%%%%%%%%	
+	
 	\section{\textit{Oikopleura dioica}, a cross-disciplinary model system}
 		\textit{Oikopleura dioica} is a marine chordate organism belonging to the class Appendicularia, which is a member of the Tunicate subphylum along with the classes Thaliacea (salps) and Ascidiacea (sea squirts). Tunicates are the most closely extant group related to the vertebrates (see Figure ~\ref{fig:tree}). \textit{Oikopleura} shares some biological traits with most tunicates (\textit{e.g.} filter feeding), but unlike them has some peculiarities which make it a very interesting model for the study of many biological features. \textit{Oikopleura dioica} owes its name to the fact that it is the only dioeicious appendicularian known, being most other species hermaphrodites.
 		
@@ -272,69 +425,6 @@ H4 is highly constrained as it contacts with the other 3 core histones and its N
 		
 		
 		\subsubsection{Endocycling}
-		
-		
-
-	\section{Endoreplication, a polyploid cell cycle}
-		Polyploid cells possess more than two pairs of their set of chromossomes. This polyploid state is common to be predominant within fungi, plants and some vertebrates like fish and amphibians, but also within restricted cell types in many other organisms \cite{Fox2013}.
-		Documented advantages of polyploid organisms compared to diploids include heterosis (a evolutionary situation where the progeny has fitness advantages compared to its progenitors), gene redundancy, and gain of asexual reproduction by loss of self-incompatibility \cite{Comai2005}. From a strict cellular perspective, gene redundancy is the most relevant - it provides a way of masking the effect of deleterious alleles, and shields the possible effect of mutagens in the DNA. On the other hand, the increase of the gene-space available for mutations to act can also be seen as a evolutionary advantage.
-		Changing ploidy with a cell has tremendous consequences for its physiology. Increased genetic material when active will produce more products, which will contribute to increase the cell volume and this inevitably changes the general cellular architecture. Higher number of genomic loci will bring new challenges in nuclear organization which can alter the epigenetic stability and consequently, gene expression. Cell division can be seriously compromised due to the inadequacy of the cell division machinery in dealing with an abnormal number of chromosomes. Like anything exposed to selection, only the sum of all these attributes will predict the outcome of the success of the organism, and while some of these events may be seriously restrictive to an organism survival in a specific environment, others might take them as advantages.
-		
-		Polyploidy as a cellular state is known for more than a century, but its role in endoreplication, a cell cycle mode which relies on cycles of genome replication without cell division, only recently began to gain relevance. Two main ways exist for the occurrence of endoreplication: endocycling, where genome replication in the S phase of the cell cycle alternates with a G phase preparing for the next replication; endomitosis, where an abortive mitotic cell division attempt after genome replication returns to a new G phase. Since the outcome of both is the same - the creation of a single polyploid cell - the distinction between the two can be unclear.
-		
-		Most remarkably, the core protein machinery that drives and regulates the typical mitotic cell cycle is the same performing those functions in endocycles. Key signalling factors during development seems to exploit conserved cell cycle pathways to guide a cell into performing endocycling. 
-		
-			\subsection{An overview of the canonical cell cycle regulation}
-			Cell division is a common mechanism to all organisms, being necessary for reproduction and also used for growth and proliferation in multicellular organisms. Regulation of the whole cell cycle and cell division is intricately complex as it is necessary to assure progression into the several phases and division in a controlled manner. Multicellular eukaryotes in particular, require precise timing and sensing of internal and environmental clues, which is regulated by this highly complex cellular machinery, to achieve correct tissue and organ development.
-			
-			The canonical cell cycle consists of four major phases: gap phase one (G1) - cell growth and synthesis of required subtracts for DNA synthesis; Synthesis (S) - genome replication; gap phase two (G2) - continued cell growth; mitotic phase (M) - cell division through mitosis. Progression through the cell cycle phases is controlled by a number of checkpoints where genomic and cellular integrity are attested and various internal and external cues are considered, allowing progression, or arresting cell cycle.
-			
-			Numerous protein classes interact during regulation of the canonical cell cycle, being the complexes of Cyclins and Cyclin-dependent kinases (CDK) very prominent. Different CDK/cyclin complexes are activated throughout the cell cycle, and their specific temporal regulation allows modulation of the activity of specific downstream effectors of cycle progression. While CDKs remain relatively constant through the cycle, the level of the cyclin subunit is temporally regulated thus restricting the complex temporal activity. 
-			
-				\subsubsection{CDK-cyclin complex regulation during the canonical cell cycle}
-				In general, the overall activity of CDK-cyclin complexes increases from G1 to M, being several thresholds of their activity used by the cell to identify the phase it is in.
-				% some CDKs are mitotic, some are...
-				The G1 phase is the one with lowest CDK-cyclin activity. This allows the cell to start replication with the assembly of the replication-specific proteins into a pre-replication complex in DNA sites that will become origins of replication. The assembly of pre-replication complexes during the G1 phase licenses replication and when CDK activity is detected above a threshold, the S phase begins with DNA replication. High CDK activity activates replication but also prevents replication licencing during other phases, for it requires low activity. A unique cell division per cycle is thus assured, for only when CDK activity is abolished at the end of mitosis can the genome be licenced for replication again.
-				
-				Cyclins A and B are responsible for entry and progression of mitosis through association with CDK 1 and 2. Cyclin A-CDK 1/2 complexes occur from the S phase until the start of mitosis when cyclin A is degraded, while the CyclinB-CDK1 complex starts to take over during the G2 phase but is most prominent during mitosis, after which cyclin B is degraded. Both cyclins are ubiquitinated by the ubiquitin ligase anaphase-promoting complex/cyclosome (APC/C), which includes the Fzr/Cdh1 subunit. This subunit confers cyclin A and B specificity and thus, cyclins are marked for proteolytic degradation starting at the end of mitosis but continuing through the G1 phase, which helps to ensure unidirectional cell cycle progression.	
-			
-				Downstream effects of cyclin-CDK activity involve transcription activation of various cell cycle effectors including cyclins necessary for the subsequent phase, and this is fundamental for all cell cycle events to occur, specially in the beginning of the S phase, and during mitosis, assuring that the latter cannot start without the first and vice-versa, and that once they have started they cannot be reversed. These concepts will prove useful when considering the implications of an endoreplicative cell cycle - a cycle of G and S phases.
-
-			\subsection{Endocycle regulation}
-			Much less is known about the regulation of the endoreplicative cell cycle, and endocycling in particular. Compared with the canonical cell cycle regulation, two prominent events must occur for an endocycle to take place:
-			\begin{enumerate}
-				\item abolishment of mitosis and cell division;
-				\item regulation of cell cycle effectors to continue to allow genome replication.
-			\end{enumerate}
-						
-				\subsubsection{Endoreplication by abolishment of mitosis and cell division}
-				Bypassing mitosis and cell division in endocycles can be accomplished in several ways. One such way involves the exploitation of the regular regulation mechanism in the canonical cell cycle through modulation of the Cyclin-CDK regulators. 
-				The APC/C subunit, Frz/Cdh1 is used in \textit{Drosophila} and \textit{Arabidopsis} as a way to achieve this, and its expression is in fact sufficient to induce endoreplication \cite{asd}. Its expression throughout the endocycles is required to continue suppression of pro-mitotic effectors such as Cyclin A and B.
-				
-				Evidence from mammalian cells, specifically placental throphoblas giant cells (TGC) and megakaryocytes in the bone marrow - which both employ endocycling - suggest that cyclin kinase inhibitors (CKI), proteins that act by direct binding to CDKs, also promote endocycling. This happens, with the activation of the p57 protein (a CKI), which inhibits CDK1 and helps prevention of mitosis.	 
-
-			 	Blocking cytokinesis is a way to inhibit cell division and thus leads to endoreplication, a mechanism known to be normal in plants, where it has even been used in horticulture to improve crops. RhoA, a GTPase with a key role in regulating cell division is not activated due to the downregulation of two of its activators (GEF-H1 and ECT2) during cytokinesis in magakaryocytes as well, which causes failure of cell division. Resulting in endoreplication, through an incomplete mitosis this method is a known path for endomitosis.
-			 
-			\subsubsection{Endoreplication by CDK activity regulation}
-			Cyclin E/CDK2 complex drives replication during S phase
-			And that's required for endoreplication in drosophila (Lilly and Duronio, 2005) and megakaryocites (Eliades et al., 2010)
-
-			Evidence of Cyclin E function on S phase comes from presence of both transcript and protein in drosophila endocycling cells. ( Weng et al., 2003)
-			Absence during G phase seems to point to the need of a cycle of CE/CDK2 presence and absence coincinding with S and G. 
-			If CycE is expressed continually, endoreplication is suppressed ( Weiss et al., 1998)
-
-			\subsubsection{E2F factors in endoreplication}
-			
-			Recently, mathematical modeling of endoreplication oscillations helped guide experiments demonstrating that cyclic accumulation of the transcription factor E2f1 (E2f – FlyBase) is essential for endoreplication in the highly polyploid Drosophila salivary gland (Zielke et al., 2011). E2F transcription factors are potent stimulators of S-phase entry and control the expression of genes required for DNA synthesis, including Cyclin E. Their activity is regulated by the Rb family of tumor suppressors, which bind to and inhibit E2F proteins during G1 phase (van den Heuvel and Dyson, 2008). E2F-Rb interactions regulate endoreplication in plants and worms (Magyar et al., 2012; Ouellet and Roy, 2007). However, Rb- mediated regulation of E2f1 is not essential for endoreplication in Drosophila salivary glands, perhaps because of the action of the E2f2-containing Myb-MuvB complex in repressing Cyclin E expression during G phase (Maqbool et al., 2010; Weng et al., 2003). Zielke et al. (Zielke et al., 2011) provide data in support of a model whereby E2f1 accumulation during G phase results in activation of the Cyclin E/Cdk2 complex, which triggers S phase, which in turn causes the subsequent inactivation of E2f1 via the action of CRL4Cdt2, an E3 ubiquitin ligase that couples proteolysis with DNA replication (Havens and Walter, 2011; Shibutani et al., 2008) (Fig. 2). This model is consistent with earlier observations that Cyclin E activity is required for the downregulation of E2f1 target genes in the endoreplicating embryonic midgut (Duronio and O’Farrell, 1995), and that disruptions to normal oscillations of E2f1 activity in salivary glands suppress endoreplication (Maqbool et al., 2010). Interestingly, CRL4 is also required for endoreplication in Arabidopsis trichomes, although the relevant CRL4 target in trichomes might be CKI proteins (Roodbarkelari et al., 2010). Negative-feedback regulation of E2F activity is also important for endoreplication in hepatocytes (Chen et al., 2012; Pandit et al., 2012), but here it appears to control the transition from cell division to endoreplication, and it is not yet known whether E2F functions as part of a mammalian endoreplication oscillator. 
-			
-			
-			Nonetheless, these results emphasize that negative-feedback regulation is a common and important feature of molecular oscillators that control cell cycle progression (Ferrell et al., 2011). A central CDK oscillator provides a mechanism through which other important aspects of endoreplication can be controlled (Fig. 2). For example, the oscillation of APC/C activity in Drosophila salivary glands probably results directly from the oscillation of Cyclin E/Cdk2 complex activity, which inhibits the
-		
-		\subsection{Dot1}
-			\subsubsection{Dot1L}
-			\subsubsection{DOT1L in cell reprogramming}
-
-	
 	
 	
 	\section{Project Goals}
@@ -351,8 +441,7 @@ H4 is highly constrained as it contacts with the other 3 core histones and its N
 			\begin{table}[H]
        		\caption{\bf{Antibodies used for ChIP, immunofluorescence and western blot}}
         		\begin{center}
-            		\begin{tabular}{| p{2cm} | p{8cm} | p{3cm} | p{3cm} |}
-                		\hline
+            		\begin{tabular}{p{2cm} | p{8cm} | p{3cm} | p{3cm}}
 	                	\textbf{Antibody} & \textbf{Description} & \textbf{Supplier} & \textbf{Purpose}\\
     		            \hline
         		        ab46540 & Rabbit Control IgG - ChIP Grade & Abcam & ChIP\\
@@ -360,14 +449,13 @@ H4 is highly constrained as it contacts with the other 3 core histones and its N
             		     & E2F1 & & ChIP\\
 						 & E2F7 & & ChIP\\
             		    ab10543 & Anti-Histone H3 (phospho S28) [HTA28] & Abcam & Immunostaining\\
-            		    ActiveMotif 39143  & Anti-Histone H3 K79me2 Rabbit & Active Motif & Immunostaining and Western blot\\
-            		    Milipore 05-1312  &  Anti-Ubiquityl-Histone H2B Mouse & Milipore & Immunostaining\\
+            		    39143  & Anti-Histone H3 K79me2 Rabbit & Active Motif & Immunostaining and Western blot\\
+            		    05-1312  &  Anti-Ubiquityl-Histone H2B Mouse & Milipore & Immunostaining\\
             		    \hline
-            		    Molecular Probes A-21206 & Anti-Rabbit IgG secondary antibody conjugated with Alexa 488 fluorochrome &  Molecular Probes & Immunostaining\\
+            		    A-21206 & Anti-Rabbit IgG secondary antibody conjugated with Alexa 488 fluorochrome &  Molecular Probes & Immunostaining\\
                		    & Anti-Mouse IgG secondary antibody conjugated with Alexa 488  fluorochrome &  & Immunostaining\\
             		    & Anti-Rat IgG secondary antibody conjugated with Alexa 568 fluorochrome & & Immunostaining\\
             		    & Anti-Rabbit IgG secondary antibody conjugated with horseradish peroxidase &  & Western blot\\
-            		    \hline
 	            	\end{tabular}
     		    \end{center}
 		    \end{table}
@@ -377,12 +465,11 @@ H4 is highly constrained as it contacts with the other 3 core histones and its N
 			\begin{table}[H]
        		\caption{\bf{Chemicals and reagents used in various protocols}}
         		\begin{center}
-            		\begin{tabular}{|c|c|c|}
-                		\hline
-	               		Chemical & Supplier & Purpose\\
+            		\begin{tabular}{c|c|c}
+	               		Supplier & Chemical & Purpose\\
     		            \hline
-        		        X & X & X\\
-	               		 \hline
+    		            Thermo Scientific & 16\% Formaldehyde Ampoules, Methanol-free & ChIP\\
+    		            Tocris Bioscience & SGC0946 & H3K79me studies\\
 	            	\end{tabular}
     		    \end{center}
 		    \end{table}
@@ -392,18 +479,18 @@ H4 is highly constrained as it contacts with the other 3 core histones and its N
 			\begin{table}[H]
        			\caption{\bf{Consumables with particular relevance in certain protocols}}
         		\begin{center}
-            		\begin{tabular}{| p{2.9cm} | p{8.2cm} | p{2.2cm} |}
-                		\hline
+            		\begin{tabular}{p{2.9cm} | p{8.2cm} | p{2.2cm}}
 	                	\textbf{Supplier} & \textbf{Consumable} &  \textbf{Purpose}\\
     		            \hline
+    		            Sigma-Aldrich & BD Precisionglide syringe needles - gauge 27, L 1/2 inches & ChIP\\
     		            Covaris & AFA microtubes & ChIP\\
 						Sigma-Aldrich & Siliconized microtubes 1.7 mL capacity & ChIP\\
         		        Invitrogen & Protein G magnetic beads & ChIP\\
         		        Life Technologies & Qubit dsDNA HS assay kit & ChIP\\
         		        Bio-Rad & Mini-PROTEAN TGX stain-free gel & Western blot\\
         		        Bio-Rad & Trans-Blot turbo mini nitrocellulose membrane & Western blot\\
+						Bio-Rad & Precision Protein StrepTactin-HRP Conjugate & Western blot\\
         		        Bio-Rad & Clarity western ECL substrate & Western blot\\
-        		        \hline
 	            	\end{tabular}
     		    \end{center}
 		    \end{table}
@@ -412,8 +499,7 @@ H4 is highly constrained as it contacts with the other 3 core histones and its N
 			\begin{table}[H]
        		\caption{\bf{Instruments with particular relevance in certain protocols}}
         		\begin{center}
-            		\begin{tabular}{| p{3.1cm} | p{8.5cm} | p{2.2cm} |}
-                		\hline
+            		\begin{tabular}{p{3.1cm} | p{8.5cm} | p{2.2cm}}
 	               		\textbf{Supplier} & \textbf{Instrument/equipment} & \textbf{Purpose}\\
     		            \hline
 						Covaris & S200 focused sonicator & ChIP\\
@@ -423,7 +509,6 @@ H4 is highly constrained as it contacts with the other 3 core histones and its N
 						Leica & TCS-SP5 confocal microscope with Ar-Kr ion laser & Microscopy\\
 						Bio-Rad & Trans-Blot turbo transfer system & Western blot\\
 						Bio-Rad & ChemiDox XRS imaging system & Western blot\\
-	               		 \hline
 	            	\end{tabular}
     		    \end{center}
 		    \end{table}
@@ -432,8 +517,8 @@ H4 is highly constrained as it contacts with the other 3 core histones and its N
 			\subsubsection{ChIP}
 				\begin{description}
 					\footnotesize
-					\item[Lysis buffer] 150mM NaCl, 1\% NP-40, 0.5\% Na deoxycholate, 0.1\% SDS, 50 mM Tris pH 8, 1mM EDTA
-					\item[PBS, pH 7.4] 1.37 M NaCl, 27mM KCl,100 mM Na2HPO4, 1.8 mM KH2PO4		
+					\item[PBS, pH 7.4] 1.37 M NaCl, 27mM KCl,100 mM Na2HPO4, 1.8 mM KH2PO4
+					\item[Lysis buffer] 150mM NaCl, 1\% NP-40, 0.5\% Na deoxycholate, 0.1\% SDS, 50 mM Tris pH 8, 1mM EDTA					
 					\item[PBS-T] 0.02\% Tween-20 in PBS
 					\item[Lithium chloride buffer] 50 mM Tris pH 8, 250mM LiCl, 0.5\% NP-40, 0.5\% Na deoxycholate
 					\item[TE buffer] 10 mM Tris pH 8, 1 mM EDTA
@@ -474,10 +559,9 @@ H4 is highly constrained as it contacts with the other 3 core histones and its N
 		\begin{table}
        		\caption{\bf{Feeding regime of \textit{Oikopleura} according to developmental stage}}
        			\begin{center}
-            		\begin{tabular}{| c | c | >{\centering\arraybackslash}m{1.6cm}  | >{\centering\arraybackslash}m{2.1cm}  | >{\centering\arraybackslash}m{2.0cm} | >{\centering\arraybackslash}m{2.2cm} | >{\centering\arraybackslash}m{1.8cm} | }
-                		\hline
-		                \multicolumn{2}{|c|}{} & \small{\textbf{\textit{Isochrysis sp.}}} & \small{\textbf{\textit{Chaetoceros calcitrans}}} & \small{\textbf{\textit{Rhinomonas reticulata}}} & \small{\textbf{\textit{Synecococcus sp.}}} & \small{\textbf{Crushed \textit{R. reticulata}}}\\
-        		        \multicolumn{2}{|c}{\small{Development time}} & \multicolumn{3}{|c|}{(cells/mL)} & \multicolumn{2}{c|}{(mL)} \\
+            		\begin{tabular}{ c | c | >{\centering\arraybackslash}m{1.6cm}  | >{\centering\arraybackslash}m{2.1cm}  | >{\centering\arraybackslash}m{2.0cm} | >{\centering\arraybackslash}m{2.2cm} | >{\centering\arraybackslash}m{1.8cm} }
+		                \multicolumn{2}{c|}{} & \small{\textbf{\textit{Isochrysis sp.}}} & \small{\textbf{\textit{Chaetoceros calcitrans}}} & \small{\textbf{\textit{Rhinomonas reticulata}}} & \small{\textbf{\textit{Synecococcus sp.}}} & \small{\textbf{Crushed \textit{R. reticulata}}}\\
+        		        \multicolumn{2}{c}{\small{Development time}} & \multicolumn{3}{|c|}{(cells/mL)} & \multicolumn{2}{c}{(mL)} \\
         		        												 \hline
         		        \multirow{2}{*}{1} 	& Morning & 2000 & 2000 & 0 & 5 & 5\\
         		        												& Evening & 1000 & 1000 & 0 & 3 & 5\\
@@ -493,7 +577,6 @@ H4 is highly constrained as it contacts with the other 3 core histones and its N
         		        												 \hline
         		        \multirow{2}{*}{5} 	& Morning & 4000 & 4000 & 2000 & 0 & 5\\
         		        												& Evening & 2000 & 2000 & 1000 & 0 & 5\\
-	                	\hline
 	           			\end{tabular}
        				\end{center}
         		\label{table:ODculture}
@@ -522,14 +605,12 @@ H4 is highly constrained as it contacts with the other 3 core histones and its N
     		 \begin{table}[!ht]
 	    	    \caption{\bf{Fixation conditions for each tested developmental stage of \textit{Oikopleura dioica}}}
         		\begin{center}
-		            \begin{tabular}{|c|c|c|c|}
-        		        \hline
+		            \begin{tabular}{c|c|c|c}
                 		\textbf{Stage} & \textbf{Fixative concentration} & \textbf{Time (min)} & \textbf{Temperature (ºC)}\\
 		                \hline
 		                Tailbud & 1\% & 5 & 18\\
 		                Day two & 0.5\% & 5 & 18\\
 		                Day six immature & 1\% & 10 & 18\\
-		                \hline
         		    \end{tabular}
 		        \end{center}
         		\label{table:ODfixation}
@@ -545,21 +626,19 @@ H4 is highly constrained as it contacts with the other 3 core histones and its N
 			\begin{table}[!ht]
         		\caption{\bf{Settings used on the S200 Covaris sonicator for \textit{Oikopleura dioica} chromatin}}
         		\begin{center}
-        		\begin{tabular}{|l|c|}
-            		\hline
-	           		\textbf{Setting} & \textbf{Value}\\
-        		    \hline
-	        		Duty cycle& 5\%\\
-            	    Intensity & 7.5\\
-					Processing time & 5 minutes\\
-	        		Bath temperature & 5-6 ºC\\
-					Power mode & Frequency sweeping\\
-	        		Degassing mode & Continuous\\
-	        		Volume & 130 $\mu$L\\
-	        		AFA intensifer & Integrated\\
-	        		Water level & 8\\
-	        		\hline        		
-	        \end{tabular}
+	        		\begin{tabular}{l|c}
+		           		\textbf{Setting} & \textbf{Value}\\
+	        		    \hline
+		        		Duty cycle& 5\%\\
+	            	    Intensity & 7.5\\
+						Processing time & 5 minutes\\
+		        		Bath temperature & 5-6 ºC\\
+						Power mode & Frequency sweeping\\
+		        		Degassing mode & Continuous\\
+		        		Volume & 130 $\mu$L\\
+		        		AFA intensifer & Integrated\\
+	        			Water level & 8\\
+	        		\end{tabular}
     		    \end{center}
 	        \label{table:CovarisSettings}
 		    \end{table}
@@ -573,26 +652,27 @@ H4 is highly constrained as it contacts with the other 3 core histones and its N
 			DNA quality and amount was quantified on a Nanodrop instrument and loaded on an Agilent DNA High Sensitivity digital electrophoresis chip, to assess the distribution of DNA fragments with an Agilent Bioanalyzer instrument.
 			
 			\subsection{Immunoprecipitation}
-			Protein G magnetic beads were washed once with PBS-T in siliconized tubes, incubated at 4ºC rotating for two hours with 10 $\mu$g of antibody and washed again with PBS-T and Lysis buffer. \\
+			Protein G magnetic beads were washed once with PBS-T in siliconized tubes, incubated at 4ºC rotating for two hours with 10 $\mu$g of antibody and washed again with PBS-T and Lysis buffer.
 			
 			800 $\mu$g of chromatin were added to the magnetic beads with the already bound antibody and left O/N rotating at 4ºC, after which a series of 15 min, 4ºC washes followed: three with Lysis buffer without any inhibitors; two with Lithium chloride buffer; one with TE buffer.
 			
-			Elution of IP-enriched DNA followed with the addition of elution buffer and incubation at 65ºC for 15 min horizontally stirring at 900 rpm. A second, more stringent elution was performed with TE buffer with 500 mM NaCl and both supernatants were pooled. \\
+			Elution of IP-enriched DNA followed with the addition of elution buffer and incubation at 65ºC for 15 min horizontally stirring at 900 rpm. A second, more stringent elution was performed with TE buffer with 500 mM NaCl and both supernatants were pooled.
 			
 			Reversal of crosslink took place during a three to five hour incubation at 65ºC, after which 50 $\mu$g/mL RNAse A were added, incubated at R/T for 10 min, and incubated again this time with 200 $\mu$g/mL Proteinase K at 55ºC O/N. Phenol-Chloroform extraction followed as previously described on section \ref{section:chromQualityAssess}, with the exception of final pellet dilution in 50 $\mu$L TE buffer.
 			
 			1 $\mu$L of sample was used in a Qubit high-sensitivity assay to measure total dsDNA yield from the ChIP assay.
+			
 			\subsection{qPCR}
 			Enrichment of the ChIP samples was assessed through quantitative polymerase chain reaction (qPCR). PCR reactions were performed with 5 $\mu$L DNA from  either the ChIP sample or IgG control and the same set of primers amplifying regions of interest with 80-120 bp total length (see appendix \ref{appendixQPCRprimers}).
 			
 			Enrichments were calculated as XXXXXXXXXXXX
 		
 			\subsection{Illumina library construction and high-throughput sequencing}
-			ChIP libraries were made according to Illumina's instructions, selecting fragments within 150-250 bp and sequenced in a GAII instrument with 50 bp single-end reads at the XXXXX facility in Ohio, USA.
+			ChIP libraries were made using the Ovation Ultralow Library kit according to the manufacturer. Selected DNA fragments were within 150-350 bp and each set of biological replicates (16 samples) was sequenced in a single lane of a Illumina HiSeq 2500 instrument with 100 bp paired-end reads in Ohio, USA.
 		
 	\section{Western blot}
 			\subsection{Sample preparation}
-			Animals of the required stage were collected in microtubes and washed once with PBS. Laemmli buffer with fresh 2-mercaptoethanol was added to a 1x concentration in a volume smaller than 50$\mu$L and samples were boiled at 99ºC for 10 minutes with mild agitation. Samples were optionally snap frozen and stored at -20ºC for later use.
+			Animals of the required stage were collected in microtubes and washed once with PBS. Laemmli buffer with fresh 2-mercaptoethanol was added to a final 1x concentration and samples were boiled at 99ºC for 10 minutes with mild agitation. After a 5 minute centrifugation at 16000 g , samples were snap frozen in liquid nitrogen and stored at -20ºC for later use.
 			
 			\subsection{SDS-PAGE}
 			SDS-polyacrylamide gel electrophoresis was performed using either precast or self-casted gels (see section \ref{subsection:consumables} or \ref{subsection:Westernbuffers} respectively). The total volume of samples, as well as 8$\mu$L of protein marker were loaded and gels were run for 20 minutes at 50 V and then approximately 90 minutes at 150 V in running buffer.
@@ -606,7 +686,7 @@ H4 is highly constrained as it contacts with the other 3 core histones and its N
 			
 			The membrane was incubated with primary antibody dilluted 1:500 in 5\% fat-free milk O/N at 4ºC, and washed for 10 minutes at R/T with mild horizontally shaking, once with TBS, twice with TBS-T and again with TBS.
 			
-			Secondary antibody incubation diluted 1:5000 in 5\% fat-free milk was added to the membrane and this incubated for one hour at R/T. Following washed were as after primary antibody incubation: 10 minutes at R/T with mild horizontally shaking, once with TBS, twice with TBS-T and again with TBS.
+			Secondary antibody incubation diluted 1:5000 in 5\% fat-free milk was added to the membrane and this incubated for one hour at R/T toghether with 1:5000 WesternC XXXXXXX -HSP . Following washed were as after primary antibody incubation: 10 minutes at R/T with mild horizontally shaking, once with TBS, twice with TBS-T and again with TBS.
 			\subsection{Detection}
 			The membrane was washed once with PBS and incubated for 5 minutes in ECL substrate to allow detection of secondary antibody binding through chemiluminescence, being scanned with an exposure time between 3 and 30 seconds depending on signal strength.
 		
@@ -665,7 +745,7 @@ H4 is highly constrained as it contacts with the other 3 core histones and its N
 %
 %=========================================================================%
 \bibliographystyle{plain}
-\bibliography{/data/Documents/Mendeley/collection.bib}
+\bibliography{/data/Documents/Mendeley/library.bib}
 
 
 \cleardoublepage
@@ -676,7 +756,8 @@ H4 is highly constrained as it contacts with the other 3 core histones and its N
 	\chapter{Abbreviations}
 		\begin{description}
 			\item[aa] Amino acid
-			\item[bp] Base pair
+			\item[APC/C] Anaphase promoting complex
+			\item[bp] Nucleotide base pair
 			\item[CDK] Cyclin-dependent Kinase
 			\item[ChIP] Chromatin immunoprecipitation
 			\item[ChIP-seq] Chromatin immunoprecipitation followed by high-throughput sequencing
@@ -685,6 +766,8 @@ H4 is highly constrained as it contacts with the other 3 core histones and its N
 			\item[$\mu$L, mL, L] Microlitre, Mililitre and Litre, respectively
 			\item[O/N] Over night
 			\item[R/T] Room temperature
+			\item[RC] pre-Replication Complex
+			\item[TF] Transcription factor
 			\item[V] Volt
 		\end{description}
 
