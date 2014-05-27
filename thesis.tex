@@ -13,7 +13,7 @@
 %incluir 'final' nas opções em baixo para omitir "Documento Provisório"
 \usepackage[DBIO,newLogo,final]{uaThesis}
 
-% optional packages
+% packages
 \usepackage[english]{babel}
 \usepackage{hyperref}
 \usepackage{amsmath}
@@ -27,6 +27,11 @@
 \usepackage{array} % used in table
 \usepackage{titlesec} % used to format paragraph sections
 \usepackage{fancyhdr} % used to format headings and footer
+
+\usepackage{caption}
+\usepackage{subcaption}
+
+\usepackage[section]{placeins}  % force figure position in section
 
 % provide encoding packages depending on the compiler
 \ifxetex
@@ -68,14 +73,6 @@
 \lfoot[\thepage]{}
 \cfoot{}
 \rfoot[]{\thepage}
-
-
-
-% optional (comment to used default)
-%   horizontal line to separate floats (figures and tables) from text
-\def\topfigrule{\kern 7.8pt \hrule width\textwidth\kern -8.2pt\relax}
-\def\dblfigrule{\kern 7.8pt \hrule width\textwidth\kern -8.2pt\relax}
-\def\botfigrule{\kern -7.8pt \hrule width\textwidth\kern 8.2pt\relax}
 
 % custom macros (could also be defined using \newcommand)
 \def\I{\mathtt{i}}         % one possible way to represent $\sqrt{-1}$
@@ -358,9 +355,63 @@
 			\cite{Meserve2012}
 			\cite{Chen2012}
 
-		\subsection{Dot1}
-			\subsubsection{Dot1L}
-			\subsubsection{DOT1L in cell reprogramming}
+	\section{Histone modifications in cell cycle regulation}
+	The cell cycle is currently one of the most studied biological processes, due to its significance in growth and development and its deregulation in many human disorders. Studies using a diverse set of model organisms have greatly expanded knowledge of cell cycle regulation and have contributed to a uniform view of how the basic cell cycle machinery is regulated  \cite{Raynaud2014a}.
+	
+	Although studied for long, only recently have histone modifications been shown to contribute to it. This chapter of the review highlights the function of some post-translational histone modifications in cell cycle regulation.
+		
+		\subsection{The role of H2Bub in DNA replication}
+		Monoubiquitylation of histone H2B on lysine 123 (H2Bub1) is known to be an important histone modification during transcription. H2Bub1 is promoted by the Bre1 ubiquitin ligase and this happens mainly in coding regions, particularly the ones that are being expressed. It is also a highly dynamic histone modification, with cycles of ubiquitylation and deubiquitylation naturaly occuring during the transcritpional process. I has been shown that this oscilation is required for proper transcriptional elongation through the control of the RNA Polymerase II (Pol II) and inhibition of recruitment of the CTK1 kinase, which has a function in later phases of transcription. H2Bub1 also controls the methylation state of both lysine 4 and 79 residues on histone H3 - two other important modifications in the transcriptional and replicative process \cite{Kouzarides2007}.
+		
+		The mechanistical similarities between transcription and replication suggest that H2Bub1 may have a role in replication as well. In both processes, nucleossomes must be displaced ahead of the replication fork and assembled again after (in replication in more strands than in the original template).
+		
+		In recent studies performed in the buddying yeast  \cite{Trujillo2012}, H2Bub1 has been shown to be enriched at replication origins, while the writer of this modification, Bre1, is also present. H2Bub1 continued to be present after replication, during G2 and M phases, suggesting that it is maintained on daughter strands of chromatin and after origins are fired for replication start.
+		
+		Hydroxyurea, a inhibitor of a ribonucleotide reductase enzyme required for deoxyribonucleotides production, has the effect of causing S phase arrest due to nucleotide depletion. When G1 arrested synchronized cells were released into hydroxyurea, Bre1 and H2Bub1 were detected at regions away from replication origins, posing the hypothesis that Bre1 could be travelling with the replissome as happens in transcription due to Pol II complex association \cite{Trujillo2012}.
+		
+		Using a mutant strain for H2BK123, it was possible to detect that H2Bub1 was shown to be not required for the initiation of DNA synthesis as mutant cells initiated DNA replication. Nevertheless, when accessed for their capability to complete replication in the same time as wild-type cells, H2BK123 mutants were slower, as accessed by the levels of H3K56ac and the G2/M marker Clb2. This confirmed the involvment of H2Bub1 in normal cell cycle progression, particularly in the elongation of DNA replication in S phase \cite{Trujillo2012}.
+		
+		Dissecting the reason of the inefficiency of H2BK123 mutant cells in replication elogation, it was shown that in these cell only a fraction of the factors required for replication elongation (Pol $\alpha$, Pol $\epsilon$ Mcm4, Cdc45 Psf2) did not accumulate significantly at positions downstream of replication origins when compared with wild-type cells. Additionaly, reduced intermediate single-stranded DNA was detected in mutants. Toghether this reveals the important role of H2Bub1 in the progression of replication forks, possibly through the interaction with other effectors necessary for replication elongation \cite{Trujillo2012}.
+		
+		In these mutant cells, it was also noted that global histone H3 levels were reduced in replication origins after replication compared with wild-type cells, pointing to either a defect in nucleossome assembly on newly synthesised strands or reduced stabilization of assembled nucleossomes \cite{Trujillo2012}.
+		
+		Spt16, a subunit of the FACT complex that is responsible for nucleossome displacement ahead of the transcription fork is known to interact with H2Bub1 to restore nucleossome ocupancy during elongation of transcription. In replication the same was also detected, with Spt16 present at replication origins and more distal positions with the replication fork advancement. However, in H2BK123 mutant cells, Spt16 was significantly reduced in distal replicating positions, suggesting that H2Bub1 stabilizes Spt15 on replicating chromatin \cite{Trujillo2012}.
+		
+		Taken together, evidence collected in this study \cite{Trujillo2012} showed an unprecedented role for a histone modification in replication. Ubiquitylation of H2BK123 is present in origins of replication, promotes efficient replication elongation and the stability of the replisome as well as nucleosome assembly or stability.
+		
+		\subsection{Dot1 and H3K79 methylation in the cell cycle}
+	
+		All known histone lysine methyltransferases contain a SET domain, with the exception of Dot1, which has a conserved catalytic core more similar to arginine methyltransferases. Dot1 is conserved from trypanosomes to humans and catalyses mono-, di- and trimethylation of histone H3K79, a residue located in the nucleosome core \cite{Kouzarides2007}. Until now, no protein has been identified that unambigously binds a specific methylated state of H3K79 or that can remove any methyl group from it \cite{Frederiks2008}.
+		
+		It has been shown that Dot1's mode of action is distributive \textit{in vivo} and not processive as all SET domain-containing methyltransferases \cite{Frederiks2008}. This means Dot1 acts in a ‘methylate-and-run’ fashion rather than using a multistep processive approach - this makes it the first known distributive protein lysine methyltransferase. This also implies that the initial methylation states of H3K79 are obligatory intermediates in the synthesis of higher methylation states by Dot1.
+		
+		The earliest known function of H3K79 methylation was in euchromatin, where it restricts Sir-mediated silencing of chromatin to regions of silent chromatin \cite{Frederiks2008}. In this function there is no correlation between the level of any of the specific methylation states and the degree of silencing, but the sum of all methylation states is indeed correlated, which implies that the different methylation states are likely to have redundant functions.
+		
+		It is also known that di- and trimethylation of H3K79 in yeast requires ubiquitination of histone H2B on Lys123 (H2Bub1) which is deposited by the Bre1 ubiquitin ligase. Bre1 does not specifically regulate H3K79 methylation but instead enhances its overall catalysis \cite{Kouzarides2007} \cite{Frederiks2008}. This has been proposed to be due to the possibility that the ubiquitin moiety directly affects the active site of Dot1 or that H2Bub1 affects the \textit{in vivo} chromatin substrate such that H3K79 on the nucleosome core becomes more accessible for interaction with Dot1 \cite{Frederiks2008}. The second option seems more supported due to the fact that \textit{in vitro}, H2BK123ub1 is not required for multiple methylation of H3K79 by Dot1.
+		
+		Dot1's distributive mode of action has prompted the mathematical modelling of H3K79 methylation states in yeast, using quantitative proteomics data, growth rates and estimates of nuclear Dot1 and histone abundance \textit{in vivo} \cite{DeVos2011}. This model predicts that increased states of H3K79 methylation accumulate with time until a H3K79me3-rich steady state is reached. Another important prediction is that each subsequent methylation reaction is slower than the one before - in agreement with a non-processive mechanism of methylation \cite{DeVos2011}.
+			
+		Since all states of H3K79 methylation accumulate during a cell's life cycle, one prediction of the model is that cell-cycle length can affect the average pattern of methylation throughout the cell cycle phases. This was confirmed experimentally with the observation that in slowly growing or arrested cells, H3K79 methylation is indeed higher, probably due to the fact that Dot1 has more time to introduce methyl groups. Over all cell cycle stages, it was noted a temporary drop in methylation during S phase, when new, unmodified histones are deposited on chromatin \cite{DeVos2011}. The level of H3K79me0 was highest in the S phase but progressive accumulation of methyl groups until a new S phase. This would implicate that H3K79 methylation is at least not fully maintained on new histones during replication. Nevertheless, only when the cell cycle time was doubled, a steady state of high H3K79me3 was reached, indicating that in a normal yeast cell cycle a steady state is not reached and histone renewal might play a role on the balance of H3K79 methylation \cite{DeVos2011}.
+		
+		The model thus accurately predicted the dynamics of H3K79 methylation through cell cycle and highlighted the importance of the residence time of histones in chromatin.	It was shown experimentally that the level of H3K79 methylation correlates with the age of the histones, regardless of the cell's age and that nucleossomes binding genes known for high histone turnover had significantly less H3K79 methylation. These observations confirm the temporal dependency between H3K79 methylation and the age of histones. The same dependency was not detected in H3K4 methylation, suggesting that the presence of a demethylase can counteract the accumulation of methylation on ageing histones \cite{DeVos2011}.
+		
+		This temporal dependence of H3K79 methylation has additional implications: epigenetic inheritance of H3K79 methylation states is hindered by the fact that at least one of the daughter cells will not receive the same information as the parent cell. This is incompatible with the current model of histone modification as marks of epigenetic memory. However it shouldn't be excluded that not the information of single nucleossomes, but the global state of H3K79 methylation over larger chromatin domains might bare epigenetic function.
+		
+		In \textit{Trypanossoma} - a unicellular eukaryotic parasite with considerable divergence of key cell cycle regulators - the view of H3K79 methylation (H3K76 in \textit{Trypanossoma}) as a carrier of epigenetic information is also challenged by the depletion of H3K79 methylation on newly incorporated histones during S phase \cite{Gassen2012}.
+		
+		In this organism there are two Dot1 homologue proteins of Dot1 (Dot1A and Dot1B) and there seems to be some division of labour between the two regarding the different methylation states of H3K79. Although both enzymes can mono- and dimethylate H3K79, Dot1A seems incapable of trymetylating H3K79, whereas Dot1B does, but it is not clear if both enzymes have the same affinity for the two shared methylation forms and therefore contribute equally \cite{Gassen2012}. Only Dot1A is required for survival.
+	
+		Depletion of Dot1A decreased H3K79 mono- and di-methylation and generated cells with reduced DNA content, which suggests a role for H3K79 methylation in accurate cell-cycle progression. These cells suffered complete replication inhibition which nevertheless didn't prevented cell division \cite{Gassen2012}.
+		
+		The inverse disturbance in Dot1A expression (overexpression) resulted in premature H3K79 methylation (during S phase) opposed to generalised increase of methylation levels. Nevertheless, this temporal deregulation caused continuous DNA replication which created cells with increased levels DNA content - the opposite effect of Dot1A depletion. This suggests that not only the global methylation states of H3K79 are implied in accurate cell cycle regulation, but that the timing of addition of this histone modification also plays a role at least in \textit{Trypanossoma} \cite{Gassen2012}.
+		
+		In human cells, depletion of Dot1, and consequently H3K79 methylation, did not seem to affect replication mechanism itself since the frequency of replication initiation events, replication fork velocity and the proportion of cell cycle phases were not different when compared with normal cells \cite{Fu2013a}. However, an increased fraction of cells exhibiting DNA content greater than 4N and apoptosis was detected.
+		
+		Although cells were still able to proliferate and replicate DNA in the absence of H3K79 methylation, its absence affected the regulatory processess modulating the timing of DNA replication, for the causes of a higher fraction of cells with higher ploidy than normally were identified as cells skipping mitosis after S phase and re-replicating their DNA without completing cell division \cite{Fu2013a}.
+		
+		This deregulation of replication timing led to the hypothesis that Dot1 mediated H3K79 methylation marks origins of replication that have started replication, preventing replication initiation a second time before the cell completes division. In the case of cells lacking Dot1, the cause of re-replication might then be new replication from origins or replication that had already been used previously in the same cell cycle. This hypothesis is supported by evidence that H3K79me2 was shown to be associated with functional replication origins, but not with a mutant replication origin that resembled a functional one \cite{Fu2013a}.
+		
+		These studies highlight the non-canonical use of a histone modification (H3K79 methylation) and show its importance in the regulation of replication, a major cellular event.
 
 	%%%%%%%%%%%%%%%%%	
 	
@@ -491,6 +542,7 @@ H4 is highly constrained as it contacts with the other 3 core histones and its N
         		        Bio-Rad & Trans-Blot turbo mini nitrocellulose membrane & Western blot\\
 						Bio-Rad & Precision Protein StrepTactin-HRP Conjugate & Western blot\\
         		        Bio-Rad & Clarity western ECL substrate & Western blot\\
+        		        Molecular Probes & TO-PRO-3 Iodide stain & Immunostaining\\
 	            	\end{tabular}
     		    \end{center}
 		    \end{table}
@@ -721,6 +773,273 @@ H4 is highly constrained as it contacts with the other 3 core histones and its N
 \chapter{Results}
 %=========================================================================%
 
+\section{E2F factors in \textit{Oikopleura}'s late developmental stages}
+
+	E2F expression in Figure \ref{fig:E2F_expression}
+	
+	\begin{figure}[here]
+		\centering
+		\includegraphics[width=0.9\textwidth]{pngs/E2F_expression_+allgenes.png}
+		\caption{Expression of E2F factors during \textit{Oikopleura dioica}'s development.
+			{
+				\footnotesize
+					Green: E2F1;
+					Red: E2F7;
+					Boxplots: All genes.
+					Expression values transformed with a logarithm of base 2.
+			}
+		}
+		\label{fig:E2F_expression}
+	\end{figure}
+
+	\subsection{E2F binding}
+	
+		Oikopleura's genome is compact, with reduced intergenic and intronic space, and enlarged proportion of coding sequence (Figure \ref{fig:genome_background}).
+	
+		\begin{figure}[here]
+			\centering
+			\includegraphics[height=0.5\textwidth]{pngs/species_genome.png}
+			\caption{Comparison of the relative distribution of genomic locations in \textit{Oikopleura dioica} and other animal models. {\footnotesize From left to right: \textit{Nematostella vectensis}, \textit{Drosophila melanogaster}, \textit{Oikopleura dioica}, \textit{Homo sapiens}} }
+			\label{fig:genome_background}
+		\end{figure}
+		
+		E2F ChIP-ER locate near genes transcription start sites (TSS) (Figure \ref{fig:distance_to_TSS}).
+		
+		\begin{figure}[here]
+			\setlength{\belowcaptionskip}{5pt}
+			\centering
+			\begin{subfigure}[b]{0.75\textwidth}
+				\includegraphics[width=1\linewidth]{pngs/E2F_distanceTSS_abs.png}
+				\caption{Absolute distance.}
+			\end{subfigure}
+			\begin{subfigure}[b]{0.75\textwidth}
+				\includegraphics[width=1\linewidth]{pngs/E2F_distanceTSS_rel.png}
+				\caption{Distance relative to the transcription start site.}
+			\end{subfigure}
+			\caption{Distance of E2F ChIP-ER to the nearest gene transcription start site.}\label{dummy}
+			\label{fig:distance_to_TSS}
+		\end{figure}
+		
+		E2F ChIP-ER are constrained by the genomic architecture and their genomic distribution resembles the background of the genome (Figure \ref{fig:genomic_location}).
+		  		
+		\begin{figure}[here]
+			\centering
+			\includegraphics[width=0.9\textwidth]{pngs/E2F_genomicLocation.png}
+			\caption{Location of E2F ChIP-ERs and shuffled regions of same number and width in the genome of \textit{Oikopleura dioica}.}
+			\label{fig:genomic_location}
+		\end{figure}
+		
+		E2F motifs found (Figure \ref{fig:E2F_motifs}).
+		
+		\begin{figure}[here]
+			\centering
+			\includegraphics[width=0.5\textwidth]{pngs/E2F_motifs.png}
+			\caption{Significant motifs found in E2F ChIP-ER that align with the known vertebrate E2F motif.}
+			\label{fig:E2F_motifs}
+		\end{figure}
+		
+		E2F ChIP-ER didn't show any particular correlations with the epigenetic landscape (Fig \ref{fig:E2F_Chromatin states}.
+		
+		\begin{figure}
+			\setlength{\belowcaptionskip}{5pt}
+			\centering
+			\begin{subfigure}[b]{1\textwidth}
+				\centering
+				\includegraphics[width=1\linewidth]{pngs/E2F_chromatinAnnotation.png}
+				\caption{Frequency of location of ChIP-ERs in the chromatin state annotation.}
+			\end{subfigure}
+			\begin{subfigure}[b]{1\textwidth}
+				\centering
+				\includegraphics[width=0.5\linewidth]{pngs/ChromHMM_emissions_15.png}
+				\caption{Composition of chromatin states based on histone modifications in \textit{Oikopleura dioica}.}
+			\end{subfigure}
+			\caption{Location of ChIP-enriched regions (CHIP-ER) regarding the local chromatin environment.
+				{\footnotesize
+				}
+			}
+			\label{fig:E2F_Chromatin_states}
+		\end{figure}
+		
+		
+    	E2F ChIP-ER showed high spatial and temporal co-localization within and between developmental stages (Figure \ref{fig:E2F_colocalization}).
+    	
+		\begin{figure}[here]
+			\setlength{\belowcaptionskip}{5pt}
+			\centering
+			\begin{subfigure}[b]{0.75\textwidth}
+				\includegraphics[width=1\linewidth]{pngs/E2F_overlap.png}
+				\caption{Portion of ChIP-ERs that are shared (overlap) between transcription factors within the same developmental stage.}
+			\end{subfigure}
+			\begin{subfigure}[b]{0.75\textwidth}
+				\includegraphics[width=1\linewidth]{pngs/E2F_overlap_overlaps.png}
+				\caption{Portion of shared (overlapping) ChIP-ERs between transcription factors that also overlap between developmental stages.}
+			\end{subfigure}
+			\caption{Portion of E2F ChIP-ERs shared (overlapping) within and between developmental stages.}
+			\label{fig:E2F_colocalization}
+		\end{figure}
+		
+	\subsection{Putative E2F regulated genes}
+		
+    	E2F putatively regulated genes show significant enrichment of terms related with DNA replication, cell cycle regulation...,  (Figure \ref{fig:GO}).
+		    	
+		\begin{figure}[here]
+			\centering
+			\includegraphics[width=0.9\textwidth]{pngs/E2F_overlap_overlaps_GO.png}
+			\caption{Gene Ontology of genes putatively regulated by both E2F transcription factors in the D6 male developmental stage.
+				{\footnotesize 
+					Data spread over two semantic spaces (axis).
+					Gene Ontology terms were nested within the same parent and the amount of terms clustered is shown by the area of the circle.
+					Significance values are shown in a color spectra.
+					D6 female developmental stage have a high degree of similarity.
+				}
+			}
+			\label{fig:GO}
+		\end{figure}
+
+    	There are major and significant changes at the transcriptome level between the D6 female and male developmental stages (Figure \ref{fig:D6_expression}).
+		
+		\begin{figure}[here]
+			\centering
+			\includegraphics[width=0.5\textwidth]{pngs/D6_expression.png}
+			\caption{Expression values of all genes in the D6 male (Testis) and D6 female (Ovary) developmental stages.
+			{\footnotesize
+				Expression values were normalized by the mean expression of all genes within each stage and transformed with a logarithm of base 2;
+				Dashed lines indicate quantiles of the distribution of expression values;
+				Smoothed line represents the smoothed conditional mean of expression values.
+				}
+			}
+			\label{fig:D6_expression}
+		\end{figure}
+
+    	There were no significant changes between the means of the distribution of expression values of genes putatively regulated by E2F factors (Figure \ref{fig:E2F_targets_expression}).	However, a trend exists for genes that are bound by the repressor transcription factor (E2F7) in a stage to be less expressed in that stage and more in the other.
+		
+		\begin{figure}
+			\centering
+			\begin{subfigure}{.5\textwidth}
+				\centering
+				\includegraphics[width=1\linewidth]{pngs/E2F_specific_Female_expression.png}
+				\caption{D6 Female developmental stage (Ovary).}
+			\end{subfigure}%
+			\begin{subfigure}{.5\textwidth}
+				\centering
+				\includegraphics[width=1\linewidth]{pngs/E2F_specific_Male_expression.png}
+				\caption{D6 Male developmental stage (Testis).}
+			\end{subfigure}
+			\caption{Expression values of genes putatively regulated by E2F transcription factors in the two developemtal stages where E2F binding was characterized.
+			Green: E2F1-bound genes;
+			Red: E2F7-bound genes;
+				{\footnotesize
+				Expression values were normalized by the mean expression of all genes within each stage and transformed with a logarithm of base 2;
+				Dashed lines indicate quantiles of the distribution of expression values;
+				Smoothed line represents the smoothed conditional mean of expression values.
+				}
+			}
+			\label{fig:E2F_targets_expression}
+		\end{figure}
+		
+		Key cell cycle regulators putatively regulated by E2F factors (see full list in appendix \ref{list_key_cell_cycle_regulators}).
+
+
+\section{Dot1 and H3K79 methylation in \textit{Oikopleura dioica}'s cell cycle modes}
+	
+	Expression of Dot1 and Bre1 during \textit{Oikopleura dioica}'s development (Figure \ref{fig:Dot1_Bre1_expression}).
+	
+	\begin{figure}
+		\centering
+		\includegraphics[width=1\textwidth]{pngs/Dot1_expression_allgenes_SETs.png}
+		\caption{Expression values of Dot1 and Bre1 enzymes during (A) normal \textit{Oikopleura} development and growth arrest, and (B) after release from the growth arrest condition.
+		Red: Bre1;
+		Green: Dot1;
+			{\footnotesize
+			Expression values were transformed with a logarithm of base 2.
+			}
+		}
+		\label{fig:Dot1_Bre1_expression}
+	\end{figure}
+	
+	\textit{Oikopleura} is known to have a develop a condition with reduced proliferation and growth during dense culture due to reduced nutritional resources, known as growth arrest.  During growth arrest, expression of the Bre1 ubiquitin ligase is significantly reduced whereas the Dot1 methyltransferase is relatively stable (Figure \ref{fig:Dot1_Bre1_GA_expression}a). When animals are released from the growth arrest condition by restoring the normal culture density and nutritional supply, Bre1 expression is restored to levels compared with normal development during endocycling stages (Figure \ref{fig:Dot1_Bre1_GA_expression}b).	
+	
+	\begin{figure}
+		\centering
+		\begin{subfigure}{.5\textwidth}
+			\centering
+			\includegraphics[width=1\linewidth]{pngs/Dot1_expression_allgenes_SETs_dense_noDay4.png}
+			\caption{Expression during normal culture and growth arrest conditions.}
+		\end{subfigure}%
+		\begin{subfigure}{.5\textwidth}
+			\centering
+			\includegraphics[width=1\linewidth]{pngs/stasisRelease_Dot1_expression_allgenes_SETs.png}
+			\caption{Expression after release of growth arrest condition.}
+		\end{subfigure}
+		\caption{Expression values of Dot1 and Bre1 enzymes during (A) normal \textit{Oikopleura} development and growth arrest, and (B) after release from the growth arrest condition.
+		Red: Bre1;
+		Green: Dot1;
+			{\footnotesize
+			Expression values were transformed with a logarithm of base 2.
+			}
+		}
+		\label{fig:Dot1_Bre1_GA_expression}
+	\end{figure}
+	
+	
+	
+	
+	
+	Use of K79 methylation (K79me) during Oikopleura dioica's life cycle.
+	Assessed by western blot on whole animals (Figure \ref{fig:k79me}a).
+	Developmental stages with a predominant use of endocycles show increased levels of K79 methylation.
+	Developmental stages with a predominant use of the canonical eukaryotic cell cycle mode show decreased levels of K79 methylation.
+	
+	(Figure \ref{fig:k79me}b).	
+	H2BK123ub and H3K79 methylation – negative feedback regulation.
+	Reduction of H3S10p – reduced cell proliferation.
+	
+	
+	\begin{figure}
+		\centering
+		\begin{subfigure}{.5\textwidth}
+			\centering
+			\includegraphics[width=1\linewidth]{pngs/K79me_WT.png}
+			\caption{K79me in selected developmental stages.}
+		\end{subfigure}%
+		\begin{subfigure}{.5\textwidth}
+			\centering
+			\includegraphics[width=1\linewidth]{pngs/TB_Dot1_in.png}
+			\caption{Tailbud stage.}
+		\end{subfigure}
+		\begin{subfigure}{.5\textwidth}
+			\centering
+			\includegraphics[width=1\linewidth]{pngs/D5_Dot1_in.png}
+			\caption{D5 stage.}
+		\end{subfigure}
+		\caption{Quantification of K79 methylation states during selected developmental stages of \textit{Oikopleura dioica}'s life cycle and in Dot1in-treated animals by Western blot.
+			{\footnotesize
+				In (b) and (c), values under blots show the relative amounts compared with control normalized by ATP synthase $beta$ subunit (upper band). C - DMSO-treated control animals; T - Dot1in-treated animals.
+			}
+		}
+		\label{fig:k79me}
+	\end{figure}
+
+
+Evidence for low H3K79me in \textit{Oikopleura}:
+	RNA level:
+		Dot1 expression is lower during endocyling stages
+		Growth arrested animals have higher Dot1 expression than normal development
+		Bre1 and Rad1 expression is low
+	Protein level:
+		MS data: H3K79me1 is very high, H3K79me2 lower and H3K79me3 not detected (in day 4 and 6 males)
+		Western blots
+		
+H2BK123ub1 and H3K79me positive feedback
+
+
+Experiments:
+	Dot1 inhibition in early stages or growth arrested animals
+	Dot1 overexpression in late stages
+	
+	Compare normal/dense expression pattern of all genes/methyltransferases/Dot1
+	
+	GO of H3K79me2/3 bound genes
 
 
 \clearpage
@@ -730,11 +1049,49 @@ H4 is highly constrained as it contacts with the other 3 core histones and its N
 %=========================================================================%
 
 
+
+Higher states of K79 methylation accumulate with cell age \cite{DeVos2011}. What are the implications of this in an chordate with a extremely short cell cycle and fast cell division as \textit{Oikopleura}?
+
+
+Dot1 is more expressed when cultured densely, which might indicate that 
+Interestingly, the stage with least Dot1 expression is the testis, where the H3.t H3 variant is more expressed and the K79 residue is not present.
+
+Bre1, the ubiquitin ligase of H2BK123 in yeast and mammals is present in \textit{Oikopleura}, but its expression is not ubiquitous unlike Dot1L. Bre1 is expressed in early stages, although not present maternally (detected earliest in tailbud animals) until day 3. It is not expressed in Day 4, but it is again in Day 5 and has its highest point of expression in the male testis. It is not expressed in the female gonad.
+
+From MS data, H3K79me1/2 were detected, but not me3. me1 is much higher (is the most abundant of all histone PTMs) than me2 \cite{Moosmann2011}, possibly indicating that the state of H3K79me is one of "young cells", marked by low overall levels of H3K79me.
+
+H2Bub was not quantified in MS.
+
+
 \clearpage
 
 %=========================================================================%
 \chapter{Conclusions and Future Perspectives}
 %=========================================================================%
+
+
+
+
+replicates and ChIP-seq data -> more resolution -> more confidence 
+Confirmation with ChIP-qPCR
+Functional characterization of identified E2F binding sites 
+\textit{in vivo} reporter constructs through transgenesis is not yet possible
+alternatively,
+injections in closely related (or not) species (e.g. Ciona intestinalis)
+\textit{in vitro} assays of reporter with luciferase.
+
+
+
+
+dsRNA knockout
+overexpression
+
+Possible role of Dot1 and K79 methylation in the regulation of biological processes known to involve deregulation of replication. Cancer
+
+
+
+
+Regulation at both transcriptional and epigenetic levels is required and probably both play a role in the regulation and transition between \textit{Oikopleura}'s cell cycle modes.
 
 
 
@@ -759,7 +1116,9 @@ H4 is highly constrained as it contacts with the other 3 core histones and its N
 			\item[APC/C] Anaphase promoting complex
 			\item[bp] Nucleotide base pair
 			\item[CDK] Cyclin-dependent Kinase
+			\item[CDS] Coding sequence of genes
 			\item[ChIP] Chromatin immunoprecipitation
+			\item[ChIP-ER] ChIP-enriched region
 			\item[ChIP-seq] Chromatin immunoprecipitation followed by high-throughput sequencing
 			\item[DNA] Deoxyribonucleic acid
 			\item[kD] Kilo Dalton
@@ -768,13 +1127,17 @@ H4 is highly constrained as it contacts with the other 3 core histones and its N
 			\item[R/T] Room temperature
 			\item[RC] pre-Replication Complex
 			\item[TF] Transcription factor
+			\item[UTR] Untranslated regions of genes
 			\item[V] Volt
 		\end{description}
 
 	\chapter{PCR primers}
 		\label{appendixQPCRprimers}
 
-	\chapter{List of GO terms}
+	\chapter{Gene Ontology terms associated with genes putatively regulated by E2F factors}
+	
+	\chapter{List of key cell cycle regulators putatively regulated by E2F factors}	
+	\label{list_key_cell_cycle_regulators}
 
 \end{appendices}
 
