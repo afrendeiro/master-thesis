@@ -48,8 +48,8 @@
 % defs
 \def\ThesisYear{2014}
 \def\ThesisAuthor{André Figueiredo Rendeiro}
-\def\ptThesisTitle{Bases epigenéticas da regulação de endociclos em Oikopleura dioica}
-\def\enThesisTitle{Epigenetic basis of endocycle regulation in Oikopleura dioica}
+\def\ptThesisTitle{O papel dos fatores de transcrição E2F e de metilação da lisina 79 da histona H3 nos diferentes modos de ciclo celular de \textit{Oikopleura dioica}}
+\def\enThesisTitle{The role of E2F regulation and H3K79 methylation in \textit{Oikopleura dioica}'s cell cycle modes}
 
 % optional (comment to use default)s
 %   depth of the table of contents
@@ -101,9 +101,9 @@
     }{\ThesisYear}
     
     \TITLE{\ThesisAuthor}
-        {\ptThesisTitle}
+        {\enThesisTitle}
     \vspace*{10mm}
-    \TITLE{}{\enThesisTitle}
+    \TITLE{}{\ptThesisTitle}
           %\HEADER{\BAR\FIG{\begin{minipage}{50mm} % no more than 120mm
           %``I'm King of the world.''
           % \begin{flushright}
@@ -122,9 +122,9 @@
 \TitlePage
     \HEADER{}{\ThesisYear}
     \TITLE{\ThesisAuthor}
-        {\ptThesisTitle}
+        {\enThesisTitle}
     \vspace*{10mm}
-    \TITLE{}{\enThesisTitle}
+    \TITLE{}{\ptThesisTitle}
     \vspace*{15mm}
     
     \TEXT{}
@@ -166,13 +166,13 @@
 \TitlePage
   \vspace*{55mm}
     \TEXT{\textbf{acknowledgements}}
-        {I thank Prof. Thompson for allowing me to work in his lab and for all help with my stay in Norway. Pavla, for unconditional support and guidance during this period, Gemma for irreplaceable computational help, and everyone in the lab for all the good laughs and help when needed.}
+        {I thank Prof. Thompson for allowing me to work in his lab and for all the help with my stay in Norway. Pavla and Gemma, for support and guidance during this period, and everyone in the lab for help when needed.}
     \TEXT{}
         {I'd like to thank my family for all the support throughout these years, allowing me to follow my dreams.}
     \TEXT{}
 		{I'd also like to acknowledge the free open source software community for its marvellous efforts in building an open world and Tomás Oliveira e Silva for the University of Aveiro \LaTeX thesis template.}
     \TEXT{}
-        {This thesis was made using entirely free open source software.}
+        {This thesis was made entirely using free open source software.}
 
 
 \EndTitlePage
@@ -200,9 +200,13 @@
 \TitlePage
     \vspace*{55mm}
     \TEXT{\textbf{keywords}}
-        {epigenetics, endocycles, Oikopleura dioica}
+        {cell cycle, endocycles, E2F, \textit{Oikopleura dioica}, H3K79me, Dot1}
   \TEXT{\textbf{abstract}}
-		{Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.}
+		{The eukaryotic cell cycle is one of the most studied biological processes. However, variations of the canonical cell cycle have been discovered and found to be more predominant than previously expected. Endoreplication and endocycling - two such variants - produce polyploid cells, conferring advantages in growth and genotoxic stress. Although some of the regulatory principles of these cycles are being discovered, little is known about how cells can transition from a mitotic cell cycle to them.
+		Recently, it has been proposed that methylation of histone 3 lysine 79 (H3K79me) might have a function distinct from most histone modifications - a timer for a cell's age -, for methylation of all H3K79 states is performed in a distributive fashion (unlike all other methylated lysines in histones) by Dot1 and no demethylase is known. Functional studies on Dot1 have shown aberrant patterns of replication, linking it directly to a cell's ability to regulate its cell cycle.
+		This project aims to study the mechanisms of transition between different cell cycle modes in \textit{Oikopleura dioica} - a marine chordate employing endocycling extensively through its life cycle.
+		We performed ChIP-seq on two antagonist transcription factors (E2F1 and E2F7) involved in the control of cell cycle progression that have been shown to have differential patterns of regulation in mitotic and endocycling cell cycle modes. Initial results reveal a high degree of spatial and temporal occupancy of both transcription factors in close proximity to transcription start sites, regulating genes with a function highly enriched for the control of replication and cell cycle. We set ourselves to perform an initial functional study of H3K79me in \textit{Oikopleura} though Dot1 inhibition in developmental stages employing different cell cycle modes. Preliminary results show deregulation of proliferation patterns in different ways in the different cell cycle modes, highlighting a contribution of H3K79me to their regulation in \textit{Oikopleura}.
+		}
 \EndTitlePage
 
 \cleardoublepage
@@ -249,7 +253,7 @@
 \chapter{Introduction}
 %=========================================================================%
 
-	\section{Endoreplication, a polyploid cell cycle}
+	\section{Polyploid cell cycles - Endoreplication and Endocycles}
 		Polyploid cells possess more than two pairs of their set of chromossomes. This polyploid state is common to be predominant within fungi, plants and some vertebrates like fish and amphibians, but also within restricted cell types in many other organisms \cite{Fox2013}.
 		
 		Documented advantages of polyploid organisms compared to diploids include heterosis (a evolutionary situation where the progeny has fitness advantages compared to its progenitors), gene redundancy, and gain of asexual reproduction by loss of self-incompatibility \cite{Comai2005}. From a strict cellular perspective, gene redundancy is the most relevant - it provides a way of masking the effect of deleterious alleles, and shields the possible effect of mutagens in the DNA. On the other hand, the increase of the gene-space available for mutations to act can also be seen as a evolutionary advantage.
@@ -275,7 +279,7 @@
 			
 			Numerous protein classes interact during regulation of the canonical cell cycle, being the complexes formed by Cyclins and Cyclin-dependent kinases (CDK) very prominent. Different CDK-Cyclin complexes are activated throughout the cell cycle, and their specific temporal regulation allows modulation of the activity of specific downstream effectors of cycle progression. While CDKs remain relatively constant through the cycle, the level of the Cyclin subunit is regulated thus restricting the complexes' temporal activity. 
 			
-				\subsubsection{Cell cycle progression regulated by CDK-Cyclin complexes}
+				\subsubsection{Regulation of cell cycle progression by Cyclin-CDK complexes}
 				In general, the overall activity of CDK-Cyclin complexes increases from G1 to M, being several thresholds of their activity used by the cell to identify the phase it is in.
 								
 				% some CDKs are mitotic, some are...
@@ -308,14 +312,15 @@
 				\end{figure}
 
 			\subsection{Endocycle regulation}
-			Much less is known about the regulation of the endoreplicative cell cycle, and endocycling in particular. Compared with the canonical cell cycle regulation, two prominent events must occur for an endocycle to take place:
+			\label{subsection:endocycles}
+			Much less is known about the regulation of alternative modes of cell cycles, endocycling in particular. Compared with the canonical cell cycle regulation, two prominent events must occur for an endocycle to take place:
 			
 			\begin{enumerate}
 				\item abolishment of mitosis and cell division;
-				\item regulation of cell cycle effectors to continue to allow genome replication despite that there has been no cell division.
+				\item alternative regulation of cell cycle effectors to continue to allow genome replication despite that there has been no cell division.
 			\end{enumerate}
 						
-				\subsubsection{Abolishment of mitosis and cell division in endoreplication}
+				\subsubsection{Abolishment of mitosis and cell division}
 				Bypassing mitosis and cell division in endocycles can be accomplished in several ways. One such way involves the exploitation of the regular regulation mechanism in the canonical cell cycle through modulation of the Cyclin-CDK regulators. 
 				The APC/C subunit, Frz/Cdh1 is used in \textit{Drosophila} and \textit{Arabidopsis} as a way to achieve this, and its continued expression is in fact sufficient to induce endoreplication \cite{asd}. Its expression throughout the endocycles is required to continue suppression of pro-mitotic effectors, in particular Cyclin A and B.
 				
@@ -323,7 +328,7 @@
 				
 			 	Blocking cytokinesis is a way to inhibit cell division and thus leads to endoreplication, a mechanism known to be normal in plants, where it has even been used in horticulture to improve crops. RhoA, a GTPase with a key role in regulating cell division is not activated due to the downregulation of two of its activators (GEF-H1 and ECT2) during cytokinesis in magakaryocytes as well, which causes failure of cell division. Endoreplication through an incomplete mitosis, is also known as endomitosis.
 			
-			\subsubsection{Regulation of cell cycle drivers in endoreplication}
+			\subsubsection{Alternative regulation of cell cycle drivers}
 			
 				\paragraph{Endoreplication by CDK activity regulation}
 			
@@ -332,6 +337,7 @@
 				All these observations put the Cyclin E-CDK2 complex in the center of regulation of endoreplicative cell cycles: it seems to generally contribute to increased replication, but also inhibits elements necessary for it, indicating that a temporally cyclic regulation of expression is necessary. Cyclin E is present at both transcript and protein level just before and during S phase, but not G, in endoreplicating Drosophila cells \cite{Weng2003} and if expressed continually, endoreplication is suppressed \cite{Weiss}.
 			
 				\paragraph{E2F factors in CDK activity regulation}
+				\label{paragraph:E2Fs}
 			
 				 The E2F family of TFs is well known to have important functions in the regulation of both the canonical and endoreplicative cell cycles. This family of eight TFs in mammals can be grouped in a set of six canonical (which dimerize with the DP TF through a XXXXXXXXX domain; E2F3 is duplicated ) and two atypical TFs (lack the XXXXX domain).
 							
@@ -377,7 +383,19 @@
 			\cite{Chen2012}
 
 	\section{Histone modifications in cell cycle regulation}
-	The cell cycle is currently one of the most studied biological processes, due to its significance in growth and development and its deregulation in many human disorders. Studies using a diverse set of model organisms have greatly expanded knowledge of cell cycle regulation and have contributed to a uniform view of how the basic cell cycle machinery is regulated \cite{Raynaud2014a}.
+	In the post-genomic era, characterizing the genetic repertoire of a model species is solely the first step to understanding of its Biology from a molecular point of view. Gene regulation is currently the limelight of studies in Biology and Biomedicine and the characterization of gene expression and the mechanisms of its regulation pre- and post-transcription and translation is the current forefront of research. An important contribution to gene regulation comes from epigenetics. Long-non coding RNAs (lncRNAs), histone variants, histone modifications and modification of DNA bases (prominently methylation) are four great classes of mechanisms by which gene expression is altered epigenetically. 
+		
+	The fundamental structural unit of chromatin is the nucleosome - a structure formed by histone proteins with DNA wrapped around them. A core octamer of histones comprised of two copies of H2A, H2B, H3 and H4 histones each, forms the canonical nucleosome structure to which 147 base pairs of DNA are wrapped around twice. This basic structure repeats itself throughout the genome and provides the basis for higher-order structure in chromatin. The disposition of the histone proteins creates a disc-shaped structure resulting from the left-handed superhelical DNA structure. Since the first structural evidence of the nucleosome, more \textit{in-vivo} nucleosome structures presenting different stoichiometries have been discovered and although in some cases their functional implications have yet to be shown, they have changed the way we look at nucleosomes - it can no longer be viewed as a static identity.
+
+	Genes of histone proteins involved in the formation of the canonical nucleossome have several specific conserved features. They lack introns and are organized in clusters. Due to the occurrence of a major celluclar event requiring a high number of histone proteins - replication in S phase - histone genes are known to be replication dependent (RD). Their expression is coupled with the cellular event of replication by the use of a conserved stem-loop (SL) in the 3’UTR of the mRNAs, which promotes translation in this phase. Genes of variant histone proteins are often transcribed from orphan genes (not in clusters), can contain introns and lack the SL motif that couples translation to replication. Although considerable structural divergence exists, in most cases histone variants (also called replication-independent (RI) histones) are still fairy conserved due to being subject to the structural constraints promoted by the assembly into nucleossomes.
+			
+	Post-translational modifications of histone proteins were discovered in the mid-1960s and are long known to have a functional role. Due to the fact that most post-translational modifications of histones were found on the protruding histone tails, initial theories suggested they affected the interactions between DNA and histone tails electrostatically. This less stringent DNA-histone link would loosen chromatin structure and make attachment and detachment possible, explaining changes in accessibility of DNA sequence to regulatory proteins and differential position of nucleosomes along the DNA sequence. Later, with better knowledge of the diversity of post-translational modifications of histones and the discovery of more functions associated with them, post-translational modifications of histones are now thought to function as epitopes for regulatory proteins to act on, marking discrete parts of the histone-bound DNA for a specific function. At the same time, discovery of post-translational modifications of histones nearer to the histone core still supported the idea that they also contribute to alter DNA-histone and histone-histone interactions.
+	 
+	Some post-translational modifications of histones are known to be correlated with gene silencing, others with gene activation, and some correlate with presence or activity of regulatory elements, transcriptional units or replication origins, but although many have been identified and associated with these functions, the exact mechanism but which they achieve this is not entirely known. Common post-translational modifications in histone proteins are methylation, acetylation or ubiquitination of lysines, serine phosphorylation or arginine methylation, but others exist as well  \cite{Strahl2000a} \cite{Kouzarides2007} \cite{Bannister2011}.
+	 
+	This array of chemical varieties in histones is therefore heavily loaded with information that has been shown to condition gene expression and contribute to triggering of major cellular events (\textit{e.g.} cell division). This information is stably maintained and passed to daughter cells upon cell division which is important for the maintenance of regulatory status along cell division and differentiation. These processes are therefore considered epigenetic because they influence gene expression and are inheritable by daughter cells.
+		
+	The cell cycle is currently one of the most studied biological processes, due to its significance in growth and development, but increasingly due to its deregulation in many human disorders. Studies using a diverse set of model organisms have greatly expanded knowledge of cell cycle regulation and have contributed to a uniform view of how the basic cell cycle machinery is regulated  \cite{Raynaud2014a}.
 	
 	Although studied for long, only recently have histone modifications been shown to contribute to it. This chapter of the review highlights the function of some post-translational histone modifications in cell cycle regulation.
 		
@@ -437,63 +455,80 @@
 	%%%%%%%%%%%%%%%%%	
 	
 	\section{\textit{Oikopleura dioica}, a marine chordate extensively employing endocycles}
-		\textit{Oikopleura dioica} is a marine chordate organism belonging to the class Appendicularia, which is a member of the Tunicate subphylum along with the classes Thaliacea (salps) and Ascidiacea (sea squirts). Tunicates are the most closely extant group related to the vertebrates (see Figure ~\ref{fig:tree}). \textit{Oikopleura} shares some biological traits with most tunicates (\textit{e.g.} filter feeding), but unlike them has some peculiarities which make it a very interesting model for the study of many biological features. \textit{Oikopleura dioica} owes its name to the fact that it is the only dioeicious appendicularian known, being most other species hermaphrodites.
+		\textit{Oikopleura dioica} is a marine  chordate organism belonging to the class Appendicularia, which is a member of the Tunicate subphylum along with the classes Thaliacea (salps) and Ascidiacea (sea squirts). Tunicates are the most closely extant group related to the vertebrates (see Figure \ref{fig:tree}) \cite{Delsuc2006}. \textit{Oikopleura} shares some biological traits with most tunicates (\textit{e.g.} filter feeding through a secreted house), but unlike them has some peculiarities which make it a very interesting model for the study of many biological features, such an accelerated development and life cycle, a miniature genome and an extensive use of endocycles through its life. \textit{Oikopleura dioica} owes its name to the fact that it is the only dioeicious appendicularian known, being most other species hermaphrodites.
 		
 		\begin{figure}[here]
 			\centering
-			\includegraphics[width=0.5\textwidth]{tree.jpg}
-			\caption{Phylogeny of the Deuterostome group with emphasis on the Tunicate subphylum}
+			\begin{subfigure}{.5\textwidth}
+				\centering
+				\includegraphics[width=1\linewidth]{pngs/phylogeny.png}
+				\caption{Simplified phylogeny of the Tunicate group.}
+			\end{subfigure}%
+			\begin{subfigure}{.5\textwidth}
+				\centering
+				\includegraphics[width=1\linewidth]{pngs/tree.png}
+				\caption{Phylogenetic tree of t.}
+			\end{subfigure}
+			\caption{Phylogenetic position of the Tunicate group and \textit{Oikopleura dioica}.
+				{\footnotesize
+					Adapted from a figure from Charlotte Konikoff at the University of Washington and \cite{Delsuc2006}.
+				}
+			}
 			\label{fig:tree}
 		\end{figure}
 		
 		\subsection{\textit{Oikopleura}'s life cycle}
-		\textit{Oikopleura} reproduces through external fertilization after the rupture of both female and male gonads or sperm release via the spermiduct \cite{}. The first cell division remarkably occurs only 35 min after fertilization and a XXXXXXX gastrulation takes place after two hours when at 20ºC. Four hours after fertilization the animal is ventrally bent with on its tail (Tailbud stage) and later hatches from the chorion to be a free-swimming larva. Figure \ref{fig:LifeCycle} represents the early development of \textit{Oikopleura}.
+		\label{subsection:lifeCycle}
+		\textit{Oikopleura} reproduces through external fertilization after the rupture of both female and male gonads or sperm release via the spermiduct \cite{Bouquet2009}. The first cell division remarkably occurs only 35 min after fertilization proceeds with a basically bilateral pattern with minor left–right asymmetries. Gastrulation takes place starting at the 32-cell stage (roughly two hpf at 20ºC) and progresses until all of the vegetal cells have ingressed and are covered by the animal cells. By the 64-cell stage eight cells disposed in two rows of four align themselves along the anterior-posterior axis and are internalized giving rise to the neural tube later. This simple but accelerated early development of \textit{Oikopleura}, gives rise to a conserved chordate body plan with the animal bent ventrally inside the chorion (Tailbud stage) soon hatching and becoming a free-swimming larva \cite{Fujii2008}.
 		
-		Larval development takes place until fifteen hours after fertilization, where a metamorphosis known as Tailshift occurs and the tails changes orientation towards the ventral side of the animal. At this point, most cells stop mitotic division and start performing endocycling, a endoreduplicative cell division strategy which gives rise to multinucleated cells and increases body size by increasing the cell volume (discussed in detail in Section \ref{subsection:CellCycleVariants}). This strategy continues throughout most of the remaining juvenile life of \textit{Oikopleura} until the third day of development, where gametogenesis starts in the rapidly growing gonad. Most of \textit{Oikopleura}'s growth until the end of its life at day six is dedicated to gonad maturation, which at its peak reaches a total volume bigger than the somatic part of the whole organism. This is achieved again through the employment of endocycling in the gonad.
+		Larval development takes place until fifteen hours after fertilization, where a metamorphosis known as Tailshift occurs: the tails changes orientation towards the ventral side of the animal. At this point, most cells have stopped mitotic division and start performing endocycling, a endoreduplicative cell division strategy which gives rise to multinucleated cells (> 1000 C \cite{Ganot2002})and increases body size by increasing the cell volume rather than cell division (discussed in detail in Section \ref{subsection:endocycles} and \ref{subsection:CellCycleVariants}). \textit{Oikopleura} secretes a extracellular, cellulose-based structure through its epithelium (‘tunics’ or ‘houses’) which uses to filter particles in suspension to feed on and sustain growth. This growth strategy continues throughout most of the remaining juvenile life of \textit{Oikopleura} until the third day of development, where gonad development starts.
+		
+		Most of \textit{Oikopleura}'s growth until the end of its life at day six is dedicated to gonad maturation, which at its peak reaches a total volume bigger than the somatic part of the whole organism. This is achieved again through the employment of endocycling in the gonad tissues, creating a giant cell of over 2000 C. In the female gonad, a process of nuclei selection occurs, where some nuclei are selected to become oocytes and other nurse nuclei, providing support for the selected nuclei and then degenerating towards the end of maturation. Male gametogenesis is known to start later than the female and is a fast process occuring just before full maturation.
+		
+		An overview of the different phases of development of \textit{Oikopleura} can be seen in 	Figure \ref{fig:LifeCycle}.
 		
 		\begin{figure}[here]
 			\centering
 			\includegraphics[width=1\textwidth]{pngs/lifeCycle.png}
-			\caption{Diagram of \textit{Oikopleura dioica}'s development through its life cycle}
+			\caption{
+				Stages of development of the marine chordate \textit{Oikopleura dioica} and respective predominant modes of cell cycle employed.
+				{\footnotesize
+					Scale in micrometers. Adapted from \cite{Fujii2008} and \cite{Bouquet2009}.
+				}
+			}
 			\label{fig:LifeCycle}
 		\end{figure}
 		
 
 		\subsection{The genome of \textit{Oikopleura dioica}}
-		\textit{Oikopleura} reference genome sequence was made available in 2010 \cite{}, revealing a surprisingly plastic architecture and the species fast evolution.
-
-		% compact
-		In this planctonic animal, the chordate genome architecture seems to have been redesigned to obtain a minimal-sized genome: approximately 70 megabases. This is greatly due to the reduction of intron and intergenic space, although some gene loss also could also be detected. The dramatic reduction of intergenic space brings obvious constrains in terms of gene regulation, which is to some degree easily seen by the normal occurrence of genes in Operons (~28\% of the 18000 total), but makes the \textit{Oikopleura} genome one of the most compact of all known chordate genomes.
-		Operons are significantly enriched for genes involved in house-keeping functions, while genes involved in developmental processes are significantly under-represented in Operons.
-		Although a generalised change in cis regulatory modules seems a plausible hypothesis, cis regulation seems to take place. Highly Conserved Elements have been found through genomic alignments between Atlantic and Pacific \textit{Oikopleura dioica}.
+		A reference sequence of \textit{Oikopleura dioica} genome was made available in 2010 \cite{Denoeud2010a}, revealing a surprisingly plastic architecture and the species fast evolution. In this planctonic animal, the chordate genome architecture seems to have been redesigned to obtain a minimal-sized genome: approximately 70 megabases. This is greatly due to the reduction of intron and intergenic space, although some gene loss was also detected.
 		
-		Nevertheless, several conserved genomic features can be found in the \textit{Oikopleura} genome.
-		Long introns are more likely to be old than are short ones.
-		Developmental genes show a double proportion of old introns compared to all annotated genes.
+		The dramatic reduction of intergenic space brings obvious constrains in terms of gene regulation, which is to some degree easily seen by the normal occurrence of genes in Operons (~28\% of the 18000 total), and makes the \textit{Oikopleura} genome one of the most compact of all known chordate genomes. Operons are significantly enriched for genes involved in house-keeping functions, while genes involved in developmental processes are significantly under-represented in Operons \cite{Denoeud2010a}.
+
+		Although the idea of generalised simplicity in regulatory mechanisms could be an hipotesis due to the high density of the genome, insights from two distinct populations of \textit{Oikopleura} seem to contradict this. Highly conserved elements in non-coding regions have been found through genomic alignments of Atlantic and Pacific \textit{Oikopleura dioica} \cite{Denoeud2010a}. Besides those, several other conserved genomic features can be found in the \textit{Oikopleura} genome. 	Long introns are more likely to be descendants of ancestrally conserverd introns than the shorter ones, and genes important for development show twice as much more ancestral introns when compared to all annotated genes. Nevertheless, major changes in the number and syntheny of cis regulatory modules (promoters and enhancers) compared with other Tunicates are likely to have occured due to major loss of gene syntheny and the fast evolutionary rate of \textit{Oikopleura}.
 		
 		\subsection{Histone variants and modifications of \textit{Oikopleura dioica}}
-		\cite{Moosmann2011}
-
-canonical core histones:
-	replication dependent (RD) genes
-	lack introns
-	organized in gene clusters
-	mRNAs possess a conserved stem-loop (SL) in the 3’UTR coupling gene expression to DNA replication
-
-histone variants:
-	are often transcribed from orphan genes
-	contain introns
-	lack the SL and their expression is not restricted to S-phase
-	they are referred to as replacement or replication-independent (RI) variants.
-
-H4 is highly constrained as it contacts with the other 3 core histones and its N-terminal tail residues are subject to extensive PTMs.
-					
-		\subsection{Cell cycle variants in \textit{Oikopleura dioica}}
-		\label{subsection:CellCycleVariants}
-		O. dioica displays an unique system of cell cycle regulation that is poorly understood, because previous research on cell cycle have focussed on a single nuclei within its own cytoplasm, while in this model we can study cell cycle regulation of multiple nuclei, both meiotic and endocycling, sharing a common cytoplasm, as seen in the coenocyst. Cell cycle in O. dioica is also unique in its way of development because most cells switch from rapid mitotic division to endoreduplication around the event of tail shift. O. dioica is also an important organism when viewed at the light of evolution, because it is the closest evolutionary relative to the vertebrates, and is therefore an important model organism in the field biology. In addition to presenting a unique environment for cell cycle studies and its evolutionary importance, it has many other abilities that make it an excellent model organism. O. dioica is successfully maintained in culture and have a short life cycle of 6 days at 15°C (Bouquet, 2009), and is therefore an excellent model organism for developmental studies. It is also transparent which makes it easy to observe internal organs when used for in situ experiments. Another advantage of using O. dioica as a model organism is the fact that the genome of O. dioica has been fully sequenced, which makes genetic studies easier by far.
+		In \textit{Oikopleura dioica}, the diversity of histone variants and their use through development has been profiled with a mass spectrometry approach \cite{Moosmann2011}. \textit{Oikopleura} possesses a histone complement of 31 histone variants which can be grouped in distinct sets of developmental expression profiles throughout its life cycle. Most common histone variants are present, although remarkable absences can be seen in the macroH2A and H2AX histone variants. A significant expansion of the histone complement exists in \textit{Oikopleura}, which is even further diversified by the existance of alternative splicing on some variants. Additionally, a remarkable set of 15 male-specific histone variants was discovered \cite{Moosmann2011}.
 		
+		Histone modifications also occur extensively in \textit{Oikopleura} \cite{Moosmann2011}.	Mass spectrometry identified 40 different post-translational modifications (PTMs) in structurally distinct locations. Histone modifications involved in transcription and marking of cis-regulatory elements such as mono-, di- and tri-methylation of lysine 4 in histone 3 (H3K4me1/2/3), acetylated lysine 27 on histone 3 (H3K27ac), are present. 
+		Repressive marks with different modes of action were also found such as the constitutive heterochromatin marker trimethylation of lysine 9 of histone H3 (H3K9me3) and the mark layed by the Polycomb-Repressor Group (PRG) of proteins trimethylation of lysine 27 on histone H3 (H3K27me3). Histone marks related with the control of replication such as all methylation states of lysine 20 in histone H4 (H4K20me), monoubiquitinilation of lysine 123 in histone H2B (H2BK123ub1) and methylation of lysine 79 in histone H3 (H3K79me) , the later two of particular interest in this work.
+		
+		Regarding the function of histone modifications in the cell cycle, conservation of the function of phosphorilation of serine 10 and 31 in histone 3 (H3S10p and H3S31p) was detected \cite{Schulmeister2007} and \cite{Ganot2008}. These modifications are a marker for the mitotic phase of cell cycle, present in the diplotene/diakinesis where they have been shown to contribute to normal chromosome segregation and transmission during mitosis and meiosis. H3S10p is also a mediator of gene silencing at different stages of the cell cycle. Phosphorylation of serine 28 of H3 (H3S28p) also occurs during mitosis where it is seen as a licensing factor and indicating the state of readiness of chromosomes to undergo separation after metaphase rather than as a driving force in chromosome condensation.
+					
+		\subsection{The cell cycle modes of \textit{Oikopleura dioica}}
+		\label{subsection:CellCycleVariants}
+		\textit{Oikopleura dioica} employs an unique combination of different modes of cell cycle through its life cycle (see section \ref{subsection:lifeCycle}). This is unique because most cells switch from rapid mitotic division to endocycles around the event of tail shift. Nevertheless, not much is known about the regulation of the alternative cell cycle modes of endocycling in the somatic and gonadal tissues and even less on how can cells change from one to other.
+		
+		In a study of the diversity of \textit{Oikopleura}'s Cyclin and Cyclin-dependent kinases (CDK) \cite{Campsteijn2012}, it was shown that the complement of cyclins involved in transcriptional regulation is similar to other high invertebrates, whereas the complement used for cell cycle regulation has significant amplifications, specially in the cyclin D, B and CDK1 families. Remarkably, some families are extended not only by gene duplication by by the existence of alternative splice forms, such as in the Cyclin Db. Many of the Cyclin and CDK proteins are expressed exclusively and distinctively during the later stages of development that follow sex differentiation and gonad maturation, showing an important link between complex biological features and gene regulation.
+		
+		Amplification of the CDK1 family to five paralogs of this mitotic CDK is somewhat unexpected due to the necessity of suppression of CDK1 activity by the activation of APC/C (Cdh1/Fzr) in \textit{Drosophila} and mammalian endocycles. Due to the extensive use of endocycles, amplification of the families of CDK regulating the G1/S phases (CDK 2 or 6) would have been more anticipated. Also very suspicious is the expansion of the Cyclin D family, leading to the hipotesis that regulation through CyclinD-CDK1 complexes specially during the late developmental stages could provide the regulatory refinement needed to control such a complex system as the female coenocyst.
+		
+		Nevertheless, the \textit{Oikopleura} somatic endocycle resembled features known to be present in endocycles in other systems such as the downregulation of cyclins B and A as in the \textit{Drosophila} and vertebrate mammalian throphoblast giant cells endocycles.
+		
+		Regarding other key cell cycle regulators, \textit{Oikopleura} possesses a fairly conserved set of proteins involved in regulation of cell cycle both upstream and downstream of the Cyclin-CDK effectors. Of particular notice, the E2F family of transcription factors is reduced when compared with vertebrates or other invertebrates such as \textit{Drosophila}. In \textit{Oikopleura} there is only a canonical activator (E2F1) and a atypical repressor (E2F7) (see more about the E2F family of transcription factors in section \ref{paragraph:E2Fs}).
 		
 		\subsection{Growth arrest}
+		\cite{Subramaniam2014}
 	
 	
 	\section{Project Goals}
