@@ -19,7 +19,7 @@
 \usepackage{amsmath}
 \usepackage{amssymb}
 \usepackage{xspace}% used by \sigla
-\usepackage{cite}
+\usepackage[sort]{cite}
 \usepackage[titletoc]{appendix}
 \usepackage{emptypage} % to remove numbering from empty pages
 \usepackage{multirow} % for merging cells in tables
@@ -231,9 +231,12 @@
 			\item[CDK] Cyclin-dependent Kinase
 			\item[CDS] Coding sequence of genes
 			\item[ChIP] Chromatin immunoprecipitation
+			\item[ChIP-chip] Chromatin immunoprecipitation followed by DNA microarray hybridization 
 			\item[ChIP-ER] ChIP-enriched region
-			\item[ChIP-seq] Chromatin immunoprecipitation followed by high-throughput sequencing
+			\item[ChIP-seq] Chromatin immunoprecipitation followed by high-throughput DNA sequencing
 			\item[DNA] Deoxyribonucleic acid
+			\item[GSCs] Germline stem cells
+			\item[GA] Growth arrest
 			\item[kD] Kilo Dalton
 			\item[$\mu$L, mL, L] Microlitre, Mililitre and Litre, respectively
 			\item[O/N] Over night
@@ -264,10 +267,25 @@
 		
 		\begin{figure}[here]
 			\centering
-			\includegraphics[width=0.6 \textwidth]{pngs/simple_cell_cycle.png}
-			\caption{The eukaryotic canonical endoreduplicative cell cycles. {\footnotesize Adapted from \cite{Frisch2002}}}
+			\begin{subfigure}{.33\textwidth}
+				\centering
+				\includegraphics[width=0.95\linewidth]{pngs/cell_cycle.png}
+				\caption{Canonical.}
+			\end{subfigure}%
+			\begin{subfigure}{.33\textwidth}
+				\centering
+				\includegraphics[width=0.95\linewidth]{pngs/cell_cycle_abortive.png}
+				\caption{Abortive mitotic phase.}
+			\end{subfigure}%
+			\begin{subfigure}{.33\textwidth}
+				\centering
+				\includegraphics[width=0.95\linewidth]{pngs/endocycle.png}
+				\caption{Endoreplicative and Endocycle.}
+			\end{subfigure}%
+			\caption{Variants of cell cycles employed by eukaryotic organisms.}
 			\label{fig:simple_cell_cycle}
 		\end{figure}
+		
 		
 		Most remarkably, the core protein machinery that drives and regulates the canonical mitotic cell cycle performs as well in endocycles.
 		%Key signalling factors during development seems to exploit conserved cell cycle pathways to guide a cell into performing endocycling. 
@@ -280,10 +298,18 @@
 			Numerous protein classes interact during regulation of the canonical cell cycle, being the complexes formed by Cyclins and Cyclin-dependent kinases (CDK) very prominent. Different CDK-Cyclin complexes are activated throughout the cell cycle, and their specific temporal regulation allows modulation of the activity of specific downstream effectors of cycle progression. While CDKs remain relatively constant through the cycle, the level of the Cyclin subunit is regulated thus restricting the complexes' temporal activity. 
 			
 				\subsubsection{Regulation of cell cycle progression by Cyclin-CDK complexes}
-				In general, the overall activity of CDK-Cyclin complexes increases from G1 to M, being several thresholds of their activity used by the cell to identify the phase it is in.
+				In general, the overall activity of CDK-Cyclin complexes increases from G1 to M, being several thresholds of their activity used by the cell to identify the phase it is in. An overview of the major CDK-Cyclin complexes during the phases of the cell cycle can be seen in Figure \ref{fig:cellcycle_complex}.
+				
 								
 				% some CDKs are mitotic, some are...
 				The G1 phase is the one with lowest CDK-Cyclin activity. This allows the cell to start replication with the assembly of the replication-specific proteins into a pre-replication complex in DNA sites that will become origins of replication. The assembly of pre-replication complexes during the G1 phase licenses replication and when CDK activity is detected above a threshold, the S phase begins with DNA replication. High CDK activity activates replication but also prevents replication licensing during other phases, for it requires low activity. A unique cell division per cycle is thus assured, for only when CDK activity is abolished at the end of mitosis can the genome be licensed for replication again.
+				
+				\begin{figure}[here]
+					\centering
+					\includegraphics[width=0.5\textwidth]{pngs/cell_cycle_complex.png}
+					\caption{Cyclin-CDK complexes during progression of cell cycle phases.}
+					\label{fig:cellcycle_complex}
+				\end{figure}
 								
 				In the G1 phase, the D cyclins are expressed in response to external cues such as growth factors. These associate with both CDK 4 and 6 and phosphorilate downstream targets which most importantly include the retinoblastoma protein (pRb). pRb natively binds to a complex formed by a member of the E2F family of transcriptions factors (TF) and DP (also a TF), inhibiting it. When phosphorilated, pRb releases the E2F-DP TF complex and this is free to bind DNA and activate the expression of downstream genes that are responsible for entry into the S phase (Figure \ref{fig:pRb-E2F}).
 				
@@ -382,6 +408,7 @@
 			\cite{Meserve2012}
 			\cite{Chen2012}
 
+	\clearpage
 	\section{Histone modifications in cell cycle regulation}
 	In the post-genomic era, characterizing the genetic repertoire of a model species is solely the first step to understanding of its Biology from a molecular point of view. Gene regulation is currently the limelight of studies in Biology and Biomedicine and the characterization of gene expression and the mechanisms of its regulation pre- and post-transcription and translation is the current forefront of research. An important contribution to gene regulation comes from epigenetics. Long-non coding RNAs (lncRNAs), histone variants, histone modifications and modification of DNA bases (prominently methylation) are four great classes of mechanisms by which gene expression is altered epigenetically. 
 		
@@ -436,6 +463,15 @@
 		
 		This temporal dependence of H3K79 methylation has additional implications: epigenetic inheritance of H3K79 methylation states is hindered by the fact that at least one of the daughter cells will not receive the same information as the parent cell. This is incompatible with the current model of histone modification as marks of epigenetic memory. However it shouldn't be excluded that not the information of single nucleossomes, but the global state of H3K79 methylation over larger chromatin domains might bare epigenetic function.
 		
+		Figure \ref{fig:dot1_k79}.
+		
+		\begin{figure}[here]
+			\centering
+			\includegraphics[width=0.9\linewidth]{pngs/dot1_k79.png}
+			\caption{Schematic of the dynamics of H3K79 methylation during a cell's cycle.}
+			\label{fig:dot1_k79}
+		\end{figure}
+		
 		In \textit{Trypanossoma} - a unicellular eukaryotic parasite with considerable divergence of key cell cycle regulators - the view of H3K79 methylation (H3K76 in \textit{Trypanossoma}) as a carrier of epigenetic information is also challenged by the depletion of H3K79 methylation on newly incorporated histones during S phase \cite{Gassen2012}.
 		
 		In this organism there are two Dot1 homologue proteins of Dot1 (Dot1A and Dot1B) and there seems to be some division of labour between the two regarding the different methylation states of H3K79. Although both enzymes can mono- and dimethylate H3K79, Dot1A seems incapable of trymetylating H3K79, whereas Dot1B does, but it is not clear if both enzymes have the same affinity for the two shared methylation forms and therefore contribute equally \cite{Gassen2012}. Only Dot1A is required for survival.
@@ -452,8 +488,7 @@
 		
 		These studies highlight the non-canonical use of a histone modification (H3K79 methylation) and show its importance in the regulation of replication, a major cellular event.
 
-	%%%%%%%%%%%%%%%%%	
-	
+	\clearpage
 	\section{\textit{Oikopleura dioica}, a marine chordate extensively employing endocycles}
 		\textit{Oikopleura dioica} is a marine  chordate organism belonging to the class Appendicularia, which is a member of the Tunicate subphylum along with the classes Thaliacea (salps) and Ascidiacea (sea squirts). Tunicates are the most closely extant group related to the vertebrates (see Figure \ref{fig:tree}) \cite{Delsuc2006}. \textit{Oikopleura} shares some biological traits with most tunicates (\textit{e.g.} filter feeding through a secreted house), but unlike them has some peculiarities which make it a very interesting model for the study of many biological features, such an accelerated development and life cycle, a miniature genome and an extensive use of endocycles through its life. \textit{Oikopleura dioica} owes its name to the fact that it is the only dioeicious appendicularian known, being most other species hermaphrodites.
 		
@@ -467,7 +502,7 @@
 			\begin{subfigure}{.5\textwidth}
 				\centering
 				\includegraphics[width=1\linewidth]{pngs/tree.png}
-				\caption{Phylogenetic tree of t.}
+				\caption{Phylogenetic tree including the position of \textit{Oikopleura dioica}.}
 			\end{subfigure}
 			\caption{Phylogenetic position of the Tunicate group and \textit{Oikopleura dioica}.
 				{\footnotesize
@@ -528,11 +563,22 @@
 		Regarding other key cell cycle regulators, \textit{Oikopleura} possesses a fairly conserved set of proteins involved in regulation of cell cycle both upstream and downstream of the Cyclin-CDK effectors. Of particular notice, the E2F family of transcription factors is reduced when compared with vertebrates or other invertebrates such as \textit{Drosophila}. In \textit{Oikopleura} there is only a canonical activator (E2F1) and a atypical repressor (E2F7) (see more about the E2F family of transcription factors in section \ref{paragraph:E2Fs}).
 		
 		\subsection{Growth arrest}
-		\cite{Subramaniam2014}
+		Developmental processes such as reproduction can be regulated by environmental conditions. In an array of organisms, the trigger for maturation of reproductive can be delayed or paused in unfavorable conditions. Two particular examples can be seen in the nematode \textit{Caenorhabditis elegans} and the fruitfly \textit{Drosophila melanogaster}, where the loss of germline stem cells (GSCs) has the consequence of extending the lifespan of the organism by evolutionarily conserved signaling pathways \cite{Kenyon2010}. The reverse situation has also been detected, when under nutritional deprivation, these models sacrifice a portion of GSCs that have already entered meiosis, maintaining only a small pool of active GSCs \cite{Subramaniam2014}.
+
+		In \textit{Oikopleura dioica}, nutritional stress caused by cultivation in high density has shown to induce a condition of growth arrest (GA) where somatic endocycling ceases 	and the lifespan of the animal is expanded at least three-fold. In contrast with the previously mentioned models, \textit{Oikopleura} only enters GA condition before the start of meiosis. If nutritional deprivation is encountered after, GA is not induced and maturation occcurs at the same time, but animals have a reduced offspring \cite{Subramaniam2014}.
+		
+		The GA condition therefore represents a state of suppression of proliferation in the somatic endocycles and could be exploited for experimental purposes in understanding endocycle regulation.
 	
-	
+	\clearpage
 	\section{Project Goals}
 		The general aim of this Master thesis was to study the regulation of the different \textit{Oikopleura} cell cycle modes and the transition between them. Although much is known about the canonical eukaryotic cell cycle and to some extent about endocycles, knowledge on the mechanism cells use to transition between different modes of cell cycles is still quite reduced.	 To broaden knowledge on this topic, this thesis studies specifically the role of the E2F transcription factors in these cycles by identifying putatively regulated genes during developmental stages with predominant use of either the canonical mitotic cycle or endocycling.
+		
+		\begin{figure}[here]
+			\centering
+			\includegraphics[width=0.7\textwidth]{pngs/change_cell-cycle.png}
+			\caption{Goal: to gain understanding of the mechanisms behind the change of cell cycle modes in \textit{Oikopleura}.}
+			\label{fig:goal_cycles}
+		\end{figure}
 		
 		To that end, ChIP-seq on the E2F1 and E2F7 transcription factors was performed in the Tailbud (mitotic), Day 2 (somatic endocycle), Day 6 female (gonadal endocycle) and Day 6 male (mitotic) developmental stages. ChIP-chip data on the last two stages had been previously acquired and it is here explored to highlight the differences on these two modes of cell cycle.
 		
@@ -817,6 +863,7 @@
 		
 	\section{Data analysis}
 		\subsection{Finding of ChIP-enriched regions}
+		\label{subsection:methods_find_ChIP-ER}
 		\subsection{Genomic characterization of ChIP-enriched regions}
 		\subsection{Transcription factor motif finding in ChIP-enriched regions}
 		\subsection{Characterization of the epigenetic landscape of ChIP-enriched regions}
@@ -824,7 +871,7 @@
 		\subsection{Detection of significant Gene Ontology terms}
 		\subsection{Detection of the expression levels of genes}
 
-\clearpage
+\cleardoublepage
 
 
 %=========================================================================%
@@ -832,10 +879,12 @@
 %=========================================================================%
 
 \section{E2F factors in \textit{Oikopleura}'s late developmental stages}
-
-	E2F expression in Figure \ref{fig:E2F_expression}
+	\textit{Oikopleura dioica} employs endocycles extensively through its accelerated life cycle. Endocycles are the predominant mode of cell cycle in somatic tissues from the Tailshift developmental stage on, and from the Day 3 of development endocycles are again employed extensively during gonad growth and maturation. During the last Day of the life cycle, the final maturation of the gonad occurs. In female animals, the gonad consists of a coenocyst containing thousands of nuclei of different nature - meiotic nuclei, which arose from germ stem cells and will give rise to progeny, and nurse nuclei which sustain the meiotic. During the development of the male gonad, endocycles are employed extensively for proliferation and growth and gametogenesis starts at a later point than in females. The meiotic differentiation resembles more closely the canonical eukaryotic cell cycle than endocycling. We want to discover the regulatory mechanisms behind the use of each type of cell cycle in \textit{Oikopleura} and in the transition between them.
+	
+	E2F transcription factors (TFs) are known to play a major role as key cell cycle progression effectors particularly in the transition from the G1 and G2 phases to S and M phases respectively. Both E2F TFs are ubiquitously expressed throughout the development of \textit{Oikopleura} regardless of the cell cycle mode predominantly employed (see Figure \ref{fig:E2F_expression}), pointing to a possible function of the TFs in all types of cell cycle. Two exceptions to the ubiquitous pattern of E2F expression is in male gonads during Day 6 of development, where E2F7 is very lowly expressed. The trunk of Day 6 animals has very low expression of both TFs as well and is known to have many key regulators downregulated due to lack of proliferation of somatic tissues.
 	
 	\begin{figure}[here]
+		\setlength{\belowcaptionskip}{5pt}
 		\centering
 		\includegraphics[width=0.9\textwidth]{pngs/E2F_expression_+allgenes.png}
 		\caption{Expression of E2F factors during \textit{Oikopleura dioica}'s development.
@@ -849,75 +898,113 @@
 		}
 		\label{fig:E2F_expression}
 	\end{figure}
+	
+	Despite the ubiquitous expression pattern of E2F TFs, differential binding and regulation of alternative genes can occur throughout development, leading to different biological outcomes. To investigate if E2F factors contribute to the use of different cell cycle modes through differential binding targets, we analyse ChIP-chip experiments of E2F1 and E2F7 TFs in dissected gonads of animals in Day 6 developmental stage of separate sexes.
 
 	\subsection{Detection of E2F binding through ChIP-chip}
-	
 		\subsubsection{Validation of E2F antibodies}
-	
-		Oikopleura's genome is compact, with reduced intergenic and intronic space, and enlarged proportion of coding sequence (Figure \ref{fig:genome_background}).
-	
-		\begin{figure}[here]
-			\centering
-			\includegraphics[height=0.5\textwidth]{pngs/species_genome.png}
-			\caption{Comparison of the relative distribution of genomic locations in \textit{Oikopleura dioica} and other animal models. {\footnotesize From left to right: \textit{Nematostella vectensis}, \textit{Drosophila melanogaster}, \textit{Oikopleura dioica}, \textit{Homo sapiens}} }
-			\label{fig:genome_background}
-		\end{figure}
-		
-		E2F ChIP-ER locate near genes transcription start sites (TSS) (Figure \ref{fig:distance_to_TSS}).
+		Antibodies used for immunoprecipitation of E2F TFs were validated by Western Blot (Figure \ref{fig:E2F_westerns}) and immunohistochemistry as previously published by Subramaniam \textit{et. al} \cite{Subramaniam2014} and found to detect the proteins in a specific manner.
 		
 		\begin{figure}[here]
 			\setlength{\belowcaptionskip}{5pt}
 			\centering
+			\includegraphics[width=0.4\textwidth]{pngs/E2Fs_western.png}
+			\caption{Detection of E2F proteins in two developmental stages of\textit{Oikopleura dioica}.
+				{\footnotesize 
+					Molecular weight in kDa.
+				}
+			}
+			\label{fig:E2F_westerns}
+		\end{figure}
+	
+		\subsubsection{Genomic context of E2F binding sites}
+		When conducting genome-wide analysis of features of interest (\textit{e.g.} TF binding sites, cis-regulatory elements), the distribution of genetic and regulatory elements that make the background features of the genome under analysis mirror its architecture and can influence the statistical significance of the distribution of features of interest when compared with the background.
+		
+		\textit{Oikopleura dioica} possesses the most compact genome known yet for a chordate organism \cite{Denoeud2010}, with reduced intergenic and intronic space, and enlarged proportion of coding sequence when compared with other model systems, both invertebrates and vertebrates (Figure \ref{fig:genome_background}).
+	
+		\begin{figure}[here]
+			\setlength{\belowcaptionskip}{5pt}
+			\centering
+			\includegraphics[height=0.3\textwidth]{pngs/species_genome.png}
+			\caption{Comparison of the relative distribution of genomic features in \textit{Oikopleura dioica} and other animal models.
+			{\footnotesize
+				From left to right:
+					\textit{Nematostella vectensis},
+					\textit{Drosophila melanogaster},
+					\textit{Oikopleura dioica},
+					\textit{Homo sapiens}
+				}
+			}
+			\label{fig:genome_background}
+		\end{figure}
+		
+		The knowledge of the background of features in the genome of \textit{Oikopleura} will be useful when analysing the genomic context of E2F TF binding sites obtained by ChIP-chip. After preprocessing ChIP-chip data, putative binding sites of E2F TFs were obtained by selecting statistically significant ChIP-enriched regions (ChIP-ER) (see section \ref{subsection:methods_find_ChIP-ER} on methodology).
+		
+		Transcription factors are known to regulate gene expression by binding cis-regulatory elements (CREs) (\textit{e.g. promoters, enhancers}). Although CREs locate primarily in promoters and distal or intronic enhancer elements CITE, virtually every type of genomic feature can serve as a TF binding site. In \textit{Oikopleura}, E2F ChIP-ER were found to locate in close proximity to gene transcription start sites (TSS), regardless of the function of the TF (activator or repressor) and the developmental stage profiled (Figure \ref{fig:genomic context}a/b). 
+				
+		\begin{figure}
+			\setlength{\belowcaptionskip}{5pt}
+			\centering
 			\begin{subfigure}[b]{1\textwidth}
 				\includegraphics[width=1\linewidth]{pngs/E2F_distanceTSS_abs.png}
-				\caption{Absolute distance.}
+				\caption{Absolute distance of E2F ChIP-ER to the nearest gene TSS.}
 			\end{subfigure}
 			\begin{subfigure}[b]{1\textwidth}
 				\includegraphics[width=1\linewidth]{pngs/E2F_distanceTSS_rel.png}
-				\caption{Distance relative to the transcription start site.}
+				\caption{Distance of E2F ChIP-ER relative to the nearest gene TSS.}
 			\end{subfigure}
-			\caption{Distance of E2F ChIP-ER to the nearest gene transcription start site.}\label{dummy}
-			\label{fig:distance_to_TSS}
+			\begin{subfigure}[b]{1\textwidth}			
+				\centering
+				\includegraphics[width=0.9\textwidth]{pngs/E2F_genomicLocation.png}
+				\caption{Location of E2F ChIP-ERs in the genome.}
+				\label{fig:genomic_location}
+			\end{subfigure}
+			\caption{Genomic context of \textit{Oikopleura} E2F ChIP-enriched regions.
+				{\footnotesize
+					Shuffled data has same number and widths as ChIP-ERs.
+				}
+			}
+			\label{fig:genomic context}
 		\end{figure}
 		
-		E2F ChIP-ER are constrained by the genomic architecture and their genomic distribution resembles the background of the genome (Figure \ref{fig:genomic_location}).
-		  		
-		\begin{figure}[here]
-			\centering
-			\includegraphics[width=0.9\textwidth]{pngs/E2F_genomicLocation.png}
-			\caption{Location of E2F ChIP-ERs and shuffled regions of same number and width in the genome of \textit{Oikopleura dioica}.}
-			\label{fig:genomic_location}
-		\end{figure}
+		When comparing the distribution of observed distances with randomly positioned data of same size and widths, no statistically significant differences were found. Furthermore in both observed and randomized data the median distance to the nearest TSS coincided with it, revealing the structural constraints imposed by the compact genome. Nevertheless, the width of the distributions of observed data were smaller than the randomized, showing some propensity for the observed data to cluster around gene TSSs.
 		
-		E2F motifs found (Figure \ref{fig:E2F_motifs}).
+		Regarding the type of genomic features which E2F putatively bind, a considerable portion of ChIP-ERs overlaps regions of coding sequence(CDS) (Figure \ref{fig:genomic context}c) - this was unexpected, due to the general sequence constrains (\textit{e.g.} in terms of codon usage) of CDS and due to the preferential location of TF binding sites in non-coding regions. The portion of ChIP-ERs overlaping CDS was in some cases higher than expected by chance. This could be explained  by the combination of close proximity of ChIP-ERs to gene TSS and the wideness of ChIP-ER provided by the microarray technology, making overlaps between ChIP-ERs and CDS more likely.
+		Overall, the distribution of ChIP-ERs in the \textit{Oikopleura} genome for both TFs in both stages analysed (Figure \ref{fig:genomic context}c) resembles what is expected by chance, and once again represents the constrains imposed by the genomic architecture.
 		
-		\begin{figure}[here]
-			\centering
-			\includegraphics[width=0.5\textwidth]{pngs/E2F_motifs.png}
-			\caption{Significant motifs found in E2F ChIP-ER that align with the known vertebrate E2F motif.}
-			\label{fig:E2F_motifs}
-		\end{figure}
 		
+		
+		Balance between epigenetic context and TF sequence recognition		
+		
+		
+		
+		
+		E2F motifs found (Figure \ref{fig:E2F_influence}a).
+				
 		E2F ChIP-ER didn't show any particular correlations with the epigenetic landscape (Fig \ref{fig:E2F_Chromatin states}.
 		
 		\begin{figure}
 			\setlength{\belowcaptionskip}{5pt}
 			\centering
-			\begin{subfigure}[b]{1\textwidth}
-				\centering
-				\includegraphics[width=1\linewidth]{pngs/E2F_chromatinAnnotation.png}
-				\caption{Frequency of location of ChIP-ERs in the chromatin state annotation.}
+			\begin{subfigure}[b]{0.5\textwidth}
+				\includegraphics[width=0.8\textwidth]{pngs/E2F_motifs.png}
+				\caption{Significant motifs found in E2F ChIP-ER that align with the known vertebrate E2F motif.}
 			\end{subfigure}
 			\begin{subfigure}[b]{1\textwidth}
 				\centering
 				\includegraphics[width=0.5\linewidth]{pngs/ChromHMM_emissions_15.png}
-				\caption{Composition of chromatin states based on histone modifications in \textit{Oikopleura dioica}.}
-			\end{subfigure}
-			\caption{Location of ChIP-enriched regions (ChIP-ER) regarding the local chromatin environment.
-				{\footnotesize
+				\caption{
+					Composition of chromatin states based on histone modifications in \textit{Oikopleura dioica}.
+					{\footnotesize 	Unpublished data kindly provided by P. Navratilova, G. Danks and E. Thompson.}
 				}
-			}
-			\label{fig:E2F_Chromatin_states}
+			\end{subfigure}
+			\begin{subfigure}[b]{1\textwidth}
+				\centering
+				\includegraphics[width=1\linewidth]{pngs/E2F_chromatinAnnotation.png}
+				\caption{Location of ChIP-ERs in the chromatin state annotation.}
+			\end{subfigure}
+			\caption{Influence of sequence specificity and local chromatin environment in E2F TF binding.}
+			\label{fig:E2F_influence}
 		\end{figure}
 		
 		
@@ -999,7 +1086,7 @@
 		
 		Key cell cycle regulators putatively regulated by E2F factors (see full list in appendix \ref{list_key_cell_cycle_regulators}).
 
-
+\clearpage
 \section{Dot1 and H3K79 methylation in \textit{Oikopleura dioica}'s cell cycle modes}
 	
 	Expression of Dot1 and Bre1 during \textit{Oikopleura dioica}'s development (Figure \ref{fig:Dot1_Bre1_expression}a).
@@ -1253,7 +1340,7 @@ Regulation at both transcriptional and epigenetic levels is required and probabl
 %
 %=========================================================================%
 \bibliographystyle{plain}
-\bibliography{/data/Documents/Mendeley/library.bib}
+\bibliography{/data/Documents/library.bib}
 
 
 \cleardoublepage
