@@ -881,7 +881,7 @@
 \section{E2F factors in \textit{Oikopleura}'s late developmental stages}
 	\textit{Oikopleura dioica} employs endocycles extensively through its accelerated life cycle. Endocycles are the predominant mode of cell cycle in somatic tissues from the Tailshift developmental stage on, and from the Day 3 of development endocycles are again employed extensively during gonad growth and maturation. During the last Day of the life cycle, the final maturation of the gonad occurs. In female animals, the gonad consists of a coenocyst containing thousands of nuclei of different nature - meiotic nuclei, which arose from germ stem cells and will give rise to progeny, and nurse nuclei which sustain the meiotic. During the development of the male gonad, endocycles are employed extensively for proliferation and growth and gametogenesis starts at a later point than in females. The meiotic differentiation resembles more closely the canonical eukaryotic cell cycle than endocycling. We want to discover the regulatory mechanisms behind the use of each type of cell cycle in \textit{Oikopleura} and in the transition between them.
 	
-	E2F transcription factors (TFs) are known to play a major role as key cell cycle progression effectors particularly in the transition from the G1 and G2 phases to S and M phases respectively. Both E2F TFs are ubiquitously expressed throughout the development of \textit{Oikopleura} regardless of the cell cycle mode predominantly employed (see Figure \ref{fig:E2F_expression}), pointing to a possible function of the TFs in all types of cell cycle. Two exceptions to the ubiquitous pattern of E2F expression is in male gonads during Day 6 of development, where E2F7 is very lowly expressed. The trunk of Day 6 animals has very low expression of both TFs as well and is known to have many key regulators downregulated due to lack of proliferation of somatic tissues.
+	E2F transcription factors (TFs) are known to play a major role as key cell cycle progression effectors particularly in the transition from the G1 and G2 phases to S and M phases respectively. Both E2F TFs are ubiquitously expressed throughout the development of \textit{Oikopleura} regardless of the cell cycle mode predominantly employed (see Figure \ref{fig:E2F_expression}), pointing to a possible function of the TFs in all types of cell cycle. An exception to the ubiquitous pattern of E2F expression is in male gonads during Day 6 of development, where E2F7 is very lowly expressed. The trunk of Day 6 animals has very low expression of both TFs as well and is known to have many key regulators downregulated due to lack of proliferation of somatic tissues.
 	
 	\begin{figure}[here]
 		\setlength{\belowcaptionskip}{5pt}
@@ -940,16 +940,18 @@
 		
 		The knowledge of the background of features in the genome of \textit{Oikopleura} will be useful when analysing the genomic context of E2F TF binding sites obtained by ChIP-chip. After preprocessing ChIP-chip data, putative binding sites of E2F TFs were obtained by selecting statistically significant ChIP-enriched regions (ChIP-ER) (see section \ref{subsection:methods_find_ChIP-ER} on methodology).
 		
-		Transcription factors are known to regulate gene expression by binding cis-regulatory elements (CREs) (\textit{e.g. promoters, enhancers}). Although CREs locate primarily in promoters and distal or intronic enhancer elements CITE, virtually every type of genomic feature can serve as a TF binding site. In \textit{Oikopleura}, E2F ChIP-ER were found to locate in close proximity to gene transcription start sites (TSS), regardless of the function of the TF (activator or repressor) and the developmental stage profiled (Figure \ref{fig:genomic context}a/b). 
+		Transcription factors are known to regulate gene expression by binding cis-regulatory elements (CREs) (\textit{e.g.} promoters, enhancers). Although CREs locate primarily in promoters and distal or intronic enhancer elements CITE, virtually every type of genomic feature can serve as a TF binding site. In \textit{Oikopleura}, E2F ChIP-ER were found to locate in close proximity to gene transcription start sites (TSS), regardless of the function of the TF (activator or repressor) and the developmental stage profiled (Figure \ref{fig:genomic context}a/b). 
 				
 		\begin{figure}
 			\setlength{\belowcaptionskip}{5pt}
 			\centering
 			\begin{subfigure}[b]{1\textwidth}
+				\centering
 				\includegraphics[width=1\linewidth]{pngs/E2F_distanceTSS_abs.png}
 				\caption{Absolute distance of E2F ChIP-ER to the nearest gene TSS.}
 			\end{subfigure}
 			\begin{subfigure}[b]{1\textwidth}
+				\centering
 				\includegraphics[width=1\linewidth]{pngs/E2F_distanceTSS_rel.png}
 				\caption{Distance of E2F ChIP-ER relative to the nearest gene TSS.}
 			\end{subfigure}
@@ -970,24 +972,26 @@
 		When comparing the distribution of observed distances with randomly positioned data of same size and widths, no statistically significant differences were found. Furthermore in both observed and randomized data the median distance to the nearest TSS coincided with it, revealing the structural constraints imposed by the compact genome. Nevertheless, the width of the distributions of observed data were smaller than the randomized, showing some propensity for the observed data to cluster around gene TSSs.
 		
 		Regarding the type of genomic features which E2F putatively bind, a considerable portion of ChIP-ERs overlaps regions of coding sequence(CDS) (Figure \ref{fig:genomic context}c) - this was unexpected, due to the general sequence constrains (\textit{e.g.} in terms of codon usage) of CDS and due to the preferential location of TF binding sites in non-coding regions. The portion of ChIP-ERs overlaping CDS was in some cases higher than expected by chance. This could be explained  by the combination of close proximity of ChIP-ERs to gene TSS and the wideness of ChIP-ER provided by the microarray technology, making overlaps between ChIP-ERs and CDS more likely.
+		
 		Overall, the distribution of ChIP-ERs in the \textit{Oikopleura} genome for both TFs in both stages analysed (Figure \ref{fig:genomic context}c) resembles what is expected by chance, and once again represents the constrains imposed by the genomic architecture.
+
+		\subsubsection{Insights into the mechanism of E2F binding}
 		
+		Transcription factors are by definition sequence-specific DNA-binding proteins, but TF binding has also been shown to be constrained by the local epigenetic state of chromatin. Current findings have shown that the existence of a balance between local epigenetic context and TF sequence recognition is a likely underlying the mechanism of TF binding at least for TFs important for development and differentiation.
 		
+		In E2F ChIP-ERs we found significantly overrepresented motifs that aligned significantly to the known E2F TF binding motif from vertebrate models (Figure \ref{fig:E2F_influence}a). The motifs found in \textit{Oikopleura} are shorter in length than the vertebrate. This could be due to the evolutionary distance to vertebrates and the rapid rate of evolution of \textit{Oikopleura}, and also by the fact that the vertebrate motif was acquired with a combination of techniques (\textit{e.g.} SELEX, ChIP) which allows higher resolution. Nevertheless, both E2F TFs of \textit{Oikopleura} seem to bind locations with sequence content conserved with vertebrates.
+		%OTHER MOTIFS
 		
-		Balance between epigenetic context and TF sequence recognition		
+		To explore the possibility that the local epigenetic environment conditions the binding of the E2F TFs, we investigated the distribution of E2F ChIP-ERs in relation to a genome-wide annotation of chromatin states based on histone modifications (P. Navratilova, G. Danks and E. Thompson, unpublished data). This annotation provides 15 discrete epigenetic states based on genome-wide profiles of 19 histone modification marks obtained by ChIP-chip (Figure \ref{fig:E2F_influence}b). 
 		
-		
-		
-		
-		E2F motifs found (Figure \ref{fig:E2F_influence}a).
-				
-		E2F ChIP-ER didn't show any particular correlations with the epigenetic landscape (Fig \ref{fig:E2F_Chromatin states}.
+		The pattern of distribution of chromatin states in ChIP-ERs is highly similar within the same developmental stage as opposed to the the expectation that TFs with the same regulatory function (activator, repressor) would be more similarly constrained and more similarly likely to transform the epigenetic environment. E2F ChIP-ERs didn't show any preference for a particular local epigenetic signature (Figure \ref{fig:E2F_influence}c). A possible explanation lies on the wideness of ChIP-ERs provided by the microarray technology in a very compact genome, for if a high proportion of ChIP-ERs overlap with many chromatin states, the overal resolution would drop, reflecting mostly the overall landscape of chromatin states and epigenetic regulation within a particular developmental stage. It is also possible that E2F factors are not particularly sensitive to or involved in remodeling the epigenetic lanscape by recruiting chromatin remodelers, such as known for TFs involved in core developmental functions and differentiation.
 		
 		\begin{figure}
 			\setlength{\belowcaptionskip}{5pt}
 			\centering
-			\begin{subfigure}[b]{0.5\textwidth}
-				\includegraphics[width=0.8\textwidth]{pngs/E2F_motifs.png}
+			\begin{subfigure}[b]{1\textwidth}
+				\centering
+				\includegraphics[width=0.45\textwidth]{pngs/E2F_motifs.png}
 				\caption{Significant motifs found in E2F ChIP-ER that align with the known vertebrate E2F motif.}
 			\end{subfigure}
 			\begin{subfigure}[b]{1\textwidth}
@@ -1007,23 +1011,27 @@
 			\label{fig:E2F_influence}
 		\end{figure}
 		
-		
-    	E2F ChIP-ER showed high spatial and temporal co-localization within and between developmental stages (Figure \ref{fig:E2F_colocalization}).
+		\subsubsection{Spatial and temporal co-localization of E2F factors}
+		E2F activator and repressor transcription factors are known to antagonize the effect of each other by regulating an overlapping set of genes in opposed ways CITE. To explore such relation in E2F TFs of \textit{Oikopleura}, we measured the degree of overlap between the two. Also in \textit{Oikopleura} ChIP-ERs of the activator (E2F1) and repressor (E2F7) showed high (45\% as maximum) spatial and temporal co-localization as seen by the overlap of ChIP-ERs within the same developmental stage (Figure \ref{fig:E2F_colocalization}a). From the ChIP-ERs of the two TFs that overlap within developmental stages, roughly half of them overlap between developmental stages (Figure \ref{fig:E2F_colocalization}b), showing that there is indeed a high degree of overlap between the genomic regions bound and likely the set of genes regulated.
     	
 		\begin{figure}[here]
 			\setlength{\belowcaptionskip}{5pt}
 			\centering
-			\begin{subfigure}[b]{0.75\textwidth}
-				\includegraphics[width=1\linewidth]{pngs/E2F_overlap.png}
+			\begin{subfigure}[b]{1\textwidth}
+				\centering
+				\includegraphics[width=0.75\linewidth]{pngs/E2F_overlap.png}
 				\caption{Portion of ChIP-ERs that are shared (overlap) between transcription factors within the same developmental stage.}
 			\end{subfigure}
-			\begin{subfigure}[b]{0.75\textwidth}
-				\includegraphics[width=1\linewidth]{pngs/E2F_overlap_overlaps.png}
+			\begin{subfigure}[b]{1\textwidth}
+				\centering
+				\includegraphics[width=0.75\linewidth]{pngs/E2F_overlap_overlaps.png}
 				\caption{Portion of shared (overlapping) ChIP-ERs between transcription factors that also overlap between developmental stages.}
 			\end{subfigure}
 			\caption{Portion of E2F ChIP-ERs shared (overlapping) within and between developmental stages.}
 			\label{fig:E2F_colocalization}
 		\end{figure}
+		
+		However, since ChIP experiments were performed on tissues with unsynchronised nuclei, the signal from the ChIP experiment most likely gives an overall picture of the binding of E2F TFs during this developmental stage by masking the possibly more subtle changes in E2F action during a cell cycle, rather than providing an accurate description of events inside an "ideal nucleus".
 		
 	\subsection{Putative E2F regulated genes}
 		
