@@ -599,7 +599,7 @@
 		A much less explored component of regulation of cell cycles is the influence histone modifications have. Methylation of lysine 79 on histone H3 (H3K79me) has been proposed to act as a timer for a cell's age due to the distributive mechanism of action of its histone methyltransferase - Dot1 - and the absence of a demethylase, which causes the accumulation of this histone mark along the cell's life	.
 		
 		Another major goal of the project was to gain insights on the regulation of the different cell cycle modes by performing functional studies on the Dot1 histone methyltransferase, and consequently on the function of H3K79me during different modes of cell cycle in \textit{Oikopleura dioica}. This was accomplished by the use of a chemical inhibitor of Dot1 in the Tailbud stage (mitotic) and the Day 5 (endocycle) and characterization of the phenotypic effects of inhibition from a developmental and cellular point of view.
-		
+
 \clearpage
 
 %=========================================================================%
@@ -638,7 +638,7 @@
 	               		Supplier & Chemical & Purpose\\
     		            \hline
     		            Thermo Scientific & 16\% Formaldehyde Ampoules, Methanol-free & ChIP\\
-    		            Tocris Bioscience & SGC0946 & H3K79me studies\\
+    		            Tocris Bioscience & SGC0946 & Dot1 inhibition\\
 	            	\end{tabular}
     		    \end{center}
 		    \end{table}
@@ -652,7 +652,7 @@
 	                	\textbf{Supplier} & \textbf{Consumable} &  \textbf{Purpose}\\
     		            \hline
     		            Sigma-Aldrich & BD Precisionglide syringe needles - gauge 27, L 1/2 inches & ChIP\\
-    		            Covaris & AFA microtubes & ChIP\\
+						Covaris & AFA microtubes & ChIP\\
 						Sigma-Aldrich & Siliconized microtubes 1.7 mL capacity & ChIP\\
         		        Invitrogen & Protein G magnetic beads & ChIP\\
         		        Life Technologies & Qubit dsDNA HS assay kit & ChIP\\
@@ -661,6 +661,8 @@
 						Bio-Rad & Precision Protein StrepTactin-HRP Conjugate & Western blot\\
         		        Bio-Rad & Clarity western ECL substrate & Western blot\\
         		        Molecular Probes & TO-PRO-3 Iodide stain & Immunostaining\\
+        		        Roche & In Situ Cell Death Detection Kit, Fluorescein & Tunel assay\\
+        		        Life Technologies & Click-iT EdU Alexa Fluor 488 Imaging Kit & EdU detection\\        		        
 	            	\end{tabular}
     		    \end{center}
 		    \end{table}
@@ -710,7 +712,7 @@
 					\item[Ponceau S stain] 2\% Ponceau S, 30\% trichloroacetic acid, 30\% sulfosalicylic acid
 				\end{description}
 			
-			\subsubsection{Immunostaining}
+			\subsubsection{Immunostaining, Tunel assay and Edu incorporation and detection}
 			     \begin{description}
 					\footnotesize
 					\item[Fixative] 4\% paraformaldehyde, 100 mM MOPS pH 7.5, 500 mM NaCl
@@ -720,18 +722,23 @@
 					\item[PBS-TEG] 0.02\% Tween-20, 1 mM EDTA, 100 mM glycine in PBS buffer
 					\item[Blocking solution] 3 \% acetylated bovine serum albumin (BSA) in PBS-TE buffer
 				\end{description}
+				
+			\subsubsection{Tunel assay}
+			     \begin{description}
+					\item[Permeabilization solution] 0.1\% Triton X–100 in 0.1\% sodium citrate, freshly prepared
+				\end{description}
 		    		    
 		    
 	\section{Animal culture and collection}
 		\subsection{Culture of \textit{O. dioica}}
-		The culture of \textit{Oikopleura} was performed at the SARS centre appendiculatian facility as previously described \cite{Bouquet2009}. Cultured animals are native from the coastal area outside Bergen and are frequently collected and added to the permanent culture. Animals are permanently cultured at the facility in 6L seawater beakers, with permanent stirring and daily water renewal as well as feeding twice daily with algae according to the developmental stage (see table \ref{table:ODculture}). The use of a fixed volume for culture implies the progressive dilution of animals until the third day of life, where density remains at 150 animals per 6L beaker.
+		The culture of \textit{Oikopleura} was performed at the SARS Centre appendiculatian facility as previously described \cite{Bouquet2009}. Cultured animals are native from the coastal area outside Bergen and are frequently collected and added to the permanent culture. Animals are permanently cultured at the facility in 6L seawater beakers, with permanent stirring and daily water renewal as well as feeding twice daily with algae according to the developmental stage (see table \ref{table:ODculture}). The use of a fixed volume for culture implies the progressive dilution of animals until the third day of life, where density remains at 150 animals per 6L beaker.
 		
 		\begin{table}
        		\caption{\bf{Feeding regime of \textit{Oikopleura} according to developmental stage}}
        			\begin{center}
             		\begin{tabular}{ c | c | >{\centering\arraybackslash}m{1.6cm}  | >{\centering\arraybackslash}m{2.1cm}  | >{\centering\arraybackslash}m{2.0cm} | >{\centering\arraybackslash}m{2.2cm} | >{\centering\arraybackslash}m{1.8cm} }
 		                \multicolumn{2}{c|}{} & \small{\textbf{\textit{Isochrysis sp.}}} & \small{\textbf{\textit{Chaetoceros calcitrans}}} & \small{\textbf{\textit{Rhinomonas reticulata}}} & \small{\textbf{\textit{Synecococcus sp.}}} & \small{\textbf{Crushed \textit{R. reticulata}}}\\
-        		        \multicolumn{2}{c}{\small{Development time}} & \multicolumn{3}{|c|}{(cells/mL)} & \multicolumn{2}{c}{(mL)} \\
+        		        \multicolumn{2}{c}{\small{Developmental stage/Time}} & \multicolumn{3}{|c|}{(cells/mL)} & \multicolumn{2}{c}{(mL)} \\
         		        												 \hline
         		        \multirow{2}{*}{1} 	& Morning & 2000 & 2000 & 0 & 5 & 5\\
         		        												& Evening & 1000 & 1000 & 0 & 3 & 5\\
@@ -754,6 +761,7 @@
 		
 		\subsection{Collection of \textit{O. dioica}}
 			\subsubsection{Tailbud stage}
+			\label{subsubsection:TailbudCollection}
 			To collect \textit{Oikopleura} in the Tailbud developmental stage, a controlled \textit{in vitro} fertilization was performed. Day six mature male animals were collected to a Petri dish with seawater and allowed to spawn. When all male animals had spawned, sperm quality was visually inspected on a light microscope for motility. Day six mature females were individually collected to glass salliers with seawater and allowed to spawn at 18ºC. When spawned, 60$\mu$L of sperm solution was added to the sallier and after 3-4 hours tailbud animals collected to a eppendorf microtube.
 			
 			\subsubsection{Day two stage}
@@ -767,13 +775,13 @@
 	
 	\section{ChIP-seq}
 		\subsection{Animal fixation}
-			Tailbud and day two animals were briefly spin at 5000 g for 10 seconds to be collected at the bottom of the microtube, while day six immature voluntarily sank in seconds time. Seawater was exchanged for 0,5 mL PBS and 0,5 ml of either 1 or 2\% Formaldehyde in PBS was added to have a final fixative concentration of 0.5 or 1\% respectively, and let rotating for a variable amount of time as shown in Table \ref{table:ODfixation}, depending of the developmental stage. %Use good quality, methanol-free formaldehyde (see materials) and always opened fresh.
+			Tailbud and day two animals were briefly spin at 5000 g for 10 seconds to be collected at the bottom of the microtube, while day six immature voluntarily sank in seconds time. Seawater was exchanged for 0,5 mL PBS and 0,5 ml of either 1 or 2\% Formaldehyde in PBS was added to have a final fixative concentration of 0.5 or 1\% respectively, and let rotating for a variable amount of time as shown in Table \ref{table:ODfixation}, depending of the developmental stage.
 			
-			Formaldehyde was quenched with Glycine solution to stop fixation and again let rotating for 5 min at 18ºC. 
+			Formaldehyde was quenched with glycine solution to stop fixation and again let rotating for 5 min at 18ºC. 
 			Again by either spinning at 5000 g for 30 seconds or allowing animals to freely sink, Formaldehyde was removed and animals washed with cold PBSplus three times on ice, after which all solution was removed and animal pellets frozen with liquid nitrogen and stored at -80ºC for future use.
     
     		 \begin{table}[!ht]
-	    	    \caption{\bf{Fixation conditions for each tested developmental stage of \textit{Oikopleura dioica}}}
+	    	    \caption{\bf{Fixation conditions for each tested developmental stage of \textit{Oikopleura}}}
         		\begin{center}
 		            \begin{tabular}{c|c|c|c}
                 		\textbf{Stage} & \textbf{Fixative concentration} & \textbf{Time (min)} & \textbf{Temperature (ºC)}\\
@@ -787,14 +795,14 @@
 		    \end{table}
     
     			\subsection{Cell lysis and chromatin sonication}
-			Frozen animals pellets were thawed on ice and pooled with the aid of cold Lysis buffer to a total volume multiple of 130$\mu$L but never less than 390$\mu$L depending on the total amount of animal material.		
-			Mechanical lysis was conducted with a 27-gauge XXXXXX needle and 2 mL syringe passing the whole volume no less than three times through the needle and incubated on ice 15 min.
+			Frozen animals pellets were thawed on ice and pooled with the aid of cold Lysis buffer to a total volume multiple of 130 $\mu$L but never less than 390$\mu$L depending on the total amount of animal material.		
+			Mechanical lysis was conducted with a 27-gauge needle and 2 mL syringe passing the whole volume no less than three times through the needle and incubated on ice 15 min.
 			
-			Sonication was performed on a S200 Covaris focused sonicator on a 4ºC water bath with 130$\mu$L AFA glass microtubes. The instrument settings used to sonicate the chromatin to a approximate gaussian distribution within 100-800 bp can be seen on Table \ref{table:CovarisSettings}. \\
+			Sonication was performed on a S200 Covaris focused sonicator on a 4ºC water bath with 130 $\mu$L AFA glass microtubes. The instrument settings used to sonicate the chromatin to a approximate gaussian distribution within 100-800 bp can be seen on Table \ref{table:CovarisSettings}. \\
 			Whole sonicated lysates were centrifuged for 10 min, at 21000 g at 4°C and the chromatin-enriched supernatant was collect to a siliconized microtube.
 			
 			\begin{table}[!ht]
-        		\caption{\bf{Settings used on the S200 Covaris sonicator for \textit{Oikopleura dioica} chromatin}}
+        		\caption{\bf{Settings used on the S200 Covaris sonicator for \textit{Oikopleura} chromatin}}
         		\begin{center}
 	        		\begin{tabular}{l|c}
 		           		\textbf{Setting} & \textbf{Value}\\
@@ -837,26 +845,26 @@
 		
 	\section{Western blot}
 			\subsection{Sample preparation}
-			Animals of the required stage were collected in microtubes and washed once with PBS. Laemmli buffer with fresh 2-mercaptoethanol was added to a final 1x concentration and samples were boiled at 99ºC for 10 minutes with mild agitation. After a 5 minute centrifugation at 16000 g , samples were snap frozen in liquid nitrogen and stored at -20ºC for later use.
+			Animals of the required stage were collected in microtubes and washed once with PBS. Laemmli buffer with fresh 2-mercaptoethanol was added to a final 1x concentration and samples were boiled at 99ºC for 10 minutes with mild agitation. After a 5 minute centrifugation at 16000 g, samples were snap frozen in liquid nitrogen and stored at -20ºC for later use.
 			
 			\subsection{SDS-PAGE}
-			SDS-polyacrylamide gel electrophoresis was performed using either precast or self-casted gels (see section \ref{subsection:consumables} or \ref{subsection:Westernbuffers} respectively). The total volume of samples, as well as 8$\mu$L of protein marker were loaded and gels were run for 20 minutes at 50 V and then approximately 90 minutes at 150 V in running buffer.
+			SDS-polyacrylamide gel electrophoresis was performed using either precasted or self-casted gels (see section \ref{subsection:consumables} or \ref{subsection:Westernbuffers} respectively). The total volume of samples, as well as 8$\mu$L of protein marker were loaded and gels were run for 20 minutes at 50 V and then approximately 90 minutes at 150 V in running buffer.
 			
 			\subsection{Protein transference}
-			Electrophoretically separed proteins were transfered to a nitrocelulose membrane using the a semi-dry transfer system with a program optimized for low molecular weight proteins (5 minutes transfer at XXXXX V).
+			Electrophoretically separated proteins were transferred to a nitrocelulose membrane using a semi-dry transfer system with a program optimized for proteins with mixed molecular weight (7 minutes transfer at constant 1.3 A).
 			
 			The nitrocellulose membrane was washed once in TBS buffer for 10 minutes, incubated in 1:10 Ponceau stain in TBS for 5 minutes and briefly rinsed with distilled water to allow visualization of protein, and an assessment of the transference efficiency. Ponceau stain was removed with two TBS-T washes.
 			\subsection{Blotting}
 			To reduce unspecific antibody binding, the membrane was blocked with 5\% fat-free milk or 3\% BSA in TBS-T for 60 minutes at R/T with mild horizontal shaking.
 			
-			The membrane was incubated with primary antibody dilluted 1:500 in 5\% fat-free milk O/N at 4ºC, and washed for 10 minutes at R/T with mild horizontally shaking, once with TBS, twice with TBS-T and again with TBS.
+			The membrane was incubated with primary antibody diluted 1:500-2000 in 5\% fat-free milk O/N at 4ºC, and washed for 10 minutes at R/T with mild horizontally shaking, once with TBS, twice with TBS-T and again with TBS.
 			
-			Secondary antibody incubation diluted 1:5000 in 5\% fat-free milk was added to the membrane and this incubated for one hour at R/T toghether with 1:5000 WesternC XXXXXXX -HSP . Following washed were as after primary antibody incubation: 10 minutes at R/T with mild horizontally shaking, once with TBS, twice with TBS-T and again with TBS.
+			Secondary antibody diluted 1:2000-5000 in 5\% fat-free milk was added to the membrane and incubated for one hour at R/T together with 1:5000 StrepTactin-HRP conjugate. Following washes were as after primary antibody incubation: 10 minutes at R/T with mild horizontally shaking, once with TBS, twice with TBS-T and again with TBS.
 			\subsection{Detection}
 			The membrane was washed once with PBS and incubated for 5 minutes in ECL substrate to allow detection of secondary antibody binding through chemiluminescence, being scanned with an exposure time between 3 and 30 seconds depending on signal strength.
 		
 	\section{Whole mount immunostaining}
-		Collected animals were fixed in 4\% paraformaldehyde at 4ºC overnight and washed once with PBS-TE and twice with PBS-TEG to quench remaining formaldehyde. Two TBS-TE washes followed, after which animals were inculated O/N in blocking solution.
+		Collected animals were fixed in 4\% paraformaldehyde at 4ºC O/N and washed once with PBS-TE and twice with PBS-TEG to quench remaining formaldehyde. Two TBS-TE washes followed, after which animals were inculated O/N in blocking solution.
 		
 		Primary antibodies were diluted 1:100 in blocking solution and added to the animals after the previous blocking solution was removed from the microtubes. An incubation of at least six days with the primary antibodies was performed at 4ºC
 		
@@ -866,19 +874,84 @@
 		
 		Animals were mounted in glass slides with Vectashield and imaged with confocal microscopy.
 	
-	\section{Dot1L inhibition}
+	\section{Dot1 inhibition}
+		SGC0946 or DMSO were diluted to 30 $\mu$M in sea water previously heated to 60ºC and left at 60ºC for 10 minutes, after which it was left to cool to R/T.
+		
+		Animals of the Tailbud developmental stage were obtained by \textit{in vitro} fertilization as described in section \ref{subsubsection:TailbudCollection}. After hatching, animals were pooled and transferred in equal number to a 6-well plate coated with agarose with previously prepared sea water with either SGC0946 or DMSO.
+		
+		Animals of D5 stage were transferred to a 50 mL Falcon tube filled sea water with SGC0946 or DMSO ddiluted as described previously. Falcon tubes were left rotaing slowly at R/T for 3,5 hours and animals were fed with 4000 cells/mL of \textit{Isochrysis sp.}, \textit{Chaetoceros calcitrans} and \textit{Rhinomonas reticulata}.
+	
 	\section{Tunel assay}
+		Collected animals were fixed in 4\% paraformaldehyde for 1 hour at RT and washed twice with PBS-TE.
+	
+		Permeabilization was performed by the addition of 500 $\mu$L of Permeabilisation solution and incubation for 10 min on ice.
+	
+		Tunel reaction was prepared as indicated by the manufacturer with the exception that higher volume was used. Reaction mixture was prepared by the addition of 50 $\mu$L of Enzyme solution to 450 $\mu$L of Label solution. At least 100 $\mu$L (250 $\mu$L recommended) of the Tunel reaction was added to the samples and these were incubated for 60 min at 37°C without light.
+	
+		Samples were washed five times with PBS-TE with the particularity that ToPRo3 was added to the third wash, diluted 1:1000, to stain DNA.
+	
+		Animals were mounted in glass slides with Vectashield and imaged with confocal microscopy.
+
 	\section{EdU incorporation and detection}
+		\subsection*{Edu incorporation}
+			Animals of required stage were incubated in either 10 $\mu$M EdU solution or DMSO in sea water for 1 hour.
+		\subsection*{Edu detection}
+			Animals were collected and fixed in 4\% paraformaldehyde at 4ºC O/N, washed once with PBS-TE and twice with PBS-TEG to quench remaining formaldehyde. Two TBS-TE washes followed, after which animals were washed three times in blocking solution.
+		
+			The Click-iT reaction cocktail was prepared according to the manufacturer for each sample (Table \ref{table:EdUmix}), and 500 $\mu$L were added to each sample, after which a 2,5 hour incubation time with mild shaking followed.
+
+			\begin{table}[!h]
+        		\caption{\bf{Reaction mix used in detection of EdU}}
+        		\begin{center}
+	        		\begin{tabular}{l|c}
+		           		\textbf{Reagent} & \textbf{Volume ($\mu$L)}\\
+	        		    \hline
+		        		10X Click-iT reaction buffer & 43\\
+						CuSO & 20\\
+						Alexa Fluor azide & 1.2\\
+						Reaction buffer additive & 50\\
+						MQ H$_{2}$O & 386\\
+	        		\end{tabular}
+    		    \end{center}
+	    	    \label{table:EdUmix}
+		    \end{table}
+
+			Samples were washed once with blocking solution and six times with PBS-TE, with the particularity that ToPRo3 was added to the fourth wash, diluted 1:1000, therefore allowing DNA staining.
+		
+			Animals were mounted in glass slides with Vectashield and imaged with confocal microscopy.
 		
 	\section{Data analysis}
+		\subsection{Data preprocessing}
+			ChIP-chip data was obtained by performing ChIP on E2F1 and E2F7 transcription factors and hybridized to a high density tiling array designed for the \textit{Oikopleura} genome previously used \cite{Danks2013}. This data was processed using the the R/Bioconductor package Ringo \cite{Toedling2007a}.
+		
+			Quality of raw microarray data was assessed by observing the spatial distribution of the intensities on the chips and autocorrelation.
+		
+			Raw probe intensities were normalized and fold changes of reporters' intensities were derived from the enriched sample divided by their intensities in the non-enriched input sample. The logarithm of these ratios is used as normalized probe intensity values.
+		
+			Smoothing over individual probe intensities was performed to reduce the bias from probe GC content, melting temperature and secondary structures.
+		
 		\subsection{Finding of ChIP-enriched regions}
 		\label{subsection:methods_find_ChIP-ER}
+			ChIP-enriched regions (ChIP-ERs) were derived from the smoothed intensities of reporters that exceed the 0.95 threshold in a region with at least three contiguous positions but where none of the probes is in a distance higher than N to the others.
+		
 		\subsection{Genomic characterization of ChIP-enriched regions}
+			ChIP-ER overlap with genomic features and distances to nearest transcription start site were calculated using the Bedtools \cite{Quinlan2010} \textit{closest} function with gene annotation information retrieved from \textit{Oikobase} \cite{Danks2013}.
+			
 		\subsection{Transcription factor motif finding in ChIP-enriched regions}
-		\subsection{Characterization of the epigenetic landscape of ChIP-enriched regions}
-		\subsection{ChIP-enriched regions and gene association}
-		\subsection{Detection of significant Gene Ontology terms}
-		\subsection{Detection of the expression levels of genes}
+			DNA sequence was retrieved from ChIP-ER and search of motifs was performed using MEME-ChIP \cite{Machanick2011} with default settings and the JASPAR core vertebrate database.
+		
+		\subsection{Local epigenetic landscape of ChIP-enriched regions}
+			Genome segmentation by chromatin states was derived from profiles of 19 histone modifications and gently provided by P. Navratilova, G. Danks and E. Thompson prior to publication. Annotation of ChIP-ERs with chromatin states was performed using a Bedtools \cite{Quinlan2010} intersection.
+			
+		\subsection{Assignment ChIP-enriched regions to genes}
+			Each ChIP-ER was assigned to its closest gene by use of the \textit{closest} function of Bedtools \cite{Quinlan2010}. ChIP-ERs lying in genome scaffolds without genes were discarded.			
+
+		\subsection{Testing of significant Gene Ontology terms}
+			A hypergeometric tests for overrepresentation of Gene Ontology terms was performed with a 0.001 p-value, and using the universe of all GO term annotation of \textit{Oikopleura} as background using the GOstats R/Bioconductor package \cite{Falcon2007}. The GO tree of significant terms was reduced by reducing redundant GO terms joining terms under the same parent. This was perfomed with REViGO \cite{Supek2011}.
+			
+		\subsection{Expression levels of genes}
+			Expression values of genes through development of \textit{Oikopleura} were retrieved from \textit{Oikobase} \cite{Danks2013}. Expression values were normalized by the mean expression of all genes within each stage and transformed with a logarithm of base 2. When two developmental stages were compared (ovary and testis tissue), a smoothed conditional mean was fit and quantiles of the distribution were calculated from expression values.
+		
 
 \cleardoublepage
 
@@ -1223,7 +1296,7 @@
 	
 	To gain knowledge of the function of H3K79me we used a potent and specific chemical inhibitor of Dot1, SGC0946 (from now on Dot1\textsuperscript{in}) \cite{Yu2012} on animals of the Tailbud stage. Treatment with 30 $\mu$M of Dot1\textsuperscript{in} for 3.5 hours was shown to be effective in inhibiting Dot1, as assessed by the reduced levels of H3K79me compared with control animals (treated with the solvent DMSO) (Figure \ref{fig:k79me}b). Depletion of H3K79me was most successful in higher methylation states probably due to the reduced activity of Dot1 on newly deposited histones during replication, since the lower methylation states are necessary for the addition of higher.
 	
-	Since the presence of H2BK123ub1 is known to increase the deposition of H3K79me by Dot1, we decided to explore the connection between H3K79me and H2BK123ub1, by assessing H2BK123ub1 levels in Tailbud animals treated with Dot1\textsuperscript{in}. Levels of H2BK123ub1 were higher in Dot1\textsuperscript{in}-treated animals when compared with control (treated with the solvent DMSO) (Figure \ref{fig:k79me}b). Although the inverse relationship (dependency of H3K79me on H2BK123ub1) had already been described, increase of H2BK123ub1 in response to decreased levels of Dot1 and H3K79me had not and was therefore surprising. A possible mechanistic explanation could be inspired by the fact that high levels of H3K79me3 were found on the locus of the Bre1 enzyme in testis of animals in D6 developmental stage (P. Navratilova, G. Danks and E. Thompson, unpublished data), a stage where Bre1 expression is notably low (Figure \ref{fig:Dot1_Bre1_expression}a). In this situation, increased H3K79me levels in the Bre1 locus could be responsible for its very low expression, which in turn would reduce the activity of Dot1 creating a negative feedback loop. If this mechanism would be present throughout \textit{Oikopleura}'s life cycle, in the present situation of Dot1 inhibition in the Tailbud stage, H3K79me levels are decreased and Bre1 expression would be enhanced, thus being responsible for the upregulation of the H2BK123ub1 mark in Dot1\textsuperscript{in}-treated animals.
+	Since the presence of H2BK123ub1 is known to increase the deposition of H3K79me by Dot1, we decided to explore the connection between H3K79me and H2BK123ub1, by assessing H2BK123ub1 levels in Tailbud animals treated with Dot1\textsuperscript{in}. Levels of H2BK123ub1 were higher in Dot1\textsuperscript{in}-treated animals when compared with control (treated with the solvent DMSO) (Figure \ref{fig:k79me}b). Although the inverse relationship (dependency of H3K79me on H2BK123ub1) had already been described, increase of H2BK123ub1 in response to decreased levels of Dot1 and H3K79me had not and was therefore surprising. 
 	
 	Tailbud animals treated with Dot1\textsuperscript{in} presented phenotypic effects that revealed developmental defects: the surface of the trunk was largely affected, with cells presenting a granulous appearance (Figure \ref{fig:Dot1in_TB}a), failure to maintain swimming activity and later death. To further characterize the phenotype, we assessed the state of cell proliferation by the use of the mitosis marker phosphorilation of serine 10 in histone H3 (H3S10p) and apoptosis by the Tunel assay. The Tunel assay in normal animals revealed cells marked for apoptosis along the tail of animals, starting from the posterior tip and progressing to anteriorly with developmental time (Figure \ref{fig:Dot1in_TB}b), indicating a possible use of apoptosis in regulation of morphogenic processes during this stage of development of \textit{Oikopleura}. Dot1\textsuperscript{in}-treated animals showed reduced levels of H3S10p, indicative of reduced cell proliferation (Figure \ref{fig:k79me}b) signs of apoptosis in the granulous cells of the trunk, specially at its surface (Figure \ref{fig:Dot1in_TB}c).
 	
@@ -1318,7 +1391,7 @@
 \section{E2F factors in \textit{Oikopleura}'s late developmental stages}
 Alternative cell cycle modes lacking a mitotic phase and creating poliploid cells have been shown to be more predominant than previously expected. Deregulation of progression through phases of cell cycle and ploidy are often at the core of disorders such as cancer. Current approaches to study such disorders often start from a state where deregulation is already well advanced and often irreversible. The marine chordate \textit{Oikopleura dioica} presents the opportunity to study a system naturally employing different cell cycle modes through its life cycle. The study of the mechanisms governing the change between cell cycle modes could contribute in providing a fresh take on disorders which present deregulation of cell cycle progression.
 
-We focused on the role of the two E2F transcription factors (E2F1 - activator;E2F7 - repressor) in \textit{Oikopleura}'s cell cycle modes. They are known to play a major role as key cell cycle progression as regulators of an extensive array of genes. By analysing the binding of E2F TFs and they're putatively regulated genes, one can identify differentially regulated targets in the different modes of cell cycle.
+In this work, we focused on the role of the two E2F transcription factors (E2F1 - activator; E2F7 - repressor) in \textit{Oikopleura}'s cell cycle modes. They are known to play a major role as key cell cycle progression as regulators of an extensive array of genes. By analysing the binding of E2F TFs and they're putatively regulated genes, one can identify differentially regulated targets in the different modes of cell cycle.
 
 We identified thousands binding sites for both E2F TFs in ovary and testis tissue of \textit{Oikopleura} animals of Day 6 developmental stage through ChIP-chip. The compact genome of \textit{Oikopleura}, with its reduced intergenic and intronic space, conditions heavily the available genomic space for E2F TFs binding. E2F TFs bind in close proximity to gene's TSSs and a unexpectedly high portion of the binding sites overlap with regions of coding sequence. This might be due to the combination of TSS proximity and wideness of detected ChIP-ERs provided by the microarray technology. Nevertheless, the hypothesis that in a major event of genome compaction as occurred in  \textit{Oikopleura} \cite{Denoeud2010}, distal cis-regulatory elements (\textit{e.g. }enhancers, insulators) might have been "forced" to use coding sequences as regulatory sequences due to the high rate of mutation in non-coding regions, cannot be discarded. This would imply heavy rewiring of the gene regulatory networks underlying gene expression and high sequence constraints for the codons being used as CREs as has been recently proposed by Stergachis and colleges \cite{Stergachis2013} with controversy. The binding of \textit{Oikopleura} E2F TFs seems more dependent on the sequence-specificity than on the local context of chromatin. Motifs aligning significantly to vertebrate E2F TFs motifs show that the sequence specificity of E2F TFs is largely conserved.
 
@@ -1336,59 +1409,34 @@ Overall, the relatively low resolution of the microarray technology, coupled wit
 
 \section{Dot1 and H3K79 methylation in \textit{Oikopleura dioica}'s cell cycle modes}
 
-Higher states of K79 methylation accumulate with cell age \cite{DeVos2011}. What are the implications of this in an chordate with a extremely short cell cycle and fast cell division as \textit{Oikopleura}?
+In this work we started by exploring the use of different H3K79me states in the life cycle of \textit{Oikopleura}. The overall levels of H3K79me are higher towards the end of \textit{Oikopleura}'s life cycle, when endocycles are employed. Furthermore, the ratio between H3K79me1 and H3K79me3 methylation states decreases in endocycles, indicating the predominance of the higher methylation form. This is coincident with the higher expression level of the Bre1 enzyme (the ubiquitin ligase responsible for H2BK123ub1) in developmental stages employing endocycles as opposed to mitotic cycles. Taken together, results show that during endocycles there is a more widespread use of H3K79me agreeing with the view that it accumulates with cell cycles and might act as a timer for a cell age proposed by De Vos and colleges \cite{DeVos2011}.
 
-Dot1 is more expressed when cultured densely, which might indicate that
-Interestingly, the stage with least Dot1 expression is the testis, where the H3.t H3 variant is more expressed and the K79 residue is not present.
+To gain more insights into the mechanism of H3K79me regulation we disrupted Dot1's function with a chemical inhibitor (Dot1\textsuperscript{in}). It was found that in mitotic cycles, treated animals gain developmental defects, present reduced proliferation overall, have cells marked for apoptosis and die. An interesting observation came from the increase of H3K123ub1 in Dot1\textsuperscript{in}-treated animals. H3K123ub1 was known to upstream of H3K79me but the opposite had never been reported. A possible mechanistic explanation could be inspired by high levels of H3K79me3 found in the locus of the Bre1 enzyme in testis of animals in D6 developmental stage (P. Navratilova, G. Danks and E. Thompson, unpublished data), a stage where Bre1 expression is notably low (Figure \ref{fig:Dot1_Bre1_expression}a). In this situation, increased H3K79me levels in the Bre1 locus could be responsible for its very low expression, which in turn would reduce the activity of Dot1 creating a negative feedback loop. If this mechanism would be present throughout \textit{Oikopleura}'s life cycle, in the present situation of Dot1 inhibition in the Tailbud stage, H3K79me levels are decreased and Bre1 expression would be enhanced, thus being responsible for the upregulation of the H2BK123ub1 mark in Dot1\textsuperscript{in}-treated animals.
 
-Bre1, the ubiquitin ligase of H2BK123 in yeast and mammals is present in \textit{Oikopleura}, but its expression is not ubiquitous unlike Dot1L. Bre1 is expressed in early stages, although not present maternally (detected earliest in tailbud animals) until day 3. It is not expressed in Day 4, but it is again in Day 5 and has its highest point of expression in the male testis. It is not expressed in the female gonad.
+Dot1 function has been manipulated in these two model systems (the unicellular parasite \textit{Trypanossoma brucei} and in Human). In both, disruption of normal Dot1 function causes re-replication ending in cells with increased ploidy content, but this outcome proceeds from inverse manipulation (overexpression in \textit{Trypanossoma}, depletion in Human). The high expression of Dot1 and Bre1 together with high presence of overall and highly methylated forms of H3K79 during endocycles in \textit{Oikopleura} suggests \textit{Oikopleura}'s use of and H3K79me is more similar to the situation in \textit{Trypanossoma} than in Human. In this case high levels of H3K79me would allow and/or promote or be the consequence of cell cycles where replication has occured more than once before cell division. Nevertheless, there is no indication of shared molecular mechanisms regulating H3K79me in the two species. Experiments of overexpression of Dot1 in \textit{Oikopleura}, particularly in stages of mitotic division could shine light over this possibility.
 
-From MS data, H3K79me1/2 were detected, but not me3. me1 is much higher (is the most abundant of all histone PTMs) than me2 \cite{Moosmann2011}, possibly indicating that the state of H3K79me is one of "young cells", marked by low overall levels of H3K79me.
+In a developmental stage employing mainly endocycles (D5), animals acquired severe deregulation of proliferation, causing exaggerated proliferation of somatic cells (at this stage normally quiescent) and reduced proliferation in the gonadal tissue. These highly proliferative somatic cells exhibited large volume and easily detached from the body of the animal. This odd cellular behaviour has some parallels with cancer cells, where highly proliferative epithelial cells, which are often polyploid lose contact with its natural substrate. However speculative this hypothesis is, it cannot be disregarded that Dot1 knockout has been shown to contribute to reprogram somatic cells to a pluripotent state \cite{Onder2012} and that this change of potency states is also often correlated with the appearance of cancer.
 
+Future experiments including the impairment Dot1 function by an alternative mean (\textit{e.g.} dsRNA injections) would be valuable to ascertain whether these effects are specific to Dot1 inhibition and to gain insights into the mechanisms of action (\textit{e.g.} due to H3K79me deposition or Dot1 involvement in other functions). Assessment of the ploidy state of cells of Dot1\textsuperscript{in}-treated animals by flow cytometry could provide a more accurate description of the events of proliferation deregulation and the use of cell cycle modes. ChIP-seq of H3K79me in Dot1\textsuperscript{in}-treated animals to detect if depletion of H3K79me is generalized or locus-specific through \textit{Oikopleura}'s genome. Levels of H3K79me on origins of replication have been correlated with the inhibition of re-replication in the same cell cycle \cite{Fu2013a}.
 
-All H3K79me states reduced;
-Increased H2Bub (feedback mechanism);
-Reduced H3S10p – reduced proliferation;
-Apoptosis and death;
-H3K79me and Dot1 regulation seem to play a role in the
-regulation of Oikopleura's cell cycle modes;
-However, validation and more thorough assessment must be
-conducted to better elucidate its exact role.
-Future studies: dsRNA, overexpression
-
-
-
+Although it is clear that Dot1 has a critical function in regulation of cell cycle and proliferation in \textit{Oikopleura}, it is not clear if that influence is a direct consequence of the lack of H3K79me or arises by the impairment of Dot1 in other cellular functions. 
 
 \cleardoublepage
 
 %=========================================================================%
-\chapter{Conclusions and Future Perspectives}
+\chapter{Conclusion and Future Perspectives}
 %=========================================================================%
+The goal of this thesis was to study the mechanisms of regulation and transition between different cell cycle modes of \textit{Oikopleura dioica}. Our main focus was the study of the role of the family of E2F transcription factors, of which we identified their binding sites genome-wide and characterized their putatively regulated genes. We also explored the contribution of histone modifications to cell cycle regulation. This study shows that regulation at both transcriptional and epigenetic levels is required and probably both play a role in the regulation and transition between \textit{Oikopleura}'s cell cycle modes.
 
-replicates and ChIP-seq data -> more resolution -> more confidence
-Confirmation with ChIP-qPCR
-Functional characterization of identified E2F binding sites
-\textit{in vivo} reporter constructs through transgenesis is not yet possible
-alternatively,
-injections in closely related (or not) species (e.g. Ciona intestinalis)
-\textit{in vitro} assays of reporter with luciferase.
+We've described the mode of action of E2F TFs by showing its close-to-TSS binding, restricted by the compact \textit{Oikopleura} genome. We've shown that E2F TFs regulate a network of thousands of genes enriched in functions related to cell cycle progression and regulation and that genes under differential regulation by the activator and repressor E2Fs during maturation of female and male gonads are regulated inversely, which likely is behind the alternative use of cell cycle modes in these tissues.
 
+In this work, ChIP-seq of both E2F TFs in 4 developmental stages of \textit{Oikopleura} was performed. This will allow the construction of a more resolved map of E2F binding and thus, more informative of the differential gene regulation between cell cycle modes. Validation of identified TF binding sites by ChIP-qPCR and functional characterisation will show if E2F binding is the major determinant for gene expression regulation or if other co-regulator also play a role.
 
-Both transcriptional regulation and histone modifications contribute to the regulation of Oikopleura's cell cycle modes;
-Analysis of E2F binding in more stages with replication and validation will highlight the differences between mitotic cell cycles and endocycles.
+On a much less studied field, we set ourselves to explore the influence of a particular histone modification (H3K79me) on the regulation of cell cycle. Our results agreed with previous showing that H3K79me accumulates with time and give strength to the hypothesis that it may act as a timer for a cell's age. Through functional studies on the H3K79me methyltransferase, Dot1, we showed that H3K79me is likely to have an important role during mitotic cell cycles and that inhibition of Dot1 during endocycles causes major phenotypic defects by increasing proliferation of somatic tissues and reduceding it in the gonad. Furthermore, we discovered a indirect negative feedback loop between two histone modifications (H3K79me and H2BK123ub1), something likely never described.
 
+Future work would imply the validation of Dot1 inhibition results through alternative methods and more thorough dissection of the mechanisms underlying the function of Dot1 and the various states of H3K79me.
 
-dsRNA knockout
-overexpression
-
-Possible role of Dot1 and K79 methylation in the regulation of biological processes known to involve deregulation of replication. Cancer
-
-
-
-
-Regulation at both transcriptional and epigenetic levels is required and probably both play a role in the regulation and transition between \textit{Oikopleura}'s cell cycle modes.
-
-
+This study also shows the viability and advantages of using \textit{Oikopleura dioica} as a model system for the study of alternative cell cycle modes.
 
 
 \cleardoublepage
