@@ -33,6 +33,11 @@
 
 \usepackage[section]{placeins}  % force figure position in section
 
+% support long tables
+\usepackage{longtable}
+\usepackage{pdflscape}
+\usepackage{graphicx}
+
 % provide encoding packages depending on the compiler
 \ifxetex
   \usepackage{fontspec}
@@ -128,7 +133,7 @@
     \vspace*{15mm}
     
     \TEXT{}
-       {Dissertação apresentada à Universidade de Aveiro para cumprimento dos requisitos necessários à obtenção do grau de Mestre em Biologia Molecular e Celular, realizada sob a orientação científica de Eric Thompson, Professor do Departamento de Biologia da Universidade de Bergen e de Manuel Santos, Professor Associado do Departamento de Biologia da Universidade de Aveiro.}
+       {Dissertação apresentada à Universidade de Aveiro para cumprimento dos requisitos necessários à obtenção do grau de Mestre em Biologia Molecular e Celular, realizada sob a orientação científica de Manuel Santos, Professor Associado do Departamento de Biologia da Universidade de Aveiro e de Eric Thompson, Professor do Departamento de Biologia da Universidade de Bergen e do Sars International Centre for Marine Molecular Biology.}
        
 \EndTitlePage
 
@@ -143,16 +148,16 @@
   \TEXT{\textbf{jury}}{}
        
   \TEXT{president}
-       {\textbf{António MASADASDDSASD}\newline {\small Associated Professor at the Biology Department of the University of Aveiro }}
+       {\textbf{asd}\newline {\small asd }}
   \vspace*{5mm}
   
     \TEXT{}
-       {\textbf{António MASADASDDSASD}\newline {\small Associated Professor at the Biology Department of the University of Aveiro }}
+       {\textbf{asd}\newline {\small Associated Professor at the Biology Department of the University of Aveiro }}
   \vspace*{5mm}
   
     \TEXT{}
-       {\textbf{António MASADASDDSASD}\newline {\small
-        Associated Professor at the Biology Department of the University of Aveiro }}
+       {\textbf{asd}\newline {\small
+        asd }}
   \vspace*{5mm}
   
 \EndTitlePage
@@ -170,10 +175,7 @@
     \TEXT{}
         {I'd like to thank my family for all the support throughout these years, allowing me to follow my dreams.}
     \TEXT{}
-		{I'd also like to acknowledge the free open source software community for its marvellous efforts in building an open world and Tomás Oliveira e Silva for the University of Aveiro \LaTeX thesis template.}
-    \TEXT{}
-        {This thesis was made entirely using free open source software.}
-
+		{This thesis was made using entirely free open source software. I'd like to acknowledge the free open source software community for its marvellous efforts in building an open world and Tomás Oliveira e Silva for the University of Aveiro \LaTeX thesis template.}
 
 \EndTitlePage
 
@@ -224,29 +226,28 @@
 \listoftables
 
 \chapter*{Abbreviations}
-		\begin{description}
-			\item[aa] Amino acid
-			\item[APC/C] Anaphase promoting complex
-			\item[bp] Nucleotide base pair
-			\item[CDK] Cyclin-dependent kinase
-			\item[CDS] Coding sequence of genes
-			\item[ChIP] Chromatin immunoprecipitation
-			\item[ChIP-chip] Chromatin immunoprecipitation followed by DNA microarray hybridization 
-			\item[ChIP-ER] ChIP-enriched region
-			\item[ChIP-seq] Chromatin immunoprecipitation followed by high-throughput DNA sequencing
-			\item[CKI] Cyclin-dependent kinase inhibitor
-			\item[DNA] Deoxyribonucleic acid
-			\item[GSCs] Germline stem cells
-			\item[GA] Growth arrest
-			\item[kD] Kilo Dalton
-			\item[$\mu$L, mL, L] Microlitre, Mililitre and Litre, respectively
-			\item[O/N] Over night
-			\item[R/T] Room temperature
-			\item[RC] pre-Replication Complex
-			\item[TF] Transcription factor
-			\item[UTR] Untranslated regions of genes
-			\item[V] Volt
-		\end{description}
+	\begin{description}
+		\item[aa] Amino acid
+		\item[APC/C] Anaphase promoting complex
+		\item[bp] Nucleotide base pair
+		\item[CDK] Cyclin-dependent kinase
+		\item[CDS] Coding sequence of genes
+		\item[ChIP] Chromatin immunoprecipitation
+		\item[ChIP-chip] Chromatin immunoprecipitation followed by DNA microarray hybridization 
+		\item[ChIP-ER] ChIP-enriched region
+		\item[ChIP-seq] Chromatin immunoprecipitation followed by high-throughput DNA sequencing
+		\item[CKI] Cyclin-dependent kinase inhibitor
+		\item[DNA] Deoxyribonucleic acid
+		\item[GSCs] Germline stem cells
+		\item[GA] Growth arrest
+		\item[kD] Kilo Dalton
+		\item[O/N] Over night
+		\item[R/T] Room temperature
+		\item[RC] pre-Replication Complex
+		\item[TF] Transcription factor
+		\item[UTR] Untranslated regions of genes
+		\item[Units of the International System of Units (SI) are assumed.]
+	\end{description}
 
 \cleardoublepage
 %=========================================================================%
@@ -257,7 +258,7 @@
 \chapter{Introduction}
 %=========================================================================%
 
-	\section{Polyploid cell cycles - Endoreplication and Endocycles}
+	\section{Polyploid cell cycles - endoreplication and endocycles}
 		Polyploid cells possess more than two pairs of their set of chromossomes. This polyploid state is common to be predominant within fungi, plants and some vertebrates like fish and amphibians, but also within restricted cell types in many other organisms \cite{Fox2013}.
 		
 		Documented advantages of polyploid organisms compared to diploids include heterosis (a evolutionary situation where the progeny has fitness advantages compared to its progenitors), gene redundancy, and gain of asexual reproduction by loss of self-incompatibility \cite{Comai2005}. From a strict cellular perspective, gene redundancy is the most relevant - it provides a way of masking the effect of deleterious alleles, and shields the possible effect of mutagens in the DNA. On the other hand, the increase of the gene-space available for mutations to act can also be seen as a evolutionary advantage.
@@ -369,6 +370,7 @@
 			
 				\paragraph{E2F factors in CDK activity regulation}
 				\label{paragraph:E2Fs}
+				SECTION UNDER MAJOR REVISION, PLEASE SKIP
 			
 				 The E2F family of TFs is well known to have important functions in the regulation of both the canonical and endoreplicative cell cycles. This family of eight TFs in mammals can be grouped in a set of six canonical and two atypical TFs.
 				 Canonical E2Fs dimerize with the DP TF through a XXXXXXXXX domain; E2F3 is duplicated
@@ -547,11 +549,11 @@
 		
 
 		\subsection{The genome of \textit{Oikopleura dioica}}
-		A reference sequence of \textit{Oikopleura dioica} genome was made available in 2010 \cite{Denoeud2010a}, revealing a surprisingly plastic architecture and the species fast evolution. In this planctonic animal, the chordate genome architecture seems to have been redesigned to obtain a minimal-sized genome: approximately 70 megabases. This is greatly due to the reduction of intron and intergenic space, although some gene loss was also detected.
+		A reference sequence of \textit{Oikopleura dioica} genome was made available in 2010 \cite{Denoeud2010}, revealing a surprisingly plastic architecture and the species fast evolution. In this planctonic animal, the chordate genome architecture seems to have been redesigned to obtain a minimal-sized genome: approximately 70 megabases. This is greatly due to the reduction of intron and intergenic space, although some gene loss was also detected.
 		
-		The dramatic reduction of intergenic space brings obvious constrains in terms of gene regulation, which is to some degree easily seen by the normal occurrence of genes in Operons (~28\% of the 18000 total), and makes the \textit{Oikopleura} genome one of the most compact of all known chordate genomes. Operons are significantly enriched for genes involved in house-keeping functions, while genes involved in developmental processes are significantly under-represented in Operons \cite{Denoeud2010a}.
+		The dramatic reduction of intergenic space brings obvious constrains in terms of gene regulation, which is to some degree easily seen by the normal occurrence of genes in Operons (~28\% of the 18000 total), and makes the \textit{Oikopleura} genome one of the most compact of all known chordate genomes. Operons are significantly enriched for genes involved in house-keeping functions, while genes involved in developmental processes are significantly under-represented in Operons \cite{Denoeud2010}.
 
-		Although the idea of generalised simplicity in regulatory mechanisms could be an hipotesis due to the high density of the genome, insights from two distinct populations of \textit{Oikopleura} seem to contradict this. Highly conserved elements in non-coding regions have been found through genomic alignments of Atlantic and Pacific \textit{Oikopleura dioica} \cite{Denoeud2010a}. Besides those, several other conserved genomic features can be found in the \textit{Oikopleura} genome. 	Long introns are more likely to be descendants of ancestrally conserverd introns than the shorter ones, and genes important for development show twice as much more ancestral introns when compared to all annotated genes. Nevertheless, major changes in the number and syntheny of cis regulatory modules (promoters and enhancers) compared with other Tunicates are likely to have occured due to major loss of gene syntheny and the fast evolutionary rate of \textit{Oikopleura}.
+		Although the idea of generalised simplicity in regulatory mechanisms could be an hipotesis due to the high density of the genome, insights from two distinct populations of \textit{Oikopleura} seem to contradict this. Highly conserved elements in non-coding regions have been found through genomic alignments of Atlantic and Pacific \textit{Oikopleura dioica} \cite{Denoeud2010}. Besides those, several other conserved genomic features can be found in the \textit{Oikopleura} genome. 	Long introns are more likely to be descendants of ancestrally conserverd introns than the shorter ones, and genes important for development show twice as much more ancestral introns when compared to all annotated genes. Nevertheless, major changes in the number and syntheny of cis regulatory modules (promoters and enhancers) compared with other Tunicates are likely to have occured due to major loss of gene syntheny and the fast evolutionary rate of \textit{Oikopleura}.
 		
 		\subsection{Histone variants and modifications of \textit{Oikopleura dioica}}
 		In \textit{Oikopleura dioica}, the diversity of histone variants and their use through development has been profiled with a mass spectrometry approach \cite{Moosmann2011}. \textit{Oikopleura} possesses a histone complement of 31 histone variants which can be grouped in distinct sets of developmental expression profiles throughout its life cycle. Most common histone variants are present, although remarkable absences can be seen in the macroH2A and H2AX histone variants. A significant expansion of the histone complement exists in \textit{Oikopleura}, which is even further diversified by the existance of alternative splicing on some variants. Additionally, a remarkable set of 15 male-specific histone variants was discovered \cite{Moosmann2011}.
@@ -929,7 +931,7 @@
 		\subsubsection{Genomic context of E2F binding sites}
 		When conducting genome-wide analysis of features of interest (\textit{e.g.} TF binding sites, cis-regulatory elements), the distribution of genetic and regulatory elements that make the background features of the genome under analysis mirror its architecture and can influence the statistical significance of the distribution of features of interest when compared with the background.
 		
-		\textit{Oikopleura dioica} possesses the most compact genome known yet for a chordate organism \cite{Denoeud2010a}, with reduced intergenic and intronic space, and enlarged proportion of coding sequence when compared with other model systems, both invertebrates and vertebrates (Figure \ref{fig:genome_background}).
+		\textit{Oikopleura dioica} possesses the most compact genome known yet for a chordate organism \cite{Denoeud2010}, with reduced intergenic and intronic space, and enlarged proportion of coding sequence when compared with other model systems, both invertebrates and vertebrates (Figure \ref{fig:genome_background}).
 	
 		\begin{figure}[here]
 			\setlength{\belowcaptionskip}{5pt}
@@ -948,8 +950,24 @@
 			\label{fig:genome_background}
 		\end{figure}
 		
-		The knowledge of the background of features in the genome of \textit{Oikopleura} will be useful when analysing the genomic context of E2F TF binding sites obtained by ChIP-chip. After preprocessing ChIP-chip data, putative binding sites of E2F TFs were obtained by selecting statistically significant ChIP-enriched regions (ChIP-ER) (see section \ref{subsection:methods_find_ChIP-ER} on methodology).
+		The knowledge of the background of features in the genome of \textit{Oikopleura} will be useful when analysing the genomic context of E2F TF binding sites obtained by ChIP-chip. After preprocessing ChIP-chip data, putative binding sites of E2F TFs were obtained by selecting statistically significant ChIP-enriched regions (ChIP-ER) (see section \ref{subsection:methods_find_ChIP-ER} on methodology). We found tens of thousands of ChIP-ERs, where E2F1 samples have roughly similar size (16000) and the E2F7 sample in female D6 animals presented roughly the double than in male (~24000 against 12000) (Table \ref{table:No_ChIP-ERs}).
 		
+		
+		\begin{table}[H]
+       		\caption{\bf{Nº of ChIP-enriched regions detected for all samples analysed.}}
+       		\begin{center}
+           		\begin{tabular}{c|c|c|c}
+                	\textbf{Stage} & \textbf{Sex} & \textbf{TF} & \textbf{Nº ChIP-ERs}\\
+   		            \hline
+       		        D6 & Female & E2F1 & 16708\\
+           		    D6 & Female & E2F7 & 24899 \\
+					D6 & Male & E2F1 & 16630\\
+					D6 & Male & E2F7 & 12992\\
+            	\end{tabular}
+   		    \end{center}
+   		    \label{table:No_ChIP-ERs}
+	    \end{table}
+		    		
 		Transcription factors are known to regulate gene expression by binding cis-regulatory elements (CREs) (\textit{e.g.} promoters, enhancers). Although CREs locate primarily in promoters and distal or intronic enhancer elements CITE, virtually every type of genomic feature can serve as a TF binding site. In \textit{Oikopleura}, E2F ChIP-ER were found to locate in close proximity to gene transcription start sites (TSS), regardless of the function of the TF (activator or repressor) and the developmental stage profiled (Figure \ref{fig:genomic context}a/b). 
 				
 		\begin{figure}
@@ -1047,7 +1065,22 @@
 		However, since ChIP experiments were performed on tissues with unsynchronised nuclei, the signal from the ChIP experiment most likely gives an overall picture of the binding of E2F TFs during this developmental stage by masking the possibly more subtle changes in E2F action during a cell cycle, rather than providing an accurate description of events inside an "ideal nucleus".
 		
 	\subsection{Putative E2F regulated genes (target genes)}
-		Transcription factor binding has the function of altering the expression of genes. TFs binding diverse genomic locations have been shown to regulate genes near its binding site or in wide distances including different chromossomes. To attribute a putative binding event to the regulation of a gene, we assigned each ChIP-ER to the nearest transcription start site of a gene and said that this gene is regulated by this E2F ChIP-ER. This approach has the advantage that it assumes the less about the putative binding events, allowing genes to have multiple E2F regulatory elements in any genomic position. To study the functional properties of genes with an assigned ChIP-ER (from here on \textit{target genes}, for simplicity), we divided the genes into groups based on whether they were the targets of one TF exclusively or both in one of the tissues studied (ovary or testis) in Day 6 animals.
+		Transcription factor binding has the function of altering the expression of genes. TFs binding diverse genomic locations have been shown to regulate genes near its binding site or in wide distances including different chromosomes. To attribute a putative binding event to the regulation of a gene, we assigned each ChIP-ER to the nearest transcription start site of a gene and said that this gene is regulated by this E2F ChIP-ER. This approach has the advantage that it assumes the less about the putative binding events, allowing genes to have multiple E2F regulatory elements in any genomic position. To study the functional properties of genes with an assigned ChIP-ER (from here on \textit{target genes}, for simplicity), we divided the genes into groups based on whether they were the targets of one TF exclusively or both in one of the tissues studied (ovary or testis) in Day 6 animals. The total number of genes putatively regulated by ChIP-ERs can be seen in Table \ref{table:No_target_genes}, along with the number of genes that are exclusively regulated by one TF in a tissue.
+		
+		\begin{table}[H]
+       		\caption{\bf{Nº of target genes from each TF.}}
+       		\begin{center}
+           		\begin{tabular}{c|c|c|c|c}
+                	\textbf{Stage} & \textbf{Sex} & \textbf{TF} & \textbf{Nº of target genes} & \textbf{Nº of exclusive target genes}\\
+   		            \hline
+       		        D6 & Female & E2F1 & 7327 & 5907\\
+           		    D6 & Female & E2F7 & 11209 & 5504\\
+					D6 & Male & E2F1 & 7342 & 5429\\
+					D6 & Male & E2F7 & 7508 & 4814\\
+            	\end{tabular}
+   		    \end{center}
+   		    \label{table:No_target_genes}
+	    \end{table}
 		
 		\subsubsection{Gene ontology of target genes}
 		From genes that are targets of both TFs within one tissue, a significant overrepresentation of genes whose biological processes is related with DNA replication and nucleotide metabolism was found (Figure \ref{fig:GO}). Other prominent overrepresented groups of gene ontology (GO) terms found among these genes were related with cell cycle regulation and progression, formation of protein-DNA complexes (with TFs overrepresented among these) and processes related with development of adult traits.
@@ -1071,7 +1104,7 @@
 		
 		Genes exclusively targeted by the E2F1 TF in the female gonad have a set of overrepresented GO terms associated with them highly similar to genes bound by both TFs, but in addition terms related with cytoskeletal activity. This could be related to the fact that during maturation of the female gonad oocytes expand their cytoplasmatic domain drastically, occupying a volume higher than the somatic part of the organism - such accomplishment requires extensive production and coordination of structural proteins in the cytoskeleton. In the analogous situation (exclusively bound E2F1 genes) in the male gonad, much fewer overrepresented GO terms were found. Of particular notice is the presence of the \textit{"metaphase/anaphase transition of mitotic cell cycle"} term, which is highly specific for M phase. The activation by E2F1 of genes involved in M phase is coincident with the resumption of cell cycles with mitotic phase which occurs in late maturation of the male gonad and during spermatogenesis (meiosis).
 		
-		Genes under exclusive action of E2F7 in the female gonad have a sparce and reduced set of overrepresented GO terms associated with them but where again the \textit{"metaphase/anaphase transition of mitotic cell cycle"} term stands out. The female gonad employs mainly endocycles throughout its maturation and it is foreseeable that genes involved in the promotion on M phase should be repressed to allow the endocycle. Genes exclusively bound by E2F7 in the male gonad have a rich set of overrepresented terms resembling the ones in Figure \ref{fig:GO}, but where terms such as \textit{"meioisis"} and terms related with transcription and RNA metabolism also appear. This could be due to the minimalistic nature of sperm when compared with the oocyte - sperm is mainly a carrier of genetic information in the form of the genome, as opposed to the oocyte which possesses maternal transcripts and reserve substances to support early development. E2F7 binding of genes involved in these functions could be contributing to their suppression.
+		Genes under exclusive action of E2F7 in the female gonad have a sparce and reduced set of overrepresented GO terms associated with them but where again the \textit{"metaphase/anaphase transition of mitotic cell cycle"} term stands out. The female gonad employs mainly endocycles throughout its maturation and it is foreseeable that genes involved in the promotion on M phase should be repressed to allow the endocycle. Genes exclusively bound by E2F7 in the male gonad have a rich set of overrepresented terms resembling the ones in Figure \ref{fig:GO}, but where terms such as \textit{"meiosis"} and terms related with transcription and RNA metabolism also appear. This could be due to the minimalistic nature of sperm when compared with the oocyte - sperm is mainly a carrier of genetic information in the form of the genome, as opposed to the oocyte which possesses maternal transcripts and reserve substances to support early development. E2F7 binding of genes involved in these functions could be contributing to their suppression.
 		
 		This mirror situation of genes involved in the same biological processes being activated or repressed inversely in the male and female gonads is indicative of the differences underlying the different cell cycle modes employed in the two tissues. However, although analysis of gene function through testing of under/overrepresented GO terms is useful, it assumes that genes have kept the same functional properties (biological process, cellular localization, molecular function) as the genes from which the terms were originally derived. Full lists of significantly overrepresented GO terms can be seen on appendix section \ref{appendix:GOterms}.		
 		
@@ -1080,7 +1113,7 @@
 		
     	There are major and significant changes of expression at the transcriptome level between ovary and testis tissue of animals in the D6 developmental stage (Figure \ref{fig:D6_expression}). Overall, there is a bias for genes being more highly expressed in the female gonad. In the male, a high fraction of genes are not expressed at all while being expressed at various levels in the ovary (note points stacked on x axis in Figure \ref{fig:E2F_targets_expression}a). This illustrates the intrinsic Biology of the maturing gonads - in the ovary, meiotic and nurse nuclei coexist and the expression values reflect genes expressed in both (possibly even different sets of genes).
 		
-		We tested the hypotesis that genes that are exclusively targeted by the E2F1 TF (activator) in a particular tissue would be more highly expressed in that tissue than in the other, and the inverse situation for genes exclusively targeted by E2F7 (repressor). There were no significant differences between the means of the distribution of these two groups in either tissue. However, a trend exists for genes that are bound by the repressor transcription factor (E2F7) in a stage to be less expressed in that stage and more in the other as shown by the inversion of position of smoothed and quantile lines in Figure \ref{fig:E2F_targets_expression}(b) and (c) between tissues.
+		We tested the hypothesis that genes that are exclusively targeted by the E2F1 TF (activator) in a particular tissue would be more highly expressed in that tissue than in the other, and the inverse situation for genes exclusively targeted by E2F7 (repressor). There were no significant differences between the means of the distribution of these two groups in either tissue. However, a trend exists for genes that are bound by the repressor transcription factor (E2F7) in a stage to be less expressed in that stage and more in the other as shown by the inversion of position of smoothed and quantile lines in Figure \ref{fig:E2F_targets_expression}(b) and (c) between tissues.
 		
 		\begin{figure}[h!]
 			\centering
@@ -1118,12 +1151,12 @@
 		Since differential regulation of the canonical cell cycle and endocycles arise by the alternative regulation of key cell cycle effectors of progression through the cycles, it is foreseeable that some might be differentially regulated by the E2F TFs in the two gonadal tissues. The vast majority of such key cell cycle regulators components were detected to be putatively regulated by at least one E2F TF in at least one of the tissues. Such effectors are Cyclin, CDK proteins and CKI proteins as well as proteins directly involved in E2F regulation and other known regulators of cell cycle progression such as the co-transcriptional factor DP, the Retinoblastoma protein (Rb), Geminin, Cdt1, Cdh1 and PCNAs. Interestingly all four PCNA genes existent in \textit{Oikopleura} are bound by both TFs in both tissues.
 		
 		However, due to the lack of replication and the wideness of ChIP-ERs provided by the microarray technology, analysis of discrete cases of gene regulation by E2F factors should be taken with caution. Lists of key cell cycle effectors regulated by E2F TFs can be found in the appendix section \ref{list_key_cell_cycle_regulators}).
-
-
+		
 \clearpage
 \section{Dot1 and H3K79 methylation in \textit{Oikopleura dioica}'s cell cycle modes}
 	Methylation of lysine 79 in histone H3 (H3K79me) has been recently shown to be layed in a distributive manner by the Dot1 methyltransferase leading to its accumulation during a cell's cycle \cite{Frederiks2008}. This lead to the proposal H3K79me levels might act as memory for the age of the cell and contribute to the regulation of cell cycle progression \cite{DeVos2011}. Studies on H3K79me and the function of Dot1 in Human cells have shown that knock-out of Dot1 produces cells with a high degree of ploidy due to re-replication in the same cell cycle \cite{Fu2013a}, a situation similar but inverse to \textit{Trypanossoma brucei}, where overexpression of Dot1 has the aforementioned effect \cite{Gassen2012}.
 	
+	\subsection{Use of H3K79me along \textit{Oikopleura}'s life cycle}
 	To investigate whether H3K79me would have a function in the regulation of \textit{Oikopleura dioica}'s cell cycle modes and contribute to the differences between them, we conducted an initial functional study on Dot1 through the use of a chemical inhibitor in the Tailbud stage (mitotic) and the Day 5 (endocycle) and characterization of the phenotypic effects.
 	
 	The Dot1 methyltransferase is ubiquitously expressed throughout the development of \textit{Oikopleura} with no exception (Figure \ref{fig:Dot1_Bre1_expression}a), indicative of its vital function. Nevertheless, the Bre1 ubiquitin ligase, responsible for laying monoubiquitinilation of lysine 123 on histone H2B (H2BK123ub1), of which Dot1 depends to lay its mark, is mostly expressed from the Tailshift developmental stage on (Figure \ref{fig:Dot1_Bre1_expression}a), coincident with the employment of endocycles in \textit{Oikopleura}. In the last day of the life cycle (D6), where sexual dimorphism is most apparent, Bre1 ceases to be expressed in the somatic tissues of the Trunk and in the gonads of female animals, while having the highest expression level of the whole cycle in the male testis, indicating a sex-specific differential use of Bre1 during gonad maturation.
@@ -1186,13 +1219,15 @@
 		\label{fig:k79me}
 	\end{figure}
 	
+	\subsection{Functional studies on Dot1 in two cell cycle modes of \textit{Oikopleura}}
+	
 	To gain knowledge of the function of H3K79me we used a potent and specific chemical inhibitor of Dot1, SGC0946 (from now on Dot1\textsuperscript{in}) \cite{Yu2012} on animals of the Tailbud stage. Treatment with 30 $\mu$M of Dot1\textsuperscript{in} for 3.5 hours was shown to be effective in inhibiting Dot1, as assessed by the reduced levels of H3K79me compared with control animals (treated with the solvent DMSO) (Figure \ref{fig:k79me}b). Depletion of H3K79me was most successful in higher methylation states probably due to the reduced activity of Dot1 on newly deposited histones during replication, since the lower methylation states are necessary for the addition of higher.
 	
 	Since the presence of H2BK123ub1 is known to increase the deposition of H3K79me by Dot1, we decided to explore the connection between H3K79me and H2BK123ub1, by assessing H2BK123ub1 levels in Tailbud animals treated with Dot1\textsuperscript{in}. Levels of H2BK123ub1 were higher in Dot1\textsuperscript{in}-treated animals when compared with control (treated with the solvent DMSO) (Figure \ref{fig:k79me}b). Although the inverse relationship (dependency of H3K79me on H2BK123ub1) had already been described, increase of H2BK123ub1 in response to decreased levels of Dot1 and H3K79me had not and was therefore surprising. A possible mechanistic explanation could be inspired by the fact that high levels of H3K79me3 were found on the locus of the Bre1 enzyme in testis of animals in D6 developmental stage (P. Navratilova, G. Danks and E. Thompson, unpublished data), a stage where Bre1 expression is notably low (Figure \ref{fig:Dot1_Bre1_expression}a). In this situation, increased H3K79me levels in the Bre1 locus could be responsible for its very low expression, which in turn would reduce the activity of Dot1 creating a negative feedback loop. If this mechanism would be present throughout \textit{Oikopleura}'s life cycle, in the present situation of Dot1 inhibition in the Tailbud stage, H3K79me levels are decreased and Bre1 expression would be enhanced, thus being responsible for the upregulation of the H2BK123ub1 mark in Dot1\textsuperscript{in}-treated animals.
 	
 	Tailbud animals treated with Dot1\textsuperscript{in} presented phenotypic effects that revealed developmental defects: the surface of the trunk was largely affected, with cells presenting a granulous appearance (Figure \ref{fig:Dot1in_TB}a), failure to maintain swimming activity and later death. To further characterize the phenotype, we assessed the state of cell proliferation by the use of the mitosis marker phosphorilation of serine 10 in histone H3 (H3S10p) and apoptosis by the Tunel assay. The Tunel assay in normal animals revealed cells marked for apoptosis along the tail of animals, starting from the posterior tip and progressing to anteriorly with developmental time (Figure \ref{fig:Dot1in_TB}b), indicating a possible use of apoptosis in regulation of morphogenic processes during this stage of development of \textit{Oikopleura}. Dot1\textsuperscript{in}-treated animals showed reduced levels of H3S10p, indicative of reduced cell proliferation (Figure \ref{fig:k79me}b) signs of apoptosis in the granulous cells of the trunk, specially at its surface (Figure \ref{fig:Dot1in_TB}c).
 	
-	\begin{figure}
+	\begin{figure}[h!]
 		\setlength{\belowcaptionskip}{5pt}
 		\centering
 		\begin{subfigure}{1\textwidth}
@@ -1231,13 +1266,13 @@
 	
 	Since the overall amount of H3K79me levels is higher in the endocycling mode of proliferation and the ratio of the methylation states appears to change during the different cell cycle modes, we studied the effects of Dot1 inhibition in the D5 developmental stage, where endocycling is employed extensively in both somatic and gonadal tissues.
 	
-	Overall levels of H3K79me were reduced although not as much as in the Tailbud stage (Figure \ref{fig:k79me}c). This might be due to the fact that although H3K79me is not copied into new histones during replication, old histones will still carry the same methylation state of H3K79 and because on the D5 stage overall levels of H3K79me are high. This is furthermore amplified by the fact that in the female gonad most nuclei (either nurse or selected oocytes) in the coenocyst are already present at this time, making the most important step of H3K79me dilution - replication - more infrequent. Increased H2BK123ub1 was also detected on Dot1\textsuperscript{in}-treated when compared with control, reinforcing the hipotesis of a indirect negative feedback loop between H3K79me and H2BK123ub1 in \textit{Oikopleura}.
+	Overall levels of H3K79me were reduced although not as much as in the Tailbud stage (Figure \ref{fig:k79me}c). This might be due to the fact that although H3K79me is not copied into new histones during replication, old histones will still carry the same methylation state of H3K79 and because on the D5 stage overall levels of H3K79me are high. This is furthermore amplified by the fact that in the female gonad most nuclei (either nurse or selected oocytes) in the coenocyst are already present at this time, making the most important step of H3K79me dilution - replication - more infrequent. Increased H2BK123ub1 was also detected on Dot1\textsuperscript{in}-treated when compared with control, reinforcing the hypothesis of a indirect negative feedback loop between H3K79me and H2BK123ub1 in \textit{Oikopleura}.
 	
 	To assess the rate of proliferation of cells in this developmental stage, we measured the incorporation of a labeled nucleotide analog 5-ethynyl-2-deoxyuridine (EdU) using 1 hour pulses and quantifying fluorescence of the labeled nucleotides. In this developmental stage, under optimal conditions cells proliferate actively throughout the \textit{Oikopleura} body, but towards the end of the life cycle (entering Day 6), proliferation is restricted to the gonadal tissue, when somatic tissue ceases to proliferate (Figure \ref{fig:Dot1in_D5}a). In Dot1\textsuperscript{in}-treated D5 animals, gonad proliferation is severely reduced although still detectable (Figure \ref{fig:Dot1in_D5}b) and proliferating somatic cells were detected as opposed to control animals which terminated somatic proliferation as measured by EdU incorporation. Somatic cells marked with EdU were abnormally large and had propensity to detach from the animal body (Figure \ref{fig:Dot1in_D5}c). Surprisingly, animals exhibiting this phenotype remained alive and capable of filtration functions before dying, much later than in the Tailbud stage when comparing time after treatment.
 	
-	The surprising invertion of the proliferation pattern in the body of 	Dot1\textsuperscript{in}-treated D5 animals might be connected with the function of Dot1 in providing a molecular clock for the cell's age by laying H3K79me and indicate a function for Dot1 in the regulation of proliferation, perhaps by regulating the timing of replication.
+	The surprising inversion of the proliferation pattern in the body of 	Dot1\textsuperscript{in}-treated D5 animals might be connected with the function of Dot1 in providing a molecular clock for the cell's age by laying H3K79me and indicate a function for Dot1 in the regulation of proliferation, perhaps by regulating the timing of replication.
 	
-	\begin{figure}
+	\begin{figure}[h!]
 		\setlength{\belowcaptionskip}{5pt}
 		\centering
 		\begin{subfigure}{1\textwidth}
@@ -1274,20 +1309,36 @@
 		\label{fig:Dot1in_D5}
 	\end{figure}
 
-\clearpage
+\cleardoublepage
 
 %=========================================================================%
 \chapter{Discussion}
 %=========================================================================%
 
 \section{E2F factors in \textit{Oikopleura}'s late developmental stages}
+Alternative cell cycle modes lacking a mitotic phase and creating poliploid cells have been shown to be more predominant than previously expected. Deregulation of progression through phases of cell cycle and ploidy are often at the core of disorders such as cancer. Current approaches to study such disorders often start from a state where deregulation is already well advanced and often irreversible. The marine chordate \textit{Oikopleura dioica} presents the opportunity to study a system naturally employing different cell cycle modes through its life cycle. The study of the mechanisms governing the change between cell cycle modes could contribute in providing a fresh take on disorders which present deregulation of cell cycle progression.
 
+We focused on the role of the two E2F transcription factors (E2F1 - activator;E2F7 - repressor) in \textit{Oikopleura}'s cell cycle modes. They are known to play a major role as key cell cycle progression as regulators of an extensive array of genes. By analysing the binding of E2F TFs and they're putatively regulated genes, one can identify differentially regulated targets in the different modes of cell cycle.
+
+We identified thousands binding sites for both E2F TFs in ovary and testis tissue of \textit{Oikopleura} animals of Day 6 developmental stage through ChIP-chip. The compact genome of \textit{Oikopleura}, with its reduced intergenic and intronic space, conditions heavily the available genomic space for E2F TFs binding. E2F TFs bind in close proximity to gene's TSSs and a unexpectedly high portion of the binding sites overlap with regions of coding sequence. This might be due to the combination of TSS proximity and wideness of detected ChIP-ERs provided by the microarray technology. Nevertheless, the hypothesis that in a major event of genome compaction as occurred in  \textit{Oikopleura} \cite{Denoeud2010}, distal cis-regulatory elements (\textit{e.g. }enhancers, insulators) might have been "forced" to use coding sequences as regulatory sequences due to the high rate of mutation in non-coding regions, cannot be discarded. This would imply heavy rewiring of the gene regulatory networks underlying gene expression and high sequence constraints for the codons being used as CREs as has been recently proposed by Stergachis and colleges \cite{Stergachis2013} with controversy. The binding of \textit{Oikopleura} E2F TFs seems more dependent on the sequence-specificity than on the local context of chromatin. Motifs aligning significantly to vertebrate E2F TFs motifs show that the sequence specificity of E2F TFs is largely conserved.
+
+The two E2F TFs (activator and repressor) were shown to have a high degree of spatial and temporal co-localization in their binding patterns throughout the genome, with many genes being regulated by both TFs in the same tissue. Our data does not possess resolution of their possible dynamic binding during cell cycles, but can still be used to infer differences of binding sites between different cell cycle modes, rather than along the progression of these cycles. In the set of genes that are regulated by both TFs, there is overrepresentation of functions related with DNA replication and metabolism, cell cycle regulation - highlighting the function of E2F TFs in the control of cell cycle progression, specifically S phase entry. These genes are likely regulated in either opposite directions by the TFs in different phases of the cell cycle, thus implying a oscillating expression during a cell cycle or the coincident binding of both might functions as a way to gain finer control over gene expression across or during phases of the cell cycles.
+
+Both E2F factor also regulate a significant portion of genes independently. When exploring the function of genes regulated by only one of the TFs in one tissue, we found a curious inversion of a very specific function related with cell cycle regulation. The \textit{"metaphase/anaphase transition of mitotic cell cycle"} GO term is highly specific for transitions within M phase, the cell cycle phase being skipped in endocycles. In the ovary, this term was associated with genes being solely regulated by E2F7 indicating that effector genes in M phase are being repressed, while in testis their expression happened to be induced by E2F1 binding. This inversion of E2F targets in the two tissues might be at the core of the suppression of M phase and endocycle regulation. 
+
+Although an enrichment in cell cycle control functions is evident, many genes under E2F regulation are likely to participate in regulation of other biological processes. The reduced family of E2F TFs in \textit{Oikopleura} compared with other models could also have lead to diversification of E2F function as is suggested by the significant overrepresentation of GO terms related with adult development. 
+
+Differences of mean expression between genes targeted by one or other E2F TF in a tissue were found not to be significant. Nevertheless, there was a trend for genes regulated by E2F7 in a particular tissue being less expressed in the same tissue when compared with the other. Many genes, notably transcription factors are known to be regulated transcriptionally in regulatory networks that can enhance or buffer a given regulatory signal through feedback loops to allow high control over gene expression \cite{Macneil2011}. In light of this, we propose that most binding events of E2F TFs modulate gene expression in a smoothed way through interaction of various regulators, rather than controlling it in a boolean fashion.
+
+Overall, the relatively low resolution of the microarray technology, coupled with the high number of ChIP-ERs detected and putatively regulated genes, makes detection of subtle differences in E2F regulation in the two cycles more hard. This is further exacerbated by the possible function of E2F factors in other developmental processes. Nevertheless, profiling of E2F binding through ChIP-seq in more developmental time points with replicates as performed experimentally in this work (data not analysed) will allow higher resolution in binding site identification and more statistical confidence on the relation between E2F binding and gene regulation.
+
+\clearpage
 
 \section{Dot1 and H3K79 methylation in \textit{Oikopleura dioica}'s cell cycle modes}
 
 Higher states of K79 methylation accumulate with cell age \cite{DeVos2011}. What are the implications of this in an chordate with a extremely short cell cycle and fast cell division as \textit{Oikopleura}?
 
-Dot1 is more expressed when cultured densely, which might indicate that 
+Dot1 is more expressed when cultured densely, which might indicate that
 Interestingly, the stage with least Dot1 expression is the testis, where the H3.t H3 variant is more expressed and the K79 residue is not present.
 
 Bre1, the ubiquitin ligase of H2BK123 in yeast and mammals is present in \textit{Oikopleura}, but its expression is not ubiquitous unlike Dot1L. Bre1 is expressed in early stages, although not present maternally (detected earliest in tailbud animals) until day 3. It is not expressed in Day 4, but it is again in Day 5 and has its highest point of expression in the male testis. It is not expressed in the female gonad.
@@ -1305,18 +1356,18 @@ However, validation and more thorough assessment must be
 conducted to better elucidate its exact role.
 Future studies: dsRNA, overexpression
 
-\clearpage
+
+
+
+\cleardoublepage
 
 %=========================================================================%
 \chapter{Conclusions and Future Perspectives}
 %=========================================================================%
 
-
-
-
-replicates and ChIP-seq data -> more resolution -> more confidence 
+replicates and ChIP-seq data -> more resolution -> more confidence
 Confirmation with ChIP-qPCR
-Functional characterization of identified E2F binding sites 
+Functional characterization of identified E2F binding sites
 \textit{in vivo} reporter constructs through transgenesis is not yet possible
 alternatively,
 injections in closely related (or not) species (e.g. Ciona intestinalis)
@@ -1339,13 +1390,14 @@ Regulation at both transcriptional and epigenetic levels is required and probabl
 
 
 
+
 \cleardoublepage
 %=========================================================================%
 %
 % The bibliography
 %
 %=========================================================================%
-\bibliographystyle{plain}
+\bibliographystyle{ieeetr}
 \bibliography{/data/Documents/library.bib}
 
 
@@ -1357,8 +1409,202 @@ Regulation at both transcriptional and epigenetic levels is required and probabl
 	\chapter{Gene Ontology terms associated with genes putatively regulated by E2F factors}
 	\label{appendix:GOterms}
 	
+	\section{Genes bound only by E2F1 in ovary tissue}
+	\footnotesize  % Switch from 12pt to 11pt; otherwise, table won't fit
+	\begin{longtable}{@{\extracolsep{\fill}}llc@{}}
+	\textbf{Term ID}  & \textbf{Description}                                            & \textbf{log$_{10}$(p-value)} \\
+    GO:0006278 & RNA-dependent DNA replication                                          & -2.71         \\
+    GO:0009987 & cellular process                                                       & -8.9625       \\
+    GO:0016192 & vesicle-mediated transport                                             & -3.1982       \\
+    GO:0033002 & muscle cell proliferation                                              & -4.1117       \\
+    GO:0050896 & response to stimulus                                                   & -2.915        \\
+    GO:0065007 & biological regulation                                                  & -4.2604       \\
+    GO:0071840 & cellular component organization or biogenesis                          & -2.5529       \\
+    GO:0044237 & cellular metabolic process                                             & -7.5965       \\
+    GO:0009058 & biosynthetic process                                                   & -5.9322       \\
+    GO:0006006 & glucose metabolic process                                              & -2.4011       \\
+    GO:0006807 & nitrogen compound metabolic process                                    & -6.7505       \\
+    GO:0043170 & macromolecule metabolic process                                        & -3.861        \\
+    GO:0044238 & primary metabolic process                                              & -3.0041       \\
+    GO:0060059 & embryonic retina morphogenesis in camera-type eye                      & -3.0939       \\
+    GO:0035556 & intracellular signal transduction                                      & -3.7117       \\
+    GO:0022406 & membrane docking                                                       & -2.3702       \\
+    GO:0030029 & actin filament-based process                                           & -2.8771       \\
+    GO:0044260 & cellular macromolecule metabolic process                               & -7.0356       \\
+    GO:0090317 & negative regulation of intracellular protein transport                 & -3.0939       \\
+    GO:0007010 & cytoskeleton organization                                              & -3.2969       \\
+    GO:0006139 & nucleobase-containing compound metabolic process                       & -6.8149       \\
+    GO:0044249 & cellular biosynthetic process                                          & -6.2634       \\
+    GO:0015812 & gamma-aminobutyric acid transport                                      & -2.2094       \\
+    GO:0051338 & regulation of transferase activity                                     & -2.0189       \\
+    GO:0032879 & regulation of localization                                             & -2.4154       \\
+    GO:0043412 & macromolecule modification                                             & -2.4469       \\
+    GO:0033036 & macromolecule localization                                             & -3.1818       \\
+    GO:0010604 & positive regulation of macromolecule metabolic process                 & -3.4616       \\
+    GO:0051641 & cellular localization                                                  & -2.0583       \\
+    GO:0007154 & cell communication                                                     & -2.2118       \\
+    GO:0006259 & DNA metabolic process                                                  & -3.7403       \\
+    GO:0071495 & cellular response to endogenous stimulus                               & -2.1562       \\
+    GO:0032268 & regulation of cellular protein metabolic process                       & -2.7219       \\
+    GO:0009117 & nucleotide metabolic process                                           & -2.0027       \\
+    GO:0010608 & posttranscriptional regulation of gene expression                      & -2.0002       \\
+    GO:0043062 & extracellular structure organization                                   & -2.1337       \\
+    GO:0051246 & regulation of protein metabolic process                                & -2.9956       \\
+    GO:0010467 & gene expression                                                        & -3.7199       \\
+    GO:0006464 & cellular protein modification process                                  & -2.3409       \\
+    GO:0034641 & cellular nitrogen compound metabolic process                           & -7.079        \\
+    GO:0016197 & endosomal transport                                                    & -2.9234       \\
+    GO:0006471 & protein ADP-ribosylation                                               & -2.1064       \\
+    GO:0016070 & RNA metabolic process                                                  & -2.4737       \\
+    GO:0015074 & DNA integration                                                        & -2.6682       \\
+    GO:0034645 & cellular macromolecule biosynthetic process                            & -5.6595       \\
+    GO:0090304 & nucleic acid metabolic process                                         & -5.5239       \\
+    GO:0009059 & macromolecule biosynthetic process                                     & -5.3032       \\
+    GO:0008360 & regulation of cell shape                                               & -3.0133       \\
+    GO:0045184 & establishment of protein localization                                  & -2.2365       \\
+    GO:0035278 & negative regulation of translation involved in gene silencing by miRNA & -2.2094       \\
+    GO:0060255 & regulation of macromolecule metabolic process                          & -5.9469       \\
+    GO:0045974 & regulation of translation, ncRNA-mediated                              & -2.2094       \\
+    GO:0046777 & protein autophosphorylation                                            & -2.5191       \\
+    GO:0060419 & heart growth                                                           & -2.6516       \\
+    GO:0044267 & cellular protein metabolic process                                     & -2.335        \\
+    GO:0019637 & organophosphate metabolic process                                      & -2.0529       \\
+    GO:0007264 & small GTPase mediated signal transduction                              & -2.4515       \\
+    GO:0048523 & negative regulation of cellular process                                & -2.6714       \\
+    GO:0051649 & establishment of localization in cell                                  & -2.267        \\
+    GO:0006281 & DNA repair                                                             & -3.1591       \\
+    GO:0006904 & vesicle docking involved in exocytosis                                 & -2.4221       \\
+    GO:0051716 & cellular response to stimulus                                          & -4.0826       \\
+    GO:0009913 & epidermal cell differentiation                                         & -2.4019       \\
+    GO:0006260 & DNA replication                                                        & -2.9098       \\
+    GO:0006888 & ER to Golgi vesicle-mediated transport                                 & -2.3636       \\
+    GO:0016043 & cellular component organization                                        & -2.7253       \\
+    GO:0006351 & transcription, DNA-dependent                                           & -2.6185       \\
+    GO:0016567 & protein ubiquitination                                                 & -2.1172       \\
+    GO:0070647 & protein modification by small protein conjugation or removal           & -2.0504       \\
+    GO:0006996 & organelle organization                                                 & -2.0441       \\
+    \end{longtable}
+	
+	\section{Genes bound only by E2F7 in ovary tissue}
+	\footnotesize  % Switch from 12pt to 11pt; otherwise, table won't fit
+	\begin{longtable}{@{\extracolsep{\fill}}llc@{}}
+	\textbf{Term ID}  & \textbf{Description}                         & \textbf{log$_{10}$(p-value)} \\
+	GO:0001539 & ciliary or flagellar motility                       & -4.1085       \\
+    GO:0031667 & response to nutrient levels                         & -2.2702       \\
+    GO:0043094 & cellular metabolic compound salvage                 & -3.3526       \\
+    GO:0034199 & activation of protein kinase A activity             & -2.5983       \\
+    GO:0006040 & amino sugar metabolic process                       & -2.1516       \\
+    GO:0043101 & purine-containing compound salvage                  & -2.3941       \\
+    GO:0048739 & cardiac muscle fiber development                    & -2.3941       \\
+    GO:0006278 & RNA-dependent DNA replication                       & -2.2707       \\
+    GO:0007091 & metaphase/anaphase transition of mitotic cell cycle & -3.3526       \\
+    GO:0006928 & cellular component movement                         & -2.1772       \\
+    GO:0072511 & divalent inorganic cation transport                 & -3.6156       \\
+    GO:0008361 & regulation of cell size                             & -2.4811       \\
+    GO:1901071 & glucosamine-containing compound metabolic process   & -2.0935       \\
+    GO:0006816 & calcium ion transport                               & -3.8459       \\
+    GO:0030001 & metal ion transport                                 & -2.0366       \\
+    GO:0007512 & adult heart development                             & -2.1734       \\
+	\end{longtable}
+	
+	\section{Genes bound only by E2F1 in testis tissue}
+	\footnotesize  % Switch from 12pt to 11pt; otherwise, table won't fit
+	\begin{longtable}{@{\extracolsep{\fill}}llc@{}}
+	\textbf{Term ID}  & \textbf{Description}                            & \textbf{log$_{10}$(p-value)} \\
+    GO:0001539 & ciliary or flagellar motility                          & -3.2899       \\
+    GO:0006260 & DNA replication                                        & -2.2387       \\
+    GO:0048739 & cardiac muscle fiber development                       & -2.4506       \\
+    GO:0051298 & centrosome duplication                                 & -2.4506       \\
+    GO:0090316 & positive regulation of intracellular protein transport & -2.866        \\
+    GO:0006816 & calcium ion transport                                  & -2.6053       \\
+    GO:0006928 & cellular component movement                            & -2.4741       \\
+    GO:0006898 & receptor-mediated endocytosis                          & -2.9111       \\
+    GO:0006139 & nucleobase-containing compound metabolic process       & -2.1489       \\
+    GO:0034220 & ion transmembrane transport                            & -2.2164       \\
+    GO:0045727 & positive regulation of translation                     & -2.1629       \\
+    GO:0072511 & divalent inorganic cation transport                    & -2.1809       \\
+    GO:0006278 & RNA-dependent DNA replication                          & -2.1966       \\
+    GO:0030838 & positive regulation of actin filament polymerization   & -2.1432       \\
+    GO:0007091 & metaphase/anaphase transition of mitotic cell cycle    & -2.2368       \\
+    GO:0007512 & adult heart development                                & -2.2368       \\
+    \end{longtable}
+    
+    \section{Genes bound only by E2F7 in testis tissue}
+	\footnotesize  % Switch from 12pt to 11pt; otherwise, table won't fit
+	\begin{longtable}{@{\extracolsep{\fill}}llc@{}}
+	\textbf{Term ID}  & \textbf{Description}                                 & \textbf{log$_{10}$(p-value)} \\
+	GO:0009653 & anatomical structure morphogenesis                          & -3.5006       \\
+    GO:0009894 & regulation of catabolic process                             & -4.3726       \\
+    GO:0009987 & cellular process                                            & -4.0159       \\
+    GO:0023052 & signaling                                                   & -4.9272       \\
+    GO:0032501 & multicellular organismal process                            & -2.1902       \\
+    GO:0032502 & developmental process                                       & -2.4275       \\
+    GO:0050896 & response to stimulus                                        & -2.9353       \\
+    GO:0065007 & biological regulation                                       & -5.9131       \\
+    GO:0033692 & cellular polysaccharide biosynthetic process                & -3.1836       \\
+    GO:0007020 & microtubule nucleation                                      & -2.6003       \\
+    GO:0006807 & nitrogen compound metabolic process                         & -3.3346       \\
+    GO:0006112 & energy reserve metabolic process                            & -2.7232       \\
+    GO:1901071 & glucosamine-containing compound metabolic process           & -3.0878       \\
+    GO:0044238 & primary metabolic process                                   & -3.023        \\
+    GO:0043170 & macromolecule metabolic process                             & -3.7098       \\
+    GO:0050905 & neuromuscular process                                       & -2.1167       \\
+    GO:0007141 & male meiosis I                                              & -2.0799       \\
+    GO:0043112 & receptor metabolic process                                  & -3.1582       \\
+    GO:0006913 & nucleocytoplasmic transport                                 & -2.5909       \\
+    GO:0006139 & nucleobase-containing compound metabolic process            & -3.4415       \\
+    GO:0044260 & cellular macromolecule metabolic process                    & -2.6489       \\
+    GO:0006366 & transcription from RNA polymerase II promoter               & -2.0226       \\
+    GO:0009966 & regulation of signal transduction                           & -3.7948       \\
+    GO:0051641 & cellular localization                                       & -2.093        \\
+    GO:0034329 & cell junction assembly                                      & -2.1167       \\
+    GO:0015698 & inorganic anion transport                                   & -2.0856       \\
+    GO:1900542 & regulation of purine nucleotide metabolic process           & -2.6926       \\
+    GO:0010629 & negative regulation of gene expression                      & -2.39         \\
+    GO:0007154 & cell communication                                          & -5.007        \\
+    GO:0031329 & regulation of cellular catabolic process                    & -3.8914       \\
+    GO:0040029 & regulation of gene expression, epigenetic                   & -2.0888       \\
+    GO:0006022 & aminoglycan metabolic process                               & -2.9965       \\
+    GO:0006357 & regulation of transcription from RNA polymerase II promoter & -2.2083       \\
+    GO:0010604 & positive regulation of macromolecule metabolic process      & -2.1272       \\
+    GO:0048583 & regulation of response to stimulus                          & -2.5882       \\
+    GO:0006040 & amino sugar metabolic process                               & -2.6847       \\
+    GO:0071310 & cellular response to organic substance                      & -2.688        \\
+    GO:0050794 & regulation of cellular process                              & -6.1247       \\
+    GO:0007167 & enzyme linked receptor protein signaling pathway            & -2.006        \\
+    GO:0016070 & RNA metabolic process                                       & -2.7768       \\
+    GO:0006621 & protein retention in ER lumen                               & -2.0799       \\
+    GO:0034641 & cellular nitrogen compound metabolic process                & -3.3173       \\
+    GO:0007264 & small GTPase mediated signal transduction                   & -2.9759       \\
+    GO:0023051 & regulation of signaling                                     & -3.0402       \\
+    GO:0090304 & nucleic acid metabolic process                              & -2.9958       \\
+    GO:0001840 & neural plate development                                    & -2.6003       \\
+    GO:0005976 & polysaccharide metabolic process                            & -2.5276       \\
+    GO:0021871 & forebrain regionalization                                   & -2.0799       \\
+    GO:0006351 & transcription, DNA-dependent                                & -2.1927       \\
+    GO:0034446 & substrate adhesion-dependent cell spreading                 & -2.0799       \\
+    GO:0032288 & myelin assembly                                             & -2.0799       \\
+    GO:0001708 & cell fate specification                                     & -2.6684       \\
+    GO:0046661 & male sex differentiation                                    & -2.0622       \\
+    GO:0005979 & regulation of glycogen biosynthetic process                 & -2.8713       \\
+    GO:0035556 & intracellular signal transduction                           & -2.5872       \\
+    GO:0051716 & cellular response to stimulus                               & -4.8572       \\
+    GO:0045165 & cell fate commitment                                        & -2.3637       \\
+    GO:0001763 & morphogenesis of a branching structure                      & -2.8468       \\
+    GO:0010033 & response to organic substance                               & -2.0303       \\
+    GO:0007389 & pattern specification process                               & -2.0547       \\
+    GO:0007166 & cell surface receptor signaling pathway                     & -2.0848       \\
+    GO:0035239 & tube morphogenesis                                          & -2.7748       \\
+	\end{longtable}
+    
 	\chapter{List of key cell cycle regulators putatively regulated by E2F factors}	
 	\label{list_key_cell_cycle_regulators}
+	
+	\footnotesize  % Switch from 12pt to 11pt; otherwise, table won't fit
+	\begin{longtable}{@{\extracolsep{\fill}}clc@{}}
+	\textbf{Term ID}  & \textbf{Description}                                 & \textbf{log$_{10}$(p-value)} \\
+	GO:0035239 & tube morphogenesis                                          & -2.7748       \\
+	\end{longtable}
 
 \end{appendices}
 
