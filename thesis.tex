@@ -1,17 +1,18 @@
 %=========================================================================%
-%   "Epigenetic basis of endocycle regulation in Oikopleura dioica"
+%         "The role of E2F regulation and H3K79 methylation
+%              in Oikopleura dioica's cell cycle modes"
 %
-% Master thesis by André Figueiredo Rendeiro
-% 2013/1014
+%              Master thesis by André Figueiredo Rendeiro
+%                               2014
 %
-% University of Aveiro thesis
-% based on the template by Tomás Oliveira e Silva
+%                    University of Aveiro thesis
+%        based on the LaTeX template by Tomás Oliveira e Silva
 %
 %=========================================================================%
 
 \documentclass[11pt,twoside,a4paper]{report}
 %incluir 'final' nas opções em baixo para omitir "Documento Provisório"
-\usepackage[DBIO,newLogo,final]{uaThesis}
+\usepackage[DBIO,newLogo]{uaThesis}
 
 % packages
 \usepackage[english]{babel}
@@ -46,21 +47,8 @@
   \usepackage[utf8]{inputenc}
   \usepackage{lmodern}
 \fi
-% to get external fonts (e.g. google webfonts)
-% must use xelatex compiler!!!
-% \setmainfont[Ligatures=TeX]{Junge.ttf}
 
-% defs
-\def\ThesisYear{2014}
-\def\ThesisAuthor{André Figueiredo Rendeiro}
-\def\ptThesisTitle{O papel dos fatores de transcrição E2F e de metilação da lisina 79 da histona H3 nos diferentes modos de ciclo celular de \textit{Oikopleura dioica}}
-\def\enThesisTitle{The role of E2F regulation and H3K79 methylation in \textit{Oikopleura dioica}'s cell cycle modes}
-
-% optional (comment to use default)s
-%   depth of the table of contents
-%     1 ... chapther and sections
-%     2 ... chapters, sections, and subsections
-%     3 ... chapters, sections, subsections, and subsubsections
+%  depth of the table of contents
 \setcounter{tocdepth}{5}
 \setcounter{secnumdepth}{5}
 
@@ -79,22 +67,15 @@
 \cfoot{}
 \rfoot[]{\thepage}
 
-% custom macros (could also be defined using \newcommand)
-\def\I{\mathtt{i}}         % one possible way to represent $\sqrt{-1}$
-\def\Exp#1{e^{2\pi\I #1}}  % argument inside braces, i.e., "{}"
-\def\EXP#1.{e^{2\pi\I #1}} % argument finishes when a full stop is encountered, i.e., "."
-\def\sigla{\LaTeX\xspace}  % use as "blabla \sigla blabla (no need to do "blabla \sigla\ blabla"
-
-\def\AddVMargin#1{\setbox0=\hbox{#1}%
-                  \dimen0=\ht0\advance\dimen0 by 2pt\ht0=\dimen0%
-                  \dimen0=\dp0\advance\dimen0 by 2pt\dp0=\dimen0%
-                  \box0}   % add extra vertical space above and below the argument (#1)
-\def\Header#1#2{\setbox1=\hbox{#1}\setbox2=\hbox{#2}%
-           \ifdim\wd1>\wd2\dimen0=\wd1\else\dimen0=\wd2\fi%
-           \AddVMargin{\parbox{\dimen0}{\centering #1\\#2}}} % put #1 on top #2
-
+% Celcius degree "º" character
 \newcommand{\degree}{\ensuremath{^\circ}}
 \DeclareUnicodeCharacter{B0}{\degree}
+
+% defs
+\def\ThesisYear{2014}
+\def\ThesisAuthor{André Figueiredo Rendeiro}
+\def\ptThesisTitle{O papel dos fatores de transcrição E2F e de metilação da lisina 79 da histona H3 nos diferentes modos de ciclo celular de \textit{Oikopleura dioica}}
+\def\enThesisTitle{The role of E2F regulation and H3K79 methylation in \textit{Oikopleura dioica}'s cell cycle modes}
 
 \begin{document}
 
@@ -360,38 +341,34 @@
 				
 			 	Blocking cytokinesis is a way to inhibit cell division and thus leads to endoreplication, a mechanism known to be normal in plants, where it has even been used in horticulture to improve crops. RhoA, a GTPase with a key role in regulating cell division is not activated due to the downregulation of two of its activators (GEF-H1 and ECT2) during cytokinesis in magakaryocytes as well, which causes failure of cell division. Endoreplication through an incomplete mitosis, is also known as endomitosis.
 			
-			\subsubsection{Alternative regulation of cell cycle drivers}
+			\subsubsection{Alternative regulation of cell cycle effectors}
 			
 				\paragraph{Endoreplication by CDK activity regulation}
-			
+				
 				The Cyclin E-CDK2 complex is the main driver for S phase entry in the canonical cell cycle, although in the absence of CDK2, CDK1 can act as a substitute in mammalian cells \cite{Ullah2009}. Evidence suggests that modulation of Cyclin E expression during endoreplication in \textit{Drosophila} is crucial and possibly sufficient for its maintenance \cite{Lilly2005}, and megakaryocytes with Cyclin E overexpression show increased ploidy \cite{Eliades2010}, reinforcing the role of Cyclin E complexed with a CDK in endoreplication. The Cyclin E-CDK complex has also been shown to be responsible for the inhibition of the pre-replication complex (RC) protein Orc1 indirectly, by inhibiting the APC/C component Fzr/Cdh1 \cite{Narbonne-Reveau2008}.
 			
-				All these observations put the Cyclin E-CDK2 complex in the center of regulation of endoreplicative cell cycles: it seems to generally contribute to increased replication, but also inhibits elements necessary for it, indicating that a temporally cyclic regulation of expression is necessary. Cyclin E is present at both transcript and protein level just before and during S phase, but not G, in endoreplicating Drosophila cells \cite{Weng2003} and if expressed continually, endoreplication is suppressed \cite{Weiss}.
+				All these observations put the Cyclin E-CDK2 complex in the center of regulation of endoreplicative cell cycles: it seems to generally contribute to increased replication, but also inhibits elements necessary for it, indicating that a temporally cyclic regulation of expression is necessary. Cyclin E is present at both transcript and protein level just before and during S phase, but not G, in endoreplicating \textit{Drosophila} cells \cite{Weng2003} and if expressed continually, endoreplication is suppressed \cite{Weiss}.
 			
 				\paragraph{E2F factors in CDK activity regulation}
 				\label{paragraph:E2Fs}
-				SECTION UNDER MAJOR REVISION, PLEASE SKIP
-			
-				 The E2F family of TFs is well known to have important functions in the regulation of both the canonical and endoreplicative cell cycles. This family of eight TFs in mammals can be grouped in a set of six canonical and two atypical TFs.
-				 Canonical E2Fs dimerize with the DP TF through a XXXXXXXXX domain; E2F3 is duplicated
-				 Atypical lack the DP-interaction domain, have two DNA-binding domains which allows homo- and heterodimerization.
-							
-				Activator E2Fs, after dimerizing with DP are bound by the Retinoblastoma protein (Rb) which prevents its action as TF of binding DNA 
-				 (van den Heuvel and Dyson, 2008)
-			
+				The E2F family of TFs is comprised of nine TFs in mammalian organisms, which can be grouped in a set of seven canonical and two atypical TFs (Figure \ref{fig:E2F_family})  \cite{VandenHeuvel2008}. In this set there is a recent gene duplication of E2F3 into E2F3a and E2F3b. Canonical E2F TFs (E2F1 to 6) dimerize with the DP co-transcriptional factor and are the most studied. Atypical E2Fs (E2F7 and 8) lack the domain of interaction with DP and therefore act independently of it. They have however two DNA-binding domains, and have been shown to homo- and heterodimerize. In both canonical and atypical E2Fs, there is functional specialization: E2F1 to 3a are activators, while E2F3b to 8 are repressors of gene expression  \cite{VandenHeuvel2008}.
+				
 				\begin{figure}[here]
 					\centering
 					\includegraphics[width=0.9\textwidth]{pngs/E2F_family.png}
 					\caption[The E2F family of transcription factors in mammals]
 					{The E2F family of transcription factors in mammals. {\footnotesize Adapted from \cite{VandenHeuvel2008}}}
 					\label{fig:E2F_family}
+					\vspace{-20pt}
 				\end{figure}
 				
-				The most prominent regulator of Cyclin E in the canonical cell cycle is the transcription factor E2F1. It is a potent regulator of S phase entry and DNA synthesis.
-				In \textit{Drosophila} endocycles, E2F1 is subject to regulation by the action of CRL4/Cdt2, an ubiquitin ligase that is activated upon DNA replication and thus itself a consequence of the E2F1 activity - a negative feedback mechanism \cite{Zielke2011}\cite{Havens2011}\cite{Shibutani2008}.  There is therefore an oscillation of E2F1 during endocycles that both promotes and is also the consequence of the oscillation of other key players in cell cycle regulation: 
-				APC/C activity as a xXXXXXXXX is negatively regulated by Cyclin E-CDK2
-				Cdt1 (essential replication licensing protein Cdt1 (Dup - droso))
-				Gemini (inhibitor of Cdt1 - inhibited by APC)
+				The E2F family of TFs is well known to have important functions in the regulation of cell cycle progression in the canonical and endoreplicative cell cycles \cite{Moon2008}\cite{Li2008}\cite{Chen2012}. This is mostly understood due to the function of activator E2Fs in gene expression activation in the transition to S and M phases, which is also regulated by Rb \ref{fig:pRb-E2F}. Repressor E2F TFs have been recently implying particularly in the regulation of alternative cell cycles. They do so by an antagonising the function of activator E2Fs by negatively regulating a high overlapping set of genes that are being activated by the canonical activator E2Fs \cite{Li2008}. Cellular outcomes of this antagonism between the two groups of opposing E2Fs can be seen by functional experiments on atypical E2F: ablation of canonical activators in the two endocycling tissues of mammals, trophoblast giant cells (TGCs) in the placenta and hepatocytes in the liver, caused increased ploidy, whereas ablation of atypical repressors diminished ploidy \cite{Chen2012}. Genes under regulation of both antagonistic groups of TFs are involved in the coordination of G2 to M transition, critical for mitosis, karyokinesis and cytokinesis. This antagonism is also present to some extent in human cells employing a canonical cell cycle, where E2F7 has been shown to repress a network of cell cycle genes to control S-phase progression.\cite{Westendorp2012}
+				
+				Since E2Fs are sequence-specific DNA binding proteins, the outcome of their activity is the activation or repression of their targets. These are the genes which will perform the molecular functions involved in progression of cell cycle phases.
+				
+				E2F1 is most prominently known to target Cyclin E, activating its expression and inducing S phase entry when complexed with CDK2. Cyclin E-CDK2 in turn activate the ubiquitin ligase CRL4/Cdt2 which acts during DNA replication and ubiquitinates E2F1, leading to its degradation \cite{Zielke2011}\cite{Havens2011}\cite{Shibutani2008}. This negative feedback mechanism triggered by E2F1 itself creates an oscillation during endocycles that both promotes and is the consequence of the oscillation of other key effectos in cell cycle regulation. Other effectors are other ubiquitin ligases such as APC/C which is inhibited by the Cyclin E-CDK2 complex. It is important for APC/C to have its activity reduced, for it targets the Gemini protein, which is in its turn an inhibitor of Cdt1, an essential replication licensing protein. Cdt1 is degraded upon APC/C activity, and with its inhibition, is allowed to promote replication again. This has been confirmed by the observation that the combination of mitotic CDK1 inhibition and Geminin proteolysis are sufficient to trigger endoreplication in human cells \cite{Hochegger2007}.
+				
+				Oscillation of these two groups of factors occurring between G and S phases is required for the establishment and maintenance of endocycles (Figure \ref{fig:oscillation}) \cite{VandenHeuvel2008}\cite{Meserve2012}\cite{Fox2013}, and provides a mechanism through which other important aspects of endoreplication can be controlled.
 				
 				\begin{figure}[here]
 					\centering
@@ -399,26 +376,10 @@
 					\caption[Oscillation of opposing networks of cell cycle genes during endocycles]
 					{Oscillation of opposing networks of cell cycle genes during endocycles. {\footnotesize Adapted from \cite{Fox2013}}}
 					\label{fig:oscillation}
+					\vspace{-10pt}
 				\end{figure}
-				
-				
-				This is mechanism of regulation ensures DNA is replicated only once per S phase, and is consistent with the observation that E2F1 activity is necessary for 
-				consistent 
-			
-
-			Nonetheless, these results emphasize that negative-feedback regulation is a common and important feature of molecular oscillators that control cell cycle progression (Ferrell et al., 2011). A central CDK oscillator provides a mechanism through which other important aspects of endoreplication can be controlled (Fig. 2). 
-			For example, the oscillation of APC/C activity in Drosophila salivary glands probably results directly from the oscillation of Cyclin E/Cdk2 complex activity, which inhibits the APC/C (Narbonne-Reveau et al., 2008). Key targets of the APC/C during endoreplication progression are the mitotic cyclins and the protein Geminin, which is an inhibitor of the essential replication licensing protein Cdt1 (Dup – FlyBase).
-			Indeed, the combination of mitotic Cdk1 inhibition and Geminin proteolysis can trigger endoreplication in human cells (Hochegger et al., 2007). By contrast, in Arabidopsis, little or no APC/C activity is required for endoreplication progression (as opposed to endoreplication entry, as described above), perhaps because there is no Geminin protein (Roodbarkelari et al., 2010). In Drosophila salivary glands, Geminin is absent during G phase, when replication licensing occurs, and present during S phase to prevent DNA licensing (Zielke et al., 2008).
-			 In this way, the endoreplication S phase is similar to the S phase of a cell division cycle and distinct from the phenomenon of re-replication, in which specific segments of DNA are replicated more than once in a single S phase. In contrast to endoreplication, re-replication is an aberrant situation that causes genomic instability and is observed in some cancer cells (see Box 2).
-			 In summary, the central endoreplication oscillator entrains many molecular activities to ensure the cycling of CDK activity and, thus, the cycling of replication licensing. It is important to keep in mind that the mechanism by which cyclic CDK activity is achieved may differ among species or even among different cell types within the same organism. For example, Drosophila nurse cells probably rely more on CKI activity than on E2F activity for CDK control during endoreplication (Hong et al., 2007). Nevertheless, the network of interactions controlling cyclic S phase CDK activity constitutes the central principle of endoreplication that we propose is universally applicable.
-
-			Negative-feedback regulation of E2F activity is also important for endoreplication in hepatocytes (Chen et al., 2012; Pandit et al., 2012), but here it appears to control the transition from cell division to endoreplication, and it is not yet known whether E2F functions as part of a mammalian endoreplication oscillator.
-			
-			
-			In another perspective, E2F7 is known to repress a network of cell cycle genes to control S-phase progression.\cite{Westendorp2012}
-			\cite{Moon2008}
-			\cite{Meserve2012}
-			\cite{Chen2012}
+								
+				In summary, the oscillation of key cell cycle effectors in endocycles promoted by E2F factors, ensures the cycling of CDK activity and thus, the cycling of replication licensing that is at the core of endocycles. Nevertheless, the mechanism by which the oscilation of CDK activity is achieved may differ among species.
 
 	\clearpage
 	\section{Histone modifications in cell cycle regulation}
@@ -1221,7 +1182,7 @@
 		\end{figure}
 		
 		\subsubsection{E2F regulation of key cell cycle effectors}
-		Since differential regulation of the canonical cell cycle and endocycles arise by the alternative regulation of key cell cycle effectors of progression through the cycles, it is foreseeable that some might be differentially regulated by the E2F TFs in the two gonadal tissues. The vast majority of such key cell cycle regulators components were detected to be putatively regulated by at least one E2F TF in at least one of the tissues. Such effectors are Cyclin, CDK proteins and CKI proteins as well as proteins directly involved in E2F regulation and other known regulators of cell cycle progression such as the co-transcriptional factor DP, the Retinoblastoma protein (Rb), Geminin, Cdt1, Cdh1 and PCNAs. Interestingly all four PCNA genes existent in \textit{Oikopleura} are bound by both TFs in both tissues.
+		Since differential regulation of the canonical cell cycle and endocycles arise by the alternative regulation of key cell cycle effectors of progression through the cycles, it is foreseeable that some might be differentially regulated by the E2F TFs in the two gonadal tissues. The vast majority of such key cell cycle regulators components were detected to be putatively regulated by at least one E2F TF in at least one of the tissues. Such effectors are Cyclin, CDK proteins and CKI proteins as well as proteins directly involved in E2F regulation and other known regulators of cell cycle progression such as the co-transcriptional factor DP, the Retinoblastoma protein (Rb), Geminin, Cdt1, Cdh1 and PCNAs. Interestingly, all four PCNA genes existent in \textit{Oikopleura} are bound by both TFs in both tissues.
 		
 		However, due to the lack of replication and the wideness of ChIP-ERs provided by the microarray technology, analysis of discrete cases of gene regulation by E2F factors should be taken with caution. Lists of key cell cycle effectors regulated by E2F TFs can be found in the appendix section \ref{list_key_cell_cycle_regulators}).
 		
@@ -1399,13 +1360,13 @@ The two E2F TFs (activator and repressor) were shown to have a high degree of sp
 
 Both E2F factor also regulate a significant portion of genes independently. When exploring the function of genes regulated by only one of the TFs in one tissue, we found a curious inversion of a very specific function related with cell cycle regulation. The \textit{"metaphase/anaphase transition of mitotic cell cycle"} GO term is highly specific for transitions within M phase, the cell cycle phase being skipped in endocycles. In the ovary, this term was associated with genes being solely regulated by E2F7 indicating that effector genes in M phase are being repressed, while in testis their expression happened to be induced by E2F1 binding. This inversion of E2F targets in the two tissues might be at the core of the suppression of M phase and endocycle regulation. 
 
+Many key cell cycle effectors are under E2F regulation in \textit{Oikopleura}. Cyclin E, for instance, which modulation of expression during endoreplication in various models has been shown to be crucial \cite{Lilly2005}\cite{Narbonne-Reveau2008}\cite{Eliades2010}, is differentially regulated by E2F factors in the two tissues studied. Nevertheless, although a certain degree of conservation between the regulation of endocycles and endoreplicative cycles between species is expected, further dissection of specific cell cycle effectors crucial for these alternative cycles must occur to attest the conservation of these mechanisms.
+
 Although an enrichment in cell cycle control functions is evident, many genes under E2F regulation are likely to participate in regulation of other biological processes. The reduced family of E2F TFs in \textit{Oikopleura} compared with other models could also have lead to diversification of E2F function as is suggested by the significant overrepresentation of GO terms related with adult development. 
 
 Differences of mean expression between genes targeted by one or other E2F TF in a tissue were found not to be significant. Nevertheless, there was a trend for genes regulated by E2F7 in a particular tissue being less expressed in the same tissue when compared with the other. Many genes, notably transcription factors are known to be regulated transcriptionally in regulatory networks that can enhance or buffer a given regulatory signal through feedback loops to allow high control over gene expression \cite{Macneil2011}. In light of this, we propose that most binding events of E2F TFs modulate gene expression in a smoothed way through interaction of various regulators, rather than controlling it in a boolean fashion.
 
 Overall, the relatively low resolution of the microarray technology, coupled with the high number of ChIP-ERs detected and putatively regulated genes, makes detection of subtle differences in E2F regulation in the two cycles more hard. This is further exacerbated by the possible function of E2F factors in other developmental processes. Nevertheless, profiling of E2F binding through ChIP-seq in more developmental time points with replicates as performed experimentally in this work (data not analysed) will allow higher resolution in binding site identification and more statistical confidence on the relation between E2F binding and gene regulation.
-
-\clearpage
 
 \section{Dot1 and H3K79 methylation in \textit{Oikopleura dioica}'s cell cycle modes}
 
@@ -1645,14 +1606,17 @@ This study also shows the viability and advantages of using \textit{Oikopleura d
     GO:0035239 & tube morphogenesis                                          & -2.7748       \\
 	\end{longtable}
     
-	\chapter{List of key cell cycle regulators putatively regulated by E2F factors}	
+	\chapter{List of key cell cycle effectors putatively regulated by E2F factors}	
 	\label{list_key_cell_cycle_regulators}
-	
-	\footnotesize  % Switch from 12pt to 11pt; otherwise, table won't fit
-	\begin{longtable}{@{\extracolsep{\fill}}clc@{}}
-	\textbf{Term ID}  & \textbf{Description}                                 & \textbf{log$_{10}$(p-value)} \\
-	GO:0035239 & tube morphogenesis                                          & -2.7748       \\
-	\end{longtable}
+	\begin{description}
+	\footnotesize
+		\item[Genes bound by both TFs in ovary] Rb, Geminin, Cdt1, CDK1b, CDK1c, CDK1e, CDK7, p21, CyclinB1, Cyclin Dc, Cyclin E, PCNA1, PCNA2, PCNA3, PCNA4
+		\item[Genes bound by both TFs in testis] DP, Rb, Cdt1, CDK1b, CDK1e, CyclinB1, CyclinB3, PCNA1, PCNA2, PCNA3, PCNA4
+		\item[Genes bound only by E2F1 in ovary] E2F1, DP, Cdh1, CDK1d, CDK1f, CDK2/3, CDK5, CDK9b, Cyclin A1, Cyclin A2, Cyclin C
+		\item[Genes bound only by E2F7 in ovary] none
+		\item[Genes bound only by E2F1 in testis] E2F7, Geminin, CDK1c, CDK5, p21, Cyclin Dc, Cyclin E
+		\item[Genes bound only by E2F7 in testis] CDK1d, CDK1f, Cyclin A2
+	\end{description}
 
 \end{appendices}
 
