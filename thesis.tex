@@ -32,7 +32,7 @@
 \usepackage{caption}
 \usepackage{subcaption}
 
-\usepackage[section]{placeins}  % force figure position in section
+\usepackage[section]{placeins} % force figure position in section
 
 % support long tables
 \usepackage{longtable}
@@ -48,7 +48,6 @@
   \usepackage{lmodern}
 \fi
 
-%  depth of the table of contents
 \setcounter{tocdepth}{5}
 \setcounter{secnumdepth}{5}
 
@@ -67,7 +66,7 @@
 \cfoot{}
 \rfoot[]{\thepage}
 
-% Celcius degree "º" character
+% custom macros (could also be defined using \newcommand)
 \newcommand{\degree}{\ensuremath{^\circ}}
 \DeclareUnicodeCharacter{B0}{\degree}
 
@@ -76,6 +75,7 @@
 \def\ThesisAuthor{André Figueiredo Rendeiro}
 \def\ptThesisTitle{O papel dos fatores de transcrição E2F e da metilação de H3K79 nos modos de ciclo celular de \textit{Oikopleura dioica}}
 \def\enThesisTitle{The role of E2F regulation and H3K79 methylation in \textit{Oikopleura dioica}'s cell cycle modes}
+
 
 \begin{document}
 
@@ -560,23 +560,24 @@
 	\section{Materials}
 		\subsection{Antibodies}
 			\begin{table}[H]
-       		\caption{\bf{Antibodies used for ChIP, immunofluorescence and western blot}}
+       		\caption{\bf{Antibodies used for ChIP, immunohistochemistry and western blot}}
         		\begin{center}
-            		\begin{tabular}{p{2cm} | p{8cm} | p{3cm} | p{3cm}}
+            		\begin{tabular}{p{2cm} | p{7cm} | p{2.5cm} | p{3cm}}
 	                	\textbf{Antibody} & \textbf{Description} & \textbf{Supplier} & \textbf{Purpose}\\
     		            \hline
-        		        ab46540 & Rabbit Control IgG - ChIP Grade & Abcam & ChIP\\
-            		    ab & RNA Polymerase II CTD & Abcam & ChIP\\
-            		     & E2F1 & & ChIP\\
-						 & E2F7 & & ChIP\\
-            		    ab10543 & Anti-Histone H3 (phospho S28) [HTA28] & Abcam & Immunostaining\\
-            		    39143  & Anti-Histone H3 K79me2 Rabbit & Active Motif & Immunostaining and Western blot\\
-            		    05-1312  &  Anti-Ubiquityl-Histone H2B Mouse & Milipore & Immunostaining\\
+            		    OdE2F1 & Anti-E2F1 of \textit{Oikopleura dioica} & 21stCentury & ChIP\\
+						OdE2F7 & Anti-E2F7 of \textit{Oikopleura dioica} & 21stCentury & ChIP\\
+            		    ab32107 & Anti-Histone H3 (phospho S10) [HTA28] & Abcam & Immunohistochemistry and Western blot\\
+            		    ab2886 & Anti-Histone H3 K79me1 Rabbit & Abcam & Western blot\\
+            		    39143  & Anti-Histone H3 K79me2 Rabbit & Active Motif & Immunohistochemistry and Western blot\\
+            		    ab2621 & Anti-Histone H3 K79me3 Rabbit & Abcam & Western blot\\
+            		    05-1312  &  Anti-Ubiquityl-Histone H2B Mouse & Milipore & Western blot\\
+            		    ab43176 & Anti-ATP Synthase beta Chicken & Abcam & Western blot\\
             		    \hline
-            		    A-21206 & Anti-Rabbit IgG secondary antibody conjugated with Alexa 488 fluorochrome &  Molecular Probes & Immunostaining\\
-               		    & Anti-Mouse IgG secondary antibody conjugated with Alexa 488  fluorochrome &  & Immunostaining\\
-            		    & Anti-Rat IgG secondary antibody conjugated with Alexa 568 fluorochrome & & Immunostaining\\
-            		    & Anti-Rabbit IgG secondary antibody conjugated with horseradish peroxidase &  & Western blot\\
+            		    A-11077 & Anti-Rat IgG secondary antibody conjugated with Alexa 568 fluorochrome & Molecular Probes & Immunohistochemistry\\
+            		    ab6802 & Donkey anti-Rabbit IgG secondary antibody conjugated with HRP & Abcam & Western blot\\
+            		    ab7003 & Donkey anti-Mouse IgG secondary antibody conjugated with HRP & Abcam & Western blot\\
+            		    151-24-06 & Goat-Anti-Chicken IgG secondary antibody, Phosphatase labeled & KPL & Western blot\\
 	            	\end{tabular}
     		    \end{center}
 		    \end{table}
@@ -584,12 +585,12 @@
 		\subsection{Chemicals and reagents}
 		
 			\begin{table}[H]
-       		\caption{\bf{Chemicals and reagents used in various protocols}}
+       		\caption{\bf{Chemicals and reagents with particular relevance}}
         		\begin{center}
             		\begin{tabular}{c|c|c}
 	               		Supplier & Chemical & Purpose\\
     		            \hline
-    		            Thermo Scientific & 16\% Formaldehyde Ampoules, Methanol-free & ChIP\\
+    		            Thermo Scientific & 16\% Formaldehyde ampoules, methanol-free & ChIP\\
     		            Tocris Bioscience & SGC0946 & Dot1 inhibition\\
 	            	\end{tabular}
     		    \end{center}
@@ -598,7 +599,7 @@
 	    \subsection{Consumables}
 	    \label{subsection:consumables}
 			\begin{table}[H]
-       			\caption{\bf{Consumables with particular relevance in certain protocols}}
+       			\caption{\bf{Consumables with particular relevance}}
         		\begin{center}
             		\begin{tabular}{p{2.9cm} | p{8.2cm} | p{2.2cm}}
 	                	\textbf{Supplier} & \textbf{Consumable} &  \textbf{Purpose}\\
@@ -612,7 +613,7 @@
         		        Bio-Rad & Trans-Blot turbo mini nitrocellulose membrane & Western blot\\
 						Bio-Rad & Precision Protein StrepTactin-HRP Conjugate & Western blot\\
         		        Bio-Rad & Clarity western ECL substrate & Western blot\\
-        		        Molecular Probes & TO-PRO-3 Iodide stain & Immunostaining\\
+        		        Molecular Probes & TO-PRO-3 Iodide stain & Immunohistochemistry\\
         		        Roche & In Situ Cell Death Detection Kit, Fluorescein & Tunel assay\\
         		        Life Technologies & Click-iT EdU Alexa Fluor 488 Imaging Kit & EdU detection\\        		        
 	            	\end{tabular}
@@ -664,7 +665,7 @@
 					\item[Ponceau S stain] 2\% Ponceau S, 30\% trichloroacetic acid, 30\% sulfosalicylic acid
 				\end{description}
 			
-			\subsubsection{Immunostaining, Tunel assay and Edu incorporation and detection}
+			\subsubsection{Immunohistochemistry, Tunel assay and Edu incorporation and detection}
 			     \begin{description}
 					\footnotesize
 					\item[Fixative] 4\% paraformaldehyde, 100 mM MOPS pH 7.5, 500 mM NaCl
@@ -683,28 +684,28 @@
 		    
 	\section{Animal culture and collection}
 		\subsection{Culture of \textit{O. dioica}}
-		The culture of \textit{Oikopleura} was performed at the SARS Centre appendiculatian facility as previously described \cite{Bouquet2009}. Cultured animals are native from the coastal area outside Bergen and are frequently collected and added to the permanent culture. Animals are permanently cultured at the facility in 6L seawater beakers, with permanent stirring and daily water renewal as well as feeding twice daily with algae according to the developmental stage (see table \ref{table:ODculture}). The use of a fixed volume for culture implies the progressive dilution of animals until the third day of life, where density remains at 150 animals per 6L beaker.
+		The culture of \textit{Oikopleura} was performed at the SARS Centre appendicularian facility as previously described \cite{Bouquet2009}. Cultured animals are native from the coastal area outside Bergen and are frequently collected and added to the permanent culture. Animals are permanently cultured at the facility in 6L seawater beakers, with permanent stirring and daily water renewal as well as feeding twice daily with algae according to the developmental stage (see table \ref{table:ODculture}). The use of a fixed volume for culture implies the progressive dilution of animals until the third day of life, where density remains at 150 animals per 6L beaker.
 		
-		\begin{table}
+		\begin{table}[h]
        		\caption{\bf{Feeding regime of \textit{Oikopleura} according to developmental stage}}
        			\begin{center}
             		\begin{tabular}{ c | c | >{\centering\arraybackslash}m{1.6cm}  | >{\centering\arraybackslash}m{2.1cm}  | >{\centering\arraybackslash}m{2.0cm} | >{\centering\arraybackslash}m{2.2cm} | >{\centering\arraybackslash}m{1.8cm} }
 		                \multicolumn{2}{c|}{} & \small{\textbf{\textit{Isochrysis sp.}}} & \small{\textbf{\textit{Chaetoceros calcitrans}}} & \small{\textbf{\textit{Rhinomonas reticulata}}} & \small{\textbf{\textit{Synecococcus sp.}}} & \small{\textbf{Crushed \textit{R. reticulata}}}\\
-        		        \multicolumn{2}{c}{\small{Developmental stage/Time}} & \multicolumn{3}{|c|}{(cells/mL)} & \multicolumn{2}{c}{(mL)} \\
+        		        \multicolumn{2}{c}{\small{Developmental stage}} & \multicolumn{3}{|c|}{(cells/mL)} & \multicolumn{2}{c}{(mL)} \\
         		        												 \hline
-        		        \multirow{2}{*}{1} 	& Morning & 2000 & 2000 & 0 & 5 & 5\\
+        		        \multirow{2}{*}{Day 1} 	& Morning & 2000 & 2000 & 0 & 5 & 5\\
         		        												& Evening & 1000 & 1000 & 0 & 3 & 5\\
         		        												 \hline
-        		        \multirow{2}{*}{2} 	& Morning & 2000 & 2000 & 0 & 5 & 5\\
+        		        \multirow{2}{*}{Day 2} 	& Morning & 2000 & 2000 & 0 & 5 & 5\\
         		        												& Evening & 1000 & 1000 & 0 & 3 & 5\\
         		        												 \hline
-        		        \multirow{2}{*}{3} 	& Morning & 2000 & 4000 & 0 & 5 & 5\\
+        		        \multirow{2}{*}{Day 3} 	& Morning & 2000 & 4000 & 0 & 5 & 5\\
         		        												& Evening & 1000 & 2000 & 1000 & 3 & 5\\
         		        												 \hline
-        		        \multirow{2}{*}{4} 	& Morning & 4000 & 4000 & 2000 & 0 & 5\\
+        		        \multirow{2}{*}{Day 4} 	& Morning & 4000 & 4000 & 2000 & 0 & 5\\
         		        												& Evening & 2000 & 2000 & 1000 & 0 & 5\\
         		        												 \hline
-        		        \multirow{2}{*}{5} 	& Morning & 4000 & 4000 & 2000 & 0 & 5\\
+        		        \multirow{2}{*}{Day 5} 	& Morning & 4000 & 4000 & 2000 & 0 & 5\\
         		        												& Evening & 2000 & 2000 & 1000 & 0 & 5\\
 	           			\end{tabular}
        				\end{center}
@@ -815,7 +816,7 @@
 			\subsection{Detection}
 			The membrane was washed once with PBS and incubated for 5 minutes in ECL substrate to allow detection of secondary antibody binding through chemiluminescence, being scanned with an exposure time between 3 and 30 seconds depending on signal strength.
 		
-	\section{Whole mount immunostaining}
+	\section{Whole mount Immunohistochemistry}
 		Collected animals were fixed in 4\% paraformaldehyde at 4ºC O/N and washed once with PBS-TE and twice with PBS-TEG to quench remaining formaldehyde. Two TBS-TE washes followed, after which animals were inculated O/N in blocking solution.
 		
 		Primary antibodies were diluted 1:100 in blocking solution and added to the animals after the previous blocking solution was removed from the microtubes. An incubation of at least six days with the primary antibodies was performed at 4ºC
